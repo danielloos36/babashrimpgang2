@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutz</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
+</head>
+<body>
+    <div class="navbar">
+        <div class="topnav">
+            <div id="navbar-collapsed">
+                <div class="collapsed-child" id="navbar-link">
+                    <a class="pagelinks" href="index.html#home" onclick="linkClicked(); burgerIcons()">Home</a>
+                    <a class="pagelinks" href="index.html#ueber-uns" onclick="linkClicked(); burgerIcons()">über uns</a>
+                    <a class="pagelinks" href="index.html#konzerte" onclick="linkClicked(); burgerIcons()">konzerte</a>
+                    <a class="pagelinks" href="index.html#booking" onclick="linkClicked(); burgerIcons()">booking</a>
+                    <a class="pagelinks" href="index.html#social-media" onclick="linkClicked(); burgerIcons()">social media</a>
+                </div>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <div class="container" onclick="burgerIcon()">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+            </a>
+          </div>
+            <!--<div class="logo-image">
+                <svg class="bsg-logo" width="629" height="61" viewBox="0 0 629 61" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.88719 10.976H21.6792C24.0792 10.976 26.2632 11.264 28.2312 11.84C30.2472 12.368 31.9512 13.184 33.3432 14.288C34.7832 15.344 35.8872 16.688 36.6552 18.32C37.4712 19.904 37.8792 21.776 37.8792 23.936C37.8792 25.472 37.6872 26.792 37.3032 27.896C36.9192 28.952 36.5112 29.84 36.0792 30.56C35.5512 31.424 34.9512 32.144 34.2792 32.72C35.3352 33.392 36.2952 34.256 37.1592 35.312C37.8792 36.224 38.5272 37.376 39.1032 38.768C39.7272 40.16 40.0392 41.864 40.0392 43.88C40.0392 46.184 39.6312 48.272 38.8152 50.144C37.9992 52.016 36.8232 53.624 35.2872 54.968C33.7992 56.264 31.9512 57.272 29.7432 57.992C27.5832 58.664 25.1592 59 22.4712 59H2.88719V10.976ZM19.4472 47.696C23.0952 47.696 24.9192 46.304 24.9192 43.52C24.9192 40.736 23.0952 39.344 19.4472 39.344H17.7192V47.696H19.4472ZM23.0472 25.592C23.0472 23.384 21.8472 22.28 19.4472 22.28H17.7192V28.904H19.4472C21.8472 28.904 23.0472 27.8 23.0472 25.592ZM57.5026 10.976H69.0226L87.2386 59H72.1186L70.5346 54.68H55.9906L54.4066 59H39.2866L57.5026 10.976ZM66.5026 44.096L63.2626 35.672L60.0226 44.096H66.5026ZM88.3169 10.976H107.109C109.509 10.976 111.693 11.264 113.661 11.84C115.677 12.368 117.381 13.184 118.773 14.288C120.213 15.344 121.317 16.688 122.085 18.32C122.901 19.904 123.309 21.776 123.309 23.936C123.309 25.472 123.117 26.792 122.733 27.896C122.349 28.952 121.941 29.84 121.509 30.56C120.981 31.424 120.381 32.144 119.709 32.72C120.765 33.392 121.725 34.256 122.589 35.312C123.309 36.224 123.957 37.376 124.533 38.768C125.157 40.16 125.469 41.864 125.469 43.88C125.469 46.184 125.061 48.272 124.245 50.144C123.429 52.016 122.253 53.624 120.717 54.968C119.229 56.264 117.381 57.272 115.173 57.992C113.013 58.664 110.589 59 107.901 59H88.3169V10.976ZM104.877 47.696C108.525 47.696 110.349 46.304 110.349 43.52C110.349 40.736 108.525 39.344 104.877 39.344H103.149V47.696H104.877ZM108.477 25.592C108.477 23.384 107.277 22.28 104.877 22.28H103.149V28.904H104.877C107.277 28.904 108.477 27.8 108.477 25.592ZM142.932 10.976H154.452L172.668 59H157.548L155.964 54.68H141.42L139.836 59H124.716L142.932 10.976ZM151.932 44.096L148.692 35.672L145.452 44.096H151.932ZM186.865 44.096C187.921 44.432 189.025 44.696 190.177 44.888C191.137 45.128 192.217 45.32 193.417 45.464C194.665 45.608 195.913 45.68 197.161 45.68C199.369 45.68 200.473 44.864 200.473 43.232C200.473 42.608 200.137 41.984 199.465 41.36C198.793 40.688 197.929 39.968 196.873 39.2C195.865 38.384 194.761 37.496 193.561 36.536C192.409 35.576 191.305 34.472 190.249 33.224C189.241 31.976 188.401 30.584 187.729 29.048C187.057 27.464 186.721 25.664 186.721 23.648C186.721 21.392 187.129 19.4 187.945 17.672C188.761 15.944 189.889 14.504 191.329 13.352C192.769 12.2 194.449 11.336 196.369 10.76C198.337 10.136 200.425 9.824 202.633 9.824C203.785 9.824 204.937 9.896 206.089 10.04C207.241 10.136 208.273 10.232 209.185 10.328C210.241 10.472 211.273 10.616 212.281 10.76V24.224C211.897 24.176 211.465 24.128 210.985 24.08C210.601 24.032 210.169 23.984 209.689 23.936C209.209 23.888 208.705 23.864 208.177 23.864C207.889 23.864 207.529 23.888 207.097 23.936C206.665 23.936 206.257 23.984 205.873 24.08C205.489 24.176 205.153 24.344 204.865 24.584C204.577 24.824 204.433 25.16 204.433 25.592C204.433 25.976 204.745 26.456 205.369 27.032C206.041 27.608 206.833 28.28 207.745 29.048C208.705 29.816 209.737 30.704 210.841 31.712C211.993 32.72 213.025 33.872 213.937 35.168C214.897 36.464 215.689 37.928 216.313 39.56C216.985 41.192 217.321 43.016 217.321 45.032C217.321 47.144 216.985 49.136 216.313 51.008C215.641 52.832 214.585 54.44 213.145 55.832C211.753 57.176 209.953 58.232 207.745 59C205.537 59.816 202.921 60.224 199.897 60.224C198.073 60.224 196.369 60.128 194.785 59.936C193.249 59.792 191.881 59.6 190.681 59.36C189.289 59.12 188.017 58.832 186.865 58.496V44.096ZM220.575 10.976H235.911V27.32H244.479V10.976H259.887V59H244.479V41.216H235.911V59H220.575V10.976ZM264.942 10.976H281.502C284.574 10.976 287.406 11.384 289.998 12.2C292.638 13.016 294.918 14.216 296.838 15.8C298.758 17.384 300.246 19.352 301.302 21.704C302.406 24.008 302.958 26.672 302.958 29.696C302.958 32.096 302.622 34.136 301.95 35.816C301.278 37.496 300.534 38.888 299.718 39.992C298.758 41.24 297.678 42.296 296.478 43.16L305.478 59H287.478L280.278 46.832V59H264.942V10.976ZM280.278 34.592H281.07C282.894 34.592 284.43 34.184 285.678 33.368C286.974 32.552 287.622 31.184 287.622 29.264C287.622 27.344 286.974 25.976 285.678 25.16C284.43 24.344 282.894 23.936 281.07 23.936H280.278V34.592ZM306.918 10.976H323.19V59H306.918V10.976ZM328.223 10.976H340.895L353.423 29.408L365.879 10.976H378.551V59H363.215V41.72L353.423 56.12L343.559 41.72V59H328.223V10.976ZM420.927 29.264C420.927 32.576 420.351 35.408 419.199 37.76C418.047 40.064 416.463 41.936 414.447 43.376C412.479 44.816 410.151 45.872 407.463 46.544C404.823 47.216 401.967 47.552 398.895 47.552V59H383.559V10.976H398.895C401.967 10.976 404.823 11.312 407.463 11.984C410.151 12.656 412.479 13.712 414.447 15.152C416.463 16.592 418.047 18.488 419.199 20.84C420.351 23.144 420.927 25.952 420.927 29.264ZM398.895 34.592H399.543C401.559 34.592 402.999 34.136 403.863 33.224C404.775 32.264 405.231 30.944 405.231 29.264C405.231 27.584 404.775 26.288 403.863 25.376C402.999 24.416 401.559 23.936 399.543 23.936H398.895V34.592ZM469.565 27.32C468.701 26.552 467.621 25.976 466.325 25.592C465.029 25.16 463.757 24.944 462.509 24.944C461.117 24.944 459.845 25.208 458.693 25.736C457.541 26.216 456.533 26.912 455.669 27.824C454.853 28.688 454.205 29.744 453.725 30.992C453.245 32.24 453.005 33.584 453.005 35.024C453.005 36.464 453.269 37.808 453.797 39.056C454.325 40.304 455.045 41.384 455.957 42.296C456.869 43.16 457.925 43.856 459.125 44.384C460.373 44.864 461.693 45.104 463.085 45.104C464.717 45.104 466.205 44.768 467.549 44.096C468.893 43.376 470.045 42.416 471.005 41.216H466.685V31.136H485.189V47.12C484.085 49.088 482.765 50.888 481.229 52.52C479.693 54.104 477.965 55.472 476.045 56.624C474.173 57.776 472.133 58.664 469.925 59.288C467.717 59.912 465.437 60.224 463.085 60.224C459.629 60.224 456.365 59.576 453.293 58.28C450.221 56.984 447.533 55.208 445.229 52.952C442.973 50.696 441.173 48.032 439.829 44.96C438.533 41.888 437.885 38.576 437.885 35.024C437.885 31.568 438.509 28.304 439.757 25.232C441.005 22.16 442.709 19.496 444.869 17.24C447.077 14.936 449.669 13.136 452.645 11.84C455.669 10.496 458.909 9.824 462.365 9.824C465.053 9.824 467.381 10.088 469.349 10.616C471.317 11.144 472.973 11.744 474.317 12.416C475.901 13.184 477.221 14.024 478.277 14.936L469.565 27.32ZM503.424 10.976H514.944L533.16 59H518.04L516.456 54.68H501.912L500.328 59H485.208L503.424 10.976ZM512.424 44.096L509.184 35.672L505.944 44.096H512.424ZM534.239 10.976H546.839L560.087 29.48V10.976H575.135V59H562.463L549.287 40.568V59H534.239V10.976Z"/>
+                    <path d="M621.641 16.2521C621.5 16.0966 621.357 15.9411 621.216 15.7856C620.936 15.4813 620.52 15.0482 619.989 14.5595C612.956 8.11139 603.372 8.47344 602.274 8.52675C590.282 9.11758 583.425 18.6931 582.652 19.8104C582.806 20.3968 583.046 21.1831 583.421 22.0782C583.659 22.6491 584.384 24.3061 585.574 25.8543C588.299 29.4037 592.08 30.6631 592.642 30.8431C594.711 31.505 596.623 31.5872 598.132 31.4694C605.969 26.3962 613.806 21.323 621.641 16.2521Z"/>
+                    <path d="M581.55 20.9609C580.442 22.8934 578.957 26.0364 578.316 30.1722C577.507 35.3743 578.426 39.6145 579.111 41.929C579.9 42.3843 581.019 42.9574 582.432 43.4461C582.778 43.566 583.95 43.9658 585.146 44.1613C588.98 44.7921 592.278 43.2373 593.06 42.8486C595.065 41.849 596.467 40.5319 597.37 39.4924C597.161 38.8149 596.964 37.9575 596.898 36.9535C596.782 35.1988 597.105 33.755 597.403 32.8199C596.973 32.8021 596.541 32.7821 596.112 32.7644C594.702 32.7399 590.474 32.4889 586.818 29.4925C586.818 29.4925 584.324 27.4446 582.811 24.4193C582.128 23.0666 581.76 21.8472 581.55 20.9609Z"/>
+                    <path d="M598.022 40.5297C597.227 41.4359 595.913 42.7198 593.992 43.7926C592.644 44.5456 591.503 44.9121 591.024 45.052C590.24 45.2852 588.039 45.8605 585.195 45.5251C582.76 45.2386 580.9 44.4056 579.781 43.7926C579.964 44.1791 580.228 44.7122 580.57 45.3363C581.143 46.3825 582.502 48.828 584.838 51.2936C587.955 54.5876 591.229 56.2446 592.432 56.8088C595.418 58.2126 598.165 58.779 600.19 59.0122C600.514 58.7812 600.952 58.4503 601.439 58.0149C603.175 56.4645 604.11 54.8741 604.407 54.341C605.513 52.3575 605.859 50.5939 605.969 49.932C606.275 48.0862 606.137 46.5358 605.969 45.5229C605.564 45.423 605.145 45.303 604.72 45.1564C602.045 44.2368 600.073 42.6753 598.718 41.2982C598.485 41.0428 598.253 40.7873 598.022 40.5297Z"/>
+                    <path d="M607.459 45.7628C607.551 46.3714 607.641 47.2177 607.617 48.2283C607.597 49.0702 607.467 51.5201 606.128 54.2855C604.958 56.7022 603.394 58.2637 602.407 59.1099C602.979 59.1344 603.764 59.1477 604.694 59.1099C604.694 59.1099 607.256 59.0055 609.453 58.5013C613.599 57.5529 617.477 54.7231 618.288 54.1211C618.512 53.5281 618.77 52.7174 618.94 51.7267C619.019 51.2625 619.257 49.8054 619.048 48.2306C618.693 45.5518 617.193 43.6238 616.41 42.7487C615.613 43.3462 614.538 44.0325 613.187 44.6011C611.242 45.4208 609.486 45.6829 608.256 45.765"/>
+                    <path d="M620.59 51.8733C621.85 50.7227 623.529 48.9346 625.003 46.4069C626.554 43.7437 627.29 41.2693 627.66 39.5479C627.594 39.3146 627.482 38.9926 627.288 38.6372C627.189 38.455 626.66 37.5199 625.534 36.8691C624.516 36.2805 623.569 36.2472 622.93 36.225C621.775 36.185 620.819 36.4515 620.165 36.707C620.11 36.9713 620.026 37.3422 619.898 37.7798C619.682 38.5194 619.453 39.308 618.942 40.1387C618.691 40.5474 618.277 41.1182 617.613 41.6935C617.871 41.9157 618.213 42.2355 618.57 42.6575C618.788 42.9152 619.682 43.9991 620.271 45.7117C620.654 46.8267 620.747 47.7418 620.802 48.3371C620.87 49.0524 620.868 49.6654 620.846 50.1296"/>
+                    <path d="M620.072 35.1966C620.442 35.0389 620.987 34.8457 621.663 34.739C623.324 34.4769 624.633 34.919 625.072 35.0833C626.656 35.6808 627.585 36.7203 627.969 37.2023C628.119 36.5893 628.26 35.8452 628.343 34.9945C628.385 34.5591 628.401 34.1549 628.392 32.5312C628.385 31.445 628.374 30.8919 628.361 29.6881C628.337 27.5424 628.35 27.1692 628.432 26.6472C628.573 25.7432 628.817 25.028 629 24.5727C628.85 24.2683 628.194 23.0245 626.764 22.5514C625.109 22.0027 623.479 22.8357 622.624 23.7575C622.132 24.2883 621.899 24.8436 621.8 25.1191C621.383 26.2852 621.63 27.3136 621.745 27.7001C621.496 27.4069 619.993 25.7032 617.523 25.6277C617.102 25.6144 614.948 25.5366 613.482 27.1581C612.412 28.3442 612.297 29.788 612.251 30.3966C612.16 31.5583 612.416 32.4956 612.61 33.0376C613.361 32.8621 614.732 32.6467 616.38 33.0043C617.77 33.3064 618.794 33.8928 619.398 34.3037C619.618 34.5991 619.845 34.8967 620.072 35.1966Z"/>
+                    <path d="M620.599 15.6305C621.102 15.304 621.789 14.8242 622.556 14.1779C623.404 13.4627 623.944 13.0095 624.504 12.2365C625.314 11.1171 625.623 10.082 625.704 9.79324C625.792 9.48227 626.026 8.57158 625.973 7.36992C625.947 6.74354 625.881 5.53521 625.187 4.23804C624.327 2.63433 623.03 1.85692 622.452 1.52374C620.734 0.526423 619.077 0.46645 618.299 0.488662C613.91 0.979545 609.521 1.47043 605.132 1.96131C602.656 2.35446 599.336 2.62989 595.458 2.25451C591.433 1.86358 588.123 0.899583 585.722 0C585.66 0.00666358 585.572 0.0222117 585.473 0.0621931C585.453 0.0710779 584.99 0.273208 584.913 0.750764C584.88 0.959556 584.935 1.13281 584.975 1.23054C585.114 1.32828 585.31 1.46155 585.554 1.60592C585.966 1.85026 586.541 2.14345 587.544 2.4633C588.161 2.66099 588.734 2.79426 590.527 3.13188C591.695 3.35178 592.279 3.46062 592.724 3.52947C594.581 3.81157 596.022 3.86488 597.198 3.90486C598.668 3.95372 600.208 3.9404 601.922 3.84266C604.745 3.6783 606.254 3.3851 609.156 2.99195C610.956 2.74762 613.511 2.43443 616.647 2.17011C617.068 2.10125 617.656 2.03683 618.354 2.06793C618.879 2.09014 619.734 2.13679 620.712 2.52772C621.223 2.73207 622.305 3.18075 623.177 4.32466C623.367 4.57121 624.096 5.57297 624.255 7.08116C624.42 8.65821 623.862 9.84655 623.591 10.4018C622.822 11.9833 621.626 12.8563 620.754 13.4937C620.139 13.9424 619.586 14.249 619.194 14.4466C619.661 14.8376 620.13 15.2329 620.599 15.6305Z"/>
+                </svg>
+            </div>
+            <div class="item"><h3><a href="">über uns</a></h3></div>
+            <div class="item"><h3><a href="">konzerte</a></h3></div>
+            <div class="item"><h3><a href="">booking</a></h3></div>-->
+    </div>
+    <div id="datenschutz">
+        <h1>Daten&shy;schutz&shy;erklärung</h1>
+        <h2 id="einleitung-ueberblick">Einleitung und Überblick</h2>
+        <p>Wir haben diese Datenschutzerklärung (Fassung 09.10.2022-312214196) verfasst, um Ihnen gemäß der Vorgaben der <a href="https://eur-lex.europa.eu/legal-content/DE/TXT/HTML/?uri=CELEX:32016R0679&amp;from=DE&amp;tid=312214196#d1e2269-1-1" target="_blank" rel="noopener">Datenschutz-Grundverordnung (EU) 2016/679</a> und anwendbaren nationalen Gesetzen zu erklären, welche personenbezogenen Daten (kurz Daten) wir als Verantwortliche &#8211; und die von uns beauftragten Auftragsverarbeiter (z. B. Provider) &#8211; verarbeiten, zukünftig verarbeiten werden und welche rechtmäßigen Möglichkeiten Sie haben. Die verwendeten Begriffe sind geschlechtsneutral zu verstehen.<br />
+        <strong>Kurz gesagt:</strong> Wir informieren Sie umfassend über Daten, die wir über Sie verarbeiten.</p>
+        <p>Datenschutzerklärungen klingen für gewöhnlich sehr technisch und verwenden juristische Fachbegriffe. Diese Datenschutzerklärung soll Ihnen hingegen die wichtigsten Dinge so einfach und transparent wie möglich beschreiben. Soweit es der Transparenz förderlich ist, werden technische <strong>Begriffe leserfreundlich erklärt</strong>, Links zu weiterführenden Informationen geboten und <strong>Grafiken</strong> zum Einsatz gebracht. Wir informieren damit in klarer und einfacher Sprache, dass wir im Rahmen unserer Geschäftstätigkeiten nur dann personenbezogene Daten verarbeiten, wenn eine entsprechende gesetzliche Grundlage gegeben ist. Das ist sicher nicht möglich, wenn man möglichst knappe, unklare und juristisch-technische Erklärungen abgibt, so wie sie im Internet oft Standard sind, wenn es um Datenschutz geht. Ich hoffe, Sie finden die folgenden Erläuterungen interessant und informativ und vielleicht ist die eine oder andere Information dabei, die Sie noch nicht kannten.<br />
+        Wenn trotzdem Fragen bleiben, möchten wir Sie bitten, sich an die unten bzw. im Impressum genannte verantwortliche Stelle zu wenden, den vorhandenen Links zu folgen und sich weitere Informationen auf Drittseiten anzusehen. Unsere Kontaktdaten finden Sie selbstverständlich auch im Impressum.</p>
+        <h2 id="anwendungsbereich">Anwendungsbereich</h2>
+        <p>Diese Datenschutzerklärung gilt für alle von uns im Unternehmen verarbeiteten personenbezogenen Daten und für alle personenbezogenen Daten, die von uns beauftragte Firmen (Auftragsverarbeiter) verarbeiten. Mit personenbezogenen Daten meinen wir Informationen im Sinne des Art. 4 Nr. 1 DSGVO wie zum Beispiel Name, E-Mail-Adresse und postalische Anschrift einer Person. Die Verarbeitung personenbezogener Daten sorgt dafür, dass wir unsere Dienstleistungen und Produkte anbieten und abrechnen können, sei es online oder offline. Der Anwendungsbereich dieser Datenschutzerklärung umfasst:</p>
+        <ul>
+        <li>alle Onlineauftritte (Websites, Onlineshops), die wir betreiben</li>
+        <li>Social Media Auftritte und E-Mail-Kommunikation</li>
+        <li>mobile Apps für Smartphones und andere Geräte</li>
+        </ul>
+        <p>
+        <strong>Kurz gesagt:</strong> Die Datenschutzerklärung gilt für alle Bereiche, in denen personenbezogene Daten im Unternehmen über die genannten Kanäle strukturiert verarbeitet werden. Sollten wir außerhalb dieser Kanäle mit Ihnen in Rechtsbeziehungen eintreten, werden wir Sie gegebenenfalls gesondert informieren.</p>
+        <h2 id="rechtsgrundlagen">Rechtsgrundlagen</h2>
+        <p>In der folgenden Datenschutzerklärung geben wir Ihnen transparente Informationen zu den rechtlichen Grundsätzen und Vorschriften, also den Rechtsgrundlagen der Datenschutz-Grundverordnung, die uns ermöglichen, personenbezogene Daten zu verarbeiten.<br />
+        Was das EU-Recht betrifft, beziehen wir uns auf die VERORDNUNG (EU) 2016/679 DES EUROPÄISCHEN PARLAMENTS UND DES RATES vom 27. April 2016. Diese Datenschutz-Grundverordnung der EU können Sie selbstverständlich online auf EUR-Lex, dem Zugang zum EU-Recht, unter <a href="https://eur-lex.europa.eu/legal-content/DE/ALL/?uri=celex%3A32016R0679">https://eur-lex.europa.eu/legal-content/DE/ALL/?uri=celex%3A32016R0679</a> nachlesen.</p>
+        <p>Wir verarbeiten Ihre Daten nur, wenn mindestens eine der folgenden Bedingungen zutrifft:</p>
+        <ol>
+        <li>
+        <strong>Einwilligung</strong> (Artikel 6 Absatz 1 lit. a DSGVO): Sie haben uns Ihre Einwilligung gegeben, Daten zu einem bestimmten Zweck zu verarbeiten. Ein Beispiel wäre die Speicherung Ihrer eingegebenen Daten eines Kontaktformulars.</li>
+        <li>
+        <strong>Vertrag</strong> (Artikel 6 Absatz 1 lit. b DSGVO): Um einen Vertrag oder vorvertragliche Verpflichtungen mit Ihnen zu erfüllen, verarbeiten wir Ihre Daten. Wenn wir zum Beispiel einen Kaufvertrag mit Ihnen abschließen, benötigen wir vorab personenbezogene Informationen.</li>
+        <li>
+        <strong>Rechtliche Verpflichtung</strong> (Artikel 6 Absatz 1 lit. c DSGVO): Wenn wir einer rechtlichen Verpflichtung unterliegen, verarbeiten wir Ihre Daten. Zum Beispiel sind wir gesetzlich verpflichtet Rechnungen für die Buchhaltung aufzuheben. Diese enthalten in der Regel personenbezogene Daten.</li>
+        <li>
+        <strong>Berechtigte Interessen</strong> (Artikel 6 Absatz 1 lit. f DSGVO): Im Falle berechtigter Interessen, die Ihre Grundrechte nicht einschränken, behalten wir uns die Verarbeitung personenbezogener Daten vor. Wir müssen zum Beispiel gewisse Daten verarbeiten, um unsere Website sicher und wirtschaftlich effizient betreiben zu können. Diese Verarbeitung ist somit ein berechtigtes Interesse.</li>
+        </ol>
+        <p>Weitere Bedingungen wie die Wahrnehmung von Aufnahmen im öffentlichen Interesse und Ausübung öffentlicher Gewalt sowie dem Schutz lebenswichtiger Interessen treten bei uns in der Regel nicht auf. Soweit eine solche Rechtsgrundlage doch einschlägig sein sollte, wird diese an der entsprechenden Stelle ausgewiesen.</p>
+        <p>Zusätzlich zu der EU-Verordnung gelten auch noch nationale Gesetze:</p>
+        <ul>
+        <li>In <strong>Österreich</strong> ist dies das Bundesgesetz zum Schutz natürlicher Personen bei der Verarbeitung personenbezogener Daten (<strong>Datenschutzgesetz</strong>), kurz <strong>DSG</strong>.</li>
+        <li>In <strong>Deutschland</strong> gilt das <strong>Bundesdatenschutzgesetz</strong>, kurz<strong> BDSG</strong>.</li>
+        </ul>
+        <p>Sofern weitere regionale oder nationale Gesetze zur Anwendung kommen, informieren wir Sie in den folgenden Abschnitten darüber.</p>
+        <h2 id="kontaktdaten-verantwortliche">Kontaktdaten des Verantwortlichen</h2>
+        <p>Sollten Sie Fragen zum Datenschutz oder zur Verarbeitung personenbezogener Daten haben, finden Sie nachfolgend die Kontaktdaten der verantwortlichen Person bzw. Stelle:<br />
+        <span style="font-weight: 400">Daniel Loos<br />
+        Max-Reger-Str. 6<br />
+        35392 Gießen</span>
+        </p>
+        <p>E-Mail: <a href="mailto:babashrimp@outlook.de">babashrimp@outlook.de</a>
+        <br />
+        Telefon: <a href="tel:+49 1573 8146666">+49 1573 8146666</a>
+        </p>
+        <h2 id="speicherdauer">Speicherdauer</h2>
+        <p>Dass wir personenbezogene Daten nur so lange speichern, wie es für die Bereitstellung unserer Dienstleistungen und Produkte unbedingt notwendig ist, gilt als generelles Kriterium bei uns. Das bedeutet, dass wir personenbezogene Daten löschen, sobald der Grund für die Datenverarbeitung nicht mehr vorhanden ist. In einigen Fällen sind wir gesetzlich dazu verpflichtet, bestimmte Daten auch nach Wegfall des ursprüngliches Zwecks zu speichern, zum Beispiel zu Zwecken der Buchführung.</p>
+        <p>Sollten Sie die Löschung Ihrer Daten wünschen oder die Einwilligung zur Datenverarbeitung widerrufen, werden die Daten so rasch wie möglich und soweit keine Pflicht zur Speicherung besteht, gelöscht.</p>
+        <p>Über die konkrete Dauer der jeweiligen Datenverarbeitung informieren wir Sie weiter unten, sofern wir weitere Informationen dazu haben.</p>
+        <h2 id="rechte-dsgvo">Rechte laut Datenschutz-Grundverordnung</h2>
+        <p>Gemäß Artikel 13, 14 DSGVO informieren wir Sie über die folgenden Rechte, die Ihnen zustehen, damit es zu einer fairen und transparenten Verarbeitung von Daten kommt:</p>
+        <ul>
+        <li>Sie haben laut Artikel 15 DSGVO ein Auskunftsrecht darüber, ob wir Daten von Ihnen verarbeiten. Sollte das zutreffen, haben Sie Recht darauf eine Kopie der Daten zu erhalten und die folgenden Informationen zu erfahren:
+        <ul>
+        <li>zu welchem Zweck wir die Verarbeitung durchführen;</li>
+        <li>die Kategorien, also die Arten von Daten, die verarbeitet werden;</li>
+        <li>wer diese Daten erhält und wenn die Daten an Drittländer übermittelt werden, wie die Sicherheit garantiert werden kann;</li>
+        <li>wie lange die Daten gespeichert werden;</li>
+        <li>das Bestehen des Rechts auf Berichtigung, Löschung oder Einschränkung der Verarbeitung und dem Widerspruchsrecht gegen die Verarbeitung;</li>
+        <li>dass Sie sich bei einer Aufsichtsbehörde beschweren können (Links zu diesen Behörden finden Sie weiter unten);</li>
+        <li>die Herkunft der Daten, wenn wir sie nicht bei Ihnen erhoben haben;</li>
+        <li>ob Profiling durchgeführt wird, ob also Daten automatisch ausgewertet werden, um zu einem persönlichen Profil von Ihnen zu gelangen.</li>
+        </ul>
+        </li>
+        <li>Sie haben laut Artikel 16 DSGVO ein Recht auf Berichtigung der Daten, was bedeutet, dass wir Daten richtig stellen müssen, falls Sie Fehler finden.</li>
+        <li>Sie haben laut Artikel 17 DSGVO das Recht auf Löschung („Recht auf Vergessenwerden“), was konkret bedeutet, dass Sie die Löschung Ihrer Daten verlangen dürfen.</li>
+        <li>Sie haben laut Artikel 18 DSGVO das Recht auf Einschränkung der Verarbeitung, was bedeutet, dass wir die Daten nur mehr speichern dürfen aber nicht weiter verwenden.</li>
+        <li>Sie haben laut Artikel 20 DSGVO das Recht auf Datenübertragbarkeit, was bedeutet, dass wir Ihnen auf Anfrage Ihre Daten in einem gängigen Format zur Verfügung stellen.</li>
+        <li>Sie haben laut Artikel 21 DSGVO ein Widerspruchsrecht, welches nach Durchsetzung eine Änderung der Verarbeitung mit sich bringt.
+        <ul>
+        <li>Wenn die Verarbeitung Ihrer Daten auf Artikel 6 Abs. 1 lit. e (öffentliches Interesse, Ausübung öffentlicher Gewalt) oder Artikel 6 Abs. 1 lit. f (berechtigtes Interesse) basiert, können Sie gegen die Verarbeitung Widerspruch einlegen. Wir prüfen danach so rasch wie möglich, ob wir diesem Widerspruch rechtlich nachkommen können.</li>
+        <li>Werden Daten verwendet, um Direktwerbung zu betreiben, können Sie jederzeit gegen diese Art der Datenverarbeitung widersprechen. Wir dürfen Ihre Daten danach nicht mehr für Direktmarketing verwenden.</li>
+        <li>Werden Daten verwendet, um Profiling zu betreiben, können Sie jederzeit gegen diese Art der Datenverarbeitung widersprechen. Wir dürfen Ihre Daten danach nicht mehr für Profiling verwenden.</li>
+        </ul>
+        </li>
+        <li>Sie haben laut Artikel 22 DSGVO unter Umständen das Recht, nicht einer ausschließlich auf einer automatisierten Verarbeitung (zum Beispiel Profiling) beruhenden Entscheidung unterworfen zu werden.</li>
+        <li>Sie haben laut Artikel 77 DSGVO das Recht auf Beschwerde. Das heißt, Sie können sich jederzeit bei der Datenschutzbehörde beschweren, wenn Sie der Meinung sind, dass die Datenverarbeitung von personenbezogenen Daten gegen die DSGVO verstößt.</li>
+        </ul>
+        <p>
+        <strong>Kurz gesagt:</strong> Sie haben Rechte &#8211; zögern Sie nicht, die oben gelistete verantwortliche Stelle bei uns zu kontaktieren!</p>
+        <p>Wenn Sie glauben, dass die Verarbeitung Ihrer Daten gegen das Datenschutzrecht verstößt oder Ihre datenschutzrechtlichen Ansprüche in sonst einer Weise verletzt worden sind, können Sie sich bei der Aufsichtsbehörde beschweren. Diese ist für Österreich die Datenschutzbehörde, deren Website Sie unter <a href="https://www.dsb.gv.at/?tid=312214196" target="_blank" rel="noopener">https://www.dsb.gv.at/</a> finden. In Deutschland gibt es für jedes Bundesland einen Datenschutzbeauftragten. Für nähere Informationen können Sie sich an die <a href="https://www.bfdi.bund.de/DE/Home/home_node.html" target="_blank" rel="noopener">Bundesbeauftragte für den Datenschutz und die Informationsfreiheit (BfDI)</a> wenden. Für unser Unternehmen ist die folgende lokale Datenschutzbehörde zuständig:</p>
+        <h2 id="hessen-datenschutzbehoerde">Hessen Datenschutzbehörde</h2>
+        <p>
+        <strong>Landesbeauftragter für Datenschutz:</strong> Prof. Dr. Alexander Roßnagel<br />
+        <strong>Adresse: </strong>Postfach 31 63, 65021 Wiesbaden<br />
+        <strong>Telefonnr.:</strong> 06 11/140 80<br />
+        <strong>E-Mail-Adresse:</strong> poststelle@datenschutz.hessen.de<br />
+        <strong>Website: </strong>
+        <a href="https://datenschutz.hessen.de/?tid=312214196" target="_blank" rel="noopener">https://datenschutz.hessen.de/</a>
+        </p>
+        <h2 id="datenuebertragung-drittlaender">Datenübertragung in Drittländer</h2>
+        <p>Wir übertragen oder verarbeiten Daten nur dann in Länder außerhalb der EU (Drittländer), wenn Sie dieser Verarbeitung zustimmen, dies gesetzlich vorgeschrieben ist oder vertraglich notwendig und in jedem Fall nur soweit dies generell erlaubt ist. Ihre Zustimmung ist in den meisten Fällen der wichtigste Grund, dass wir Daten in Drittländern verarbeiten lassen. Die Verarbeitung personenbezogener Daten in Drittländern wie den USA, wo viele Softwarehersteller Dienstleistungen anbieten und Ihre Serverstandorte haben, kann bedeuten, dass personenbezogene Daten auf unerwartete Weise verarbeitet und gespeichert werden.</p>
+        <p>Wir weisen ausdrücklich darauf hin, dass nach Meinung des Europäischen Gerichtshofs derzeit kein angemessenes Schutzniveau für den Datentransfer in die USA besteht. Die Datenverarbeitung durch US-Dienste (wie beispielsweise Google Analytics) kann dazu führen, dass gegebenenfalls Daten nicht anonymisiert verarbeitet und gespeichert werden. Ferner können gegebenenfalls US-amerikanische staatliche Behörden Zugriff auf einzelne Daten nehmen. Zudem kann es vorkommen, dass erhobene Daten mit Daten aus anderen Diensten desselben Anbieters, sofern Sie ein entsprechendes Nutzerkonto haben, verknüpft werden. Nach Möglichkeit versuchen wir Serverstandorte innerhalb der EU zu nutzen, sofern das angeboten wird.</p>
+        <p>Wir informieren Sie an den passenden Stellen dieser Datenschutzerklärung genauer über Datenübertragung in Drittländer, sofern diese zutrifft.</p>
+        <h2 id="sicherheit-datenverarbeitung">Sicherheit der Datenverarbeitung</h2>
+        <p>Um personenbezogene Daten zu schützen, haben wir sowohl technische als auch organisatorische Maßnahmen umgesetzt. Wo es uns möglich ist, verschlüsseln oder pseudonymisieren wir personenbezogene Daten. Dadurch machen wir es im Rahmen unserer Möglichkeiten so schwer wie möglich, dass Dritte aus unseren Daten auf persönliche Informationen schließen können.</p>
+        <p>Art. 25 DSGVO spricht hier von &#8220;Datenschutz durch Technikgestaltung und durch datenschutzfreundliche Voreinstellungen&#8221; und meint damit, dass man sowohl bei Software (z. B. Formularen) also auch Hardware (z. B. Zugang zum Serverraum) immer an Sicherheit denkt und entsprechende Maßnahmen setzt. Im Folgenden gehen wir, falls erforderlich, noch auf konkrete Maßnahmen ein.</p>
+        <h2 id="tls-verschluesselung-https">TLS-Verschlüsselung mit https</h2>
+        <p>TLS, Verschlüsselung und https klingen sehr technisch und sind es auch. Wir verwenden HTTPS (das Hypertext Transfer Protocol Secure steht für „sicheres Hypertext-Übertragungsprotokoll“), um Daten abhörsicher im Internet zu übertragen.<br />
+        Das bedeutet, dass die komplette Übertragung aller Daten von Ihrem Browser zu unserem Webserver abgesichert ist &#8211; niemand kann &#8220;mithören&#8221;.</p>
+        <p>Damit haben wir eine zusätzliche Sicherheitsschicht eingeführt und erfüllen den Datenschutz durch Technikgestaltung (<a href="https://eur-lex.europa.eu/legal-content/DE/TXT/HTML/?uri=CELEX:32016R0679&amp;from=DE&amp;tid=312214196" target="_blank" rel="noopener">Artikel 25 Absatz 1 DSGVO</a>). Durch den Einsatz von TLS (Transport Layer Security), einem Verschlüsselungsprotokoll zur sicheren Datenübertragung im Internet, können wir den Schutz vertraulicher Daten sicherstellen.<br />
+        Sie erkennen die Benutzung dieser Absicherung der Datenübertragung am kleinen Schlosssymbol <img role="img" src="https://www.adsimple.at/wp-content/uploads/2018/03/schlosssymbol-https.svg" width="17" height="18" /> links oben im Browser, links von der Internetadresse (z. B. beispielseite.de) und der Verwendung des Schemas https (anstatt http) als Teil unserer Internetadresse.<br />
+        Wenn Sie mehr zum Thema Verschlüsselung wissen möchten, empfehlen wir die Google Suche nach &#8220;Hypertext Transfer Protocol Secure wiki&#8221; um gute Links zu weiterführenden Informationen zu erhalten.</p>
+        <h2 id="kommunikation">Kommunikation</h2>
+        <table border="1" cellpadding="15">
+        <tbody>
+        <tr>
+        <td>
+        <strong>Kommunikation Zusammenfassung</strong>
+        <br />
+        &#x1f465; Betroffene: Alle, die mit uns per Telefon, E-Mail oder Online-Formular kommunizieren<br />
+        &#x1f4d3; Verarbeitete Daten: z. B. Telefonnummer, Name, E-Mail-Adresse, eingegebene Formulardaten. Mehr Details dazu finden Sie bei der jeweils eingesetzten Kontaktart<br />
+        &#x1f91d; Zweck: Abwicklung der Kommunikation mit Kunden, Geschäftspartnern usw.<br />
+        &#x1f4c5; Speicherdauer: Dauer des Geschäftsfalls und der gesetzlichen Vorschriften<br />
+        &#x2696;&#xfe0f; Rechtsgrundlagen: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung), Art. 6 Abs. 1 lit. b DSGVO (Vertrag), Art. 6 Abs. 1 lit. f DSGVO (Berechtigte Interessen)</td>
+        </tr>
+        </tbody>
+        </table>
+        <p>Wenn Sie mit uns Kontakt aufnehmen und per Telefon, E-Mail oder Online-Formular kommunizieren, kann es zur Verarbeitung personenbezogener Daten kommen.</p>
+        <p>Die Daten werden für die Abwicklung und Bearbeitung Ihrer Frage und des damit zusammenhängenden Geschäftsvorgangs verarbeitet. Die Daten während eben solange gespeichert bzw. solange es das Gesetz vorschreibt.</p>
+        <h3>Betroffene Personen</h3>
+        <p>Von den genannten Vorgängen sind alle betroffen, die über die von uns bereit gestellten Kommunikationswege den Kontakt zu uns suchen.</p>
+        <h3>Telefon</h3>
+        <p>Wenn Sie uns anrufen, werden die Anrufdaten auf dem jeweiligen Endgerät und beim eingesetzten Telekommunikationsanbieter pseudonymisiert gespeichert. Außerdem können Daten wie Name und Telefonnummer im Anschluss per E-Mail versendet und zur Anfragebeantwortung gespeichert werden. Die Daten werden gelöscht, sobald der Geschäftsfall beendet wurde und es gesetzliche Vorgaben erlauben.</p>
+        <h3>E-Mail</h3>
+        <p>Wenn Sie mit uns per E-Mail kommunizieren, werden Daten gegebenenfalls auf dem jeweiligen Endgerät (Computer, Laptop, Smartphone,&#8230;) gespeichert und es kommt zur Speicherung von Daten auf dem E-Mail-Server. Die Daten werden gelöscht, sobald der Geschäftsfall beendet wurde und es gesetzliche Vorgaben erlauben.</p>
+        <h3>Online Formulare</h3>
+        <p>Wenn Sie mit uns mittels Online-Formular kommunizieren, werden Daten auf unserem Webserver gespeichert und gegebenenfalls an eine E-Mail-Adresse von uns weitergeleitet. Die Daten werden gelöscht, sobald der Geschäftsfall beendet wurde und es gesetzliche Vorgaben erlauben.</p>
+        <h3>Rechtsgrundlagen</h3>
+        <p>Die Verarbeitung der Daten basiert auf den folgenden Rechtsgrundlagen:</p>
+        <ul>
+        <li>Art. 6 Abs. 1 lit. a DSGVO (Einwilligung): Sie geben uns die Einwilligung Ihre Daten zu speichern und weiter für den Geschäftsfall betreffende Zwecke zu verwenden;</li>
+        <li>Art. 6 Abs. 1 lit. b DSGVO (Vertrag): Es besteht die Notwendigkeit für die Erfüllung eines Vertrags mit Ihnen oder einem Auftragsverarbeiter wie z. B. dem Telefonanbieter oder wir müssen die Daten für vorvertragliche Tätigkeiten, wie z. B. die Vorbereitung eines Angebots, verarbeiten;</li>
+        <li>Art. 6 Abs. 1 lit. f DSGVO (Berechtigte Interessen): Wir wollen Kundenanfragen und geschäftliche Kommunikation in einem professionellen Rahmen betreiben. Dazu sind gewisse technische Einrichtungen wie z. B. E-Mail-Programme, Exchange-Server und Mobilfunkbetreiber notwendig, um die Kommunikation effizient betreiben zu können.</li>
+        </ul>
+        <h2 id="cookies">Cookies</h2>
+        <table border="1" cellpadding="15">
+        <tbody>
+        <tr>
+        <td>
+        <strong>Cookies Zusammenfassung</strong>
+        <br />
+        &#x1f465; Betroffene: Besucher der Website<br />
+        &#x1f91d; Zweck: abhängig vom jeweiligen Cookie. Mehr Details dazu finden Sie weiter unten bzw. beim Hersteller der Software, der das Cookie setzt.<br />
+        &#x1f4d3; Verarbeitete Daten: Abhängig vom jeweils eingesetzten Cookie. Mehr Details dazu finden Sie weiter unten bzw. beim Hersteller der Software, der das Cookie setzt.<br />
+        &#x1f4c5; Speicherdauer: abhängig vom jeweiligen Cookie, kann von Stunden bis hin zu Jahren variieren<br />
+        &#x2696;&#xfe0f; Rechtsgrundlagen: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung), Art. 6 Abs. 1 lit.f DSGVO (Berechtigte Interessen)</td>
+        </tr>
+        </tbody>
+        </table>
+        <h3>Was sind Cookies?</h3>
+        <p>Unsere Website verwendet HTTP-Cookies, um nutzerspezifische Daten zu speichern.<br />
+        Im Folgenden erklären wir, was Cookies sind und warum Sie genutzt werden, damit Sie die folgende Datenschutzerklärung besser verstehen.</p>
+        <p>Immer wenn Sie durch das Internet surfen, verwenden Sie einen Browser. Bekannte Browser sind beispielsweise Chrome, Safari, Firefox, Internet Explorer und Microsoft Edge. Die meisten Websites speichern kleine Text-Dateien in Ihrem Browser. Diese Dateien nennt man Cookies.</p>
+        <p>Eines ist nicht von der Hand zu weisen: Cookies sind echt nützliche Helferlein. Fast alle Websites verwenden Cookies. Genauer gesprochen sind es HTTP-Cookies, da es auch noch andere Cookies für andere Anwendungsbereiche gibt. HTTP-Cookies sind kleine Dateien, die von unserer Website auf Ihrem Computer gespeichert werden. Diese Cookie-Dateien werden automatisch im Cookie-Ordner, quasi dem &#8220;Hirn&#8221; Ihres Browsers, untergebracht. Ein Cookie besteht aus einem Namen und einem Wert. Bei der Definition eines Cookies müssen zusätzlich ein oder mehrere Attribute angegeben werden.</p>
+        <p>Cookies speichern gewisse Nutzerdaten von Ihnen, wie beispielsweise Sprache oder persönliche Seiteneinstellungen. Wenn Sie unsere Seite wieder aufrufen, übermittelt Ihr Browser die „userbezogenen“ Informationen an unsere Seite zurück. Dank der Cookies weiß unsere Website, wer Sie sind und bietet Ihnen die Einstellung, die Sie gewohnt sind. In einigen Browsern hat jedes Cookie eine eigene Datei, in anderen wie beispielsweise Firefox sind alle Cookies in einer einzigen Datei gespeichert.</p>
+        <p>Die folgende Grafik zeigt eine mögliche Interaktion zwischen einem Webbrowser wie z. B. Chrome und dem Webserver. Dabei fordert der Webbrowser eine Website an und erhält vom Server ein Cookie zurück, welches der Browser erneut verwendet, sobald eine andere Seite angefordert wird.</p>
+        <p>
+        <img role="img" src="https://www.adsimple.at/wp-content/uploads/2018/03/http-cookie-interaction.svg" alt="HTTP Cookie Interaktion zwischen Browser und Webserver" width="100%" />
+        </p>
+        <p>Es gibt sowohl Erstanbieter Cookies als auch Drittanbieter-Cookies. Erstanbieter-Cookies werden direkt von unserer Seite erstellt, Drittanbieter-Cookies werden von Partner-Websites (z.B. Google Analytics) erstellt. Jedes Cookie ist individuell zu bewerten, da jedes Cookie andere Daten speichert. Auch die Ablaufzeit eines Cookies variiert von ein paar Minuten bis hin zu ein paar Jahren. Cookies sind keine Software-Programme und enthalten keine Viren, Trojaner oder andere „Schädlinge“. Cookies können auch nicht auf Informationen Ihres PCs zugreifen.</p>
+        <p>So können zum Beispiel Cookie-Daten aussehen:</p>
+        <p>
+        <strong>Name:</strong> _ga<br />
+        <strong>Wert:</strong> GA1.2.1326744211.152312214196-9<br />
+        <strong>Verwendungszweck:</strong> Unterscheidung der Websitebesucher<br />
+        <strong>Ablaufdatum:</strong> nach 2 Jahren</p>
+        <p>Diese Mindestgrößen sollte ein Browser unterstützen können:</p>
+        <ul>
+        <li>Mindestens 4096 Bytes pro Cookie</li>
+        <li>Mindestens 50 Cookies pro Domain</li>
+        <li>Mindestens 3000 Cookies insgesamt</li>
+        </ul>
+        <h3>Welche Arten von Cookies gibt es?</h3>
+        <p>Die Frage welche Cookies wir im Speziellen verwenden, hängt von den verwendeten Diensten ab und wird in den folgenden Abschnitten der Datenschutzerklärung geklärt. An dieser Stelle möchten wir kurz auf die verschiedenen Arten von HTTP-Cookies eingehen.</p>
+        <p>Man kann 4 Arten von Cookies unterscheiden:</p>
+        <p>
+        <strong>Unerlässliche Cookies<br />
+        </strong>Diese Cookies sind nötig, um grundlegende Funktionen der Website sicherzustellen. Zum Beispiel braucht es diese Cookies, wenn ein User ein Produkt in den Warenkorb legt, dann auf anderen Seiten weitersurft und später erst zur Kasse geht. Durch diese Cookies wird der Warenkorb nicht gelöscht, selbst wenn der User sein Browserfenster schließt.</p>
+        <p>
+        <strong>Zweckmäßige Cookies<br />
+        </strong>Diese Cookies sammeln Infos über das Userverhalten und ob der User etwaige Fehlermeldungen bekommt. Zudem werden mithilfe dieser Cookies auch die Ladezeit und das Verhalten der Website bei verschiedenen Browsern gemessen.</p>
+        <p>
+        <strong>Zielorientierte Cookies<br />
+        </strong>Diese Cookies sorgen für eine bessere Nutzerfreundlichkeit. Beispielsweise werden eingegebene Standorte, Schriftgrößen oder Formulardaten gespeichert.</p>
+        <p>
+        <strong>Werbe-Cookies<br />
+        </strong>Diese Cookies werden auch Targeting-Cookies genannt. Sie dienen dazu dem User individuell angepasste Werbung zu liefern. Das kann sehr praktisch, aber auch sehr nervig sein.</p>
+        <p>Üblicherweise werden Sie beim erstmaligen Besuch einer Website gefragt, welche dieser Cookiearten Sie zulassen möchten. Und natürlich wird diese Entscheidung auch in einem Cookie gespeichert.</p>
+        <p>Wenn Sie mehr über Cookies wissen möchten und technische Dokumentationen nicht scheuen, empfehlen wir <a href="https://datatracker.ietf.org/doc/html/rfc6265">https://datatracker.ietf.org/doc/html/rfc6265</a>, dem Request for Comments der Internet Engineering Task Force (IETF) namens &#8220;HTTP State Management Mechanism&#8221;.</p>
+        <h3>Zweck der Verarbeitung über Cookies</h3>
+        <p>Der Zweck ist letztendlich abhängig vom jeweiligen Cookie. Mehr Details dazu finden Sie weiter unten bzw. beim Hersteller der Software, die das Cookie setzt.</p>
+        <h3>Welche Daten werden verarbeitet?</h3>
+        <p>Cookies sind kleine Gehilfen für eine viele verschiedene Aufgaben. Welche Daten in Cookies gespeichert werden, kann man leider nicht verallgemeinern, aber wir werden Sie im Rahmen der folgenden Datenschutzerklärung über die verarbeiteten bzw. gespeicherten Daten informieren.</p>
+        <h3>Speicherdauer von Cookies</h3>
+        <p>Die Speicherdauer hängt vom jeweiligen Cookie ab und wird weiter unter präzisiert. Manche Cookies werden nach weniger als einer Stunde gelöscht, andere können mehrere Jahre auf einem Computer gespeichert bleiben.</p>
+        <p>Sie haben außerdem selbst Einfluss auf die Speicherdauer. Sie können über ihren Browser sämtliche Cookies jederzeit manuell löschen (siehe auch unten &#8220;Widerspruchsrecht&#8221;). Ferner werden Cookies, die auf einer Einwilligung beruhen, spätestens nach Widerruf Ihrer Einwilligung gelöscht, wobei die Rechtmäßigkeit der Speicherung bis dahin unberührt bleibt.</p>
+        <h3>Widerspruchsrecht &#8211; wie kann ich Cookies löschen?</h3>
+        <p>Wie und ob Sie Cookies verwenden wollen, entscheiden Sie selbst. Unabhängig von welchem Service oder welcher Website die Cookies stammen, haben Sie immer die Möglichkeit Cookies zu löschen, zu deaktivieren oder nur teilweise zuzulassen. Zum Beispiel können Sie Cookies von Drittanbietern blockieren, aber alle anderen Cookies zulassen.</p>
+        <p>Wenn Sie feststellen möchten, welche Cookies in Ihrem Browser gespeichert wurden, wenn Sie Cookie-Einstellungen ändern oder löschen wollen, können Sie dies in Ihren Browser-Einstellungen finden:</p>
+        <p>
+        <a href="https://support.google.com/chrome/answer/95647?tid=312214196" target="_blank" rel="noopener noreferrer">Chrome: Cookies in Chrome löschen, aktivieren und verwalten</a>
+        </p>
+        <p>
+        <a href="https://support.apple.com/de-at/guide/safari/sfri11471/mac?tid=312214196" target="_blank" rel="noopener noreferrer">Safari: Verwalten von Cookies und Websitedaten mit Safari</a>
+        </p>
+        <p>
+        <a href="https://support.mozilla.org/de/kb/cookies-und-website-daten-in-firefox-loschen?tid=312214196" target="_blank" rel="noopener noreferrer">Firefox: Cookies löschen, um Daten zu entfernen, die Websites auf Ihrem Computer abgelegt haben</a>
+        </p>
+        <p>
+        <a href="https://support.microsoft.com/de-de/windows/l%C3%B6schen-und-verwalten-von-cookies-168dab11-0753-043d-7c16-ede5947fc64d?tid=312214196">Internet Explorer: Löschen und Verwalten von Cookies</a>
+        </p>
+        <p>
+        <a href="https://support.microsoft.com/de-de/microsoft-edge/cookies-in-microsoft-edge-l%C3%B6schen-63947406-40ac-c3b8-57b9-2a946a29ae09?tid=312214196">Microsoft Edge: Löschen und Verwalten von Cookies</a>
+        </p>
+        <p>Falls Sie grundsätzlich keine Cookies haben wollen, können Sie Ihren Browser so einrichten, dass er Sie immer informiert, wenn ein Cookie gesetzt werden soll. So können Sie bei jedem einzelnen Cookie entscheiden, ob Sie das Cookie erlauben oder nicht. Die Vorgangsweise ist je nach Browser verschieden. Am besten Sie suchen die Anleitung in Google mit dem Suchbegriff “Cookies löschen Chrome” oder &#8220;Cookies deaktivieren Chrome&#8221; im Falle eines Chrome Browsers.</p>
+        <h3>Rechtsgrundlage</h3>
+        <p>Seit 2009 gibt es die sogenannten „Cookie-Richtlinien“. Darin ist festgehalten, dass das Speichern von Cookies eine <strong>Einwilligung</strong> (Artikel 6 Abs. 1 lit. a DSGVO) von Ihnen verlangt. Innerhalb der EU-Länder gibt es allerdings noch sehr unterschiedliche Reaktionen auf diese Richtlinien. In Österreich erfolgte aber die Umsetzung dieser Richtlinie in § 96 Abs. 3 des Telekommunikationsgesetzes (TKG). In Deutschland wurden die Cookie-Richtlinien nicht als nationales Recht umgesetzt. Stattdessen erfolgte die Umsetzung dieser Richtlinie weitgehend in § 15 Abs.3 des Telemediengesetzes (TMG).</p>
+        <p>Für unbedingt notwendige Cookies, auch soweit keine Einwilligung vorliegt, bestehen <strong>berechtigte Interessen</strong> (Artikel 6 Abs. 1 lit. f DSGVO), die in den meisten Fällen wirtschaftlicher Natur sind. Wir möchten den Besuchern der Website eine angenehme Benutzererfahrung bescheren und dafür sind bestimmte Cookies oft unbedingt notwendig.</p>
+        <p>Soweit nicht unbedingt erforderliche Cookies zum Einsatz kommen, geschieht dies nur im Falle Ihrer Einwilligung. Rechtsgrundlage ist insoweit Art. 6 Abs. 1 lit. a DSGVO.</p>
+        <p>In den folgenden Abschnitten werden Sie genauer über den Einsatz von Cookies informiert, sofern eingesetzte Software Cookies verwendet.</p>
+        <h2 id="webhosting-einleitung">Webhosting Einleitung</h2>
+        <table border="1" cellpadding="15">
+        <tbody>
+        <tr>
+        <td>
+        <strong>Webhosting Zusammenfassung</strong>
+        <br />
+        &#x1f465; Betroffene: Besucher der Website<br />
+        &#x1f91d; Zweck: professionelles Hosting der Website und Absicherung des Betriebs<br />
+        &#x1f4d3; Verarbeitete Daten: IP-Adresse, Zeitpunkt des Websitebesuchs, verwendeter Browser und weitere Daten. Mehr Details dazu finden Sie weiter unten bzw. beim jeweils eingesetzten Webhosting Provider.<br />
+        &#x1f4c5; Speicherdauer: abhängig vom jeweiligen Provider, aber in der Regel 2 Wochen<br />
+        &#x2696;&#xfe0f; Rechtsgrundlagen: Art. 6 Abs. 1 lit.f DSGVO (Berechtigte Interessen)</td>
+        </tr>
+        </tbody>
+        </table>
+        <h3>Was ist Webhosting?</h3>
+        <p>Wenn Sie heutzutage Websites besuchen, werden gewisse Informationen &#8211; auch personenbezogene Daten &#8211; automatisch erstellt und gespeichert, so auch auf dieser Website. Diese Daten sollten möglichst sparsam und nur mit Begründung verarbeitet werden. Mit Website meinen wir übrigens die Gesamtheit aller Webseiten auf einer Domain, d.h. alles von der Startseite (Homepage) bis hin zur aller letzten Unterseite (wie dieser hier). Mit Domain meinen wir zum Beispiel beispiel.de oder musterbeispiel.com.</p>
+        <p>Wenn Sie eine Website auf einem Computer, Tablet oder Smartphone ansehen möchten, verwenden Sie dafür ein Programm, das sich Webbrowser nennt. Sie kennen vermutlich einige Webbrowser beim Namen: Google Chrome, Microsoft Edge, Mozilla Firefox und Apple Safari. Wir sagen kurz Browser oder Webbrowser dazu.</p>
+        <p>Um die Website anzuzeigen, muss sich der Browser zu einem anderen Computer verbinden, wo der Code der Website gespeichert ist: dem Webserver. Der Betrieb eines Webservers ist eine komplizierte und aufwendige Aufgabe, weswegen dies in der Regel von professionellen Anbietern, den Providern, übernommen wird. Diese bieten Webhosting an und sorgen damit für eine verlässliche und fehlerfreie Speicherung der Daten von Websites. Eine ganze Menge Fachbegriffe, aber bitte bleiben Sie dran, es wird noch besser!</p>
+        <p>Bei der Verbindungsaufnahme des Browsers auf Ihrem Computer (Desktop, Laptop, Tablet oder Smartphone) und während der Datenübertragung zu und vom Webserver kann es zu einer Verarbeitung personenbezogener Daten kommen. Einerseits speichert Ihr Computer Daten, andererseits muss auch der Webserver Daten eine Zeit lang speichern, um einen ordentlichen Betrieb zu gewährleisten.</p>
+        <p>Ein Bild sagt mehr als tausend Worte, daher zeigt folgende Grafik zur Veranschaulichung das Zusammenspiel zwischen Browser, dem Internet und dem Hosting-Provider.</p>
+        <p>
+        <img role="img" src="https://www.adsimple.at/wp-content/uploads/2018/03/browser-und-webserver.svg" alt="Browser und Webserver" width="100%" />
+        </p>
+        <h3>Warum verarbeiten wir personenbezogene Daten?</h3>
+        <p>Die Zwecke der Datenverarbeitung sind:</p>
+        <ol>
+        <li>Professionelles Hosting der Website und Absicherung des Betriebs</li>
+        <li>zur Aufrechterhaltung der Betriebs- und IT-Sicherheit</li>
+        <li>Anonyme Auswertung des Zugriffsverhaltens zur Verbesserung unseres Angebots und ggf. zur Strafverfolgung bzw. Verfolgung von Ansprüchen</li>
+        </ol>
+        <h3>Welche Daten werden verarbeitet?</h3>
+        <p>Auch während Sie unsere Website jetzt gerade besuchen, speichert unser Webserver, das ist der Computer auf dem diese Webseite gespeichert ist, in der Regel automatisch Daten wie</p>
+        <ul>
+        <li>die komplette Internetadresse (URL) der aufgerufenen Webseite</li>
+        <li>Browser und Browserversion (z. B. Chrome 87)</li>
+        <li>das verwendete Betriebssystem (z. B. Windows 10)</li>
+        <li>die Adresse (URL) der zuvor besuchten Seite (Referrer URL) (z. B. <a href="https://www.beispielquellsite.de/vondabinichgekommen/" target="_blank" rel="follow noopener">https://www.beispielquellsite.de/vondabinichgekommen/</a>)</li>
+        <li>den Hostnamen und die IP-Adresse des Geräts von welchem aus zugegriffen wird (z. B. COMPUTERNAME und 194.23.43.121)</li>
+        <li>Datum und Uhrzeit</li>
+        <li>in Dateien, den sogenannten Webserver-Logfiles</li>
+        </ul>
+        <h3>Wie lange werden Daten gespeichert?</h3>
+        <p>In der Regel werden die oben genannten Daten zwei Wochen gespeichert und danach automatisch gelöscht. Wir geben diese Daten nicht weiter, können jedoch nicht ausschließen, dass diese Daten beim Vorliegen von rechtswidrigem Verhalten von Behörden eingesehen werden.</p>
+        <p>
+        <strong>Kurz gesagt:</strong> Ihr Besuch wird durch unseren Provider (Firma, die unsere Website auf speziellen Computern (Servern) laufen lässt), protokolliert, aber wir geben Ihre Daten nicht ohne Zustimmung weiter!</p>
+        <h3>Rechtsgrundlage</h3>
+        <p>Die Rechtmäßigkeit der Verarbeitung personenbezogener Daten im Rahmen des Webhosting ergibt sich aus Art. 6 Abs. 1 lit. f DSGVO (Wahrung der berechtigten Interessen), denn die Nutzung von professionellem Hosting bei einem Provider ist notwendig, um das Unternehmen im Internet sicher und nutzerfreundlich präsentieren und Angriffe und Forderungen hieraus gegebenenfalls verfolgen zu können.</p>
+        <p>Zwischen uns und dem Hosting-Provider besteht in der Regel ein Vertrag über die Auftragsverarbeitung gemäß Art. 28 f. DSGVO, der die Einhaltung von Datenschutz gewährleistet und Datensicherheit garantiert.</p>
+        <h2 id="1und1-ionos-datenschutzerklaerung">1&amp;1 IONOS Webhosting Datenschutzerklärung</h2>
+        <p>Wir nutzen IONOS by 1&amp;1 um unsere Website zu hosten. In Deutschland hat die 1&amp;1 IONOS SE ihren Sitz in Elgendorfer Str. 57, 56410 Montabaur, in Österreich finden Sie die 1&amp;1 IONOS SE in der Gumpendorfer Straße 142/PF 266, 1060 Wien. IONOS bietet folgende Leistungen rund um Webhosting an: Domain, Website &amp; Shop, Hosting &amp; WordPress, Marketing, E-Mail &amp; Office, IONOS Cloud und Server.</p>
+        <p>Wie im Abschnitt &#8220;Automatische Datenspeicherung&#8221; erläutert, speichern Webserver, wie die von IONOS, Daten jedes Websitebesuchs ab.</p>
+        <p>Wenn Sie mehr über den Datenschutz für IONOS Website erfahren möchten, besuchen Sie bitte die <a href="https://www.ionos.de/terms-gtc/terms-privacy?tid=312214196" target="_blank" rel="follow noopener">Datenschutzerklärung auf ionos.de</a>.</p>
+        <h2 id="auftragsverarbeitungsvertrag-avv-ionos">Auftragsverarbeitungsvertrag (AVV) IONOS</h2>
+        <p>Wir haben im Sinne des Artikels 28 der Datenschutz-Grundverordnung (DSGVO) mit IONOS einen Auftragsverarbeitungsvertrag (AVV) abgeschlossen. Was ein AVV genau ist und vor allem was in einem AVV enthalten sein muss, können Sie in unserem allgemeinen Abschnitt „Auftragsverarbeitungsvertrag (AVV)“ nachlesen.</p>
+        <p>Dieser Vertrag ist gesetzlich vorgeschrieben, weil IONOS in unserem Auftrag personenbezogene Daten verarbeitet. Darin wird geklärt, dass IONOS Daten, die sie von uns erhalten, nur nach unserer Weisung verarbeiten darf und die DSGVO einhalten muss. Den Link zum Auftragsverarbeitungsvertrag (AVV) finden Sie unter <a href="https://www.ionos.de/hilfe/datenschutz/allgemeine-informationen-zur-datenschutz-grundverordnung-dsgvo/auftragsverarbeitung/">https://www.ionos.de/hilfe/datenschutz/allgemeine-informationen-zur-datenschutz-grundverordnung-dsgvo/auftragsverarbeitung/</a>.</p>
+        <h2 id="web-analytics-einleitung">Web Analytics Einleitung</h2>
+        <table border="1" cellpadding="15">
+        <tbody>
+        <tr>
+        <td>
+        <strong>Web Analytics Datenschutzerklärung Zusammenfassung</strong>
+        <br />
+        &#x1f465; Betroffene: Besucher der Website<br />
+        &#x1f91d; Zweck: Auswertung der Besucherinformationen zur Optimierung des Webangebots.<br />
+        &#x1f4d3; Verarbeitete Daten: Zugriffsstatistiken, die Daten wie Standorte der Zugriffe, Gerätedaten, Zugriffsdauer und Zeitpunkt, Navigationsverhalten, Klickverhalten und IP-Adressen enthalten. Mehr Details dazu finden Sie beim jeweils eingesetzten Web Analytics Tool.<br />
+        &#x1f4c5; Speicherdauer: abhängig vom eingesetzten Web-Analytics-Tool<br />
+        &#x2696;&#xfe0f; Rechtsgrundlagen: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung), Art. 6 Abs. 1 lit. f DSGVO (Berechtigte Interessen)</td>
+        </tr>
+        </tbody>
+        </table>
+        <h3>Was ist Web Analytics?</h3>
+        <p>Wir verwenden auf unserer Website Software zur Auswertung des Verhaltens der Website-Besucher, kurz Web Analytics oder Web-Analyse genannt. Dabei werden Daten gesammelt, die der jeweilige Analytic-Tool-Anbieter (auch Trackingtool genannt) speichert, verwaltet und verarbeitet. Mit Hilfe der Daten werden Analysen über das Nutzerverhalten auf unserer Website erstellt und uns als Websitebetreiber zur Verfügung gestellt. Zusätzlich bieten die meisten Tools verschiedene Testmöglichkeiten an. So können wir etwa testen, welche Angebote oder Inhalte bei unseren Besuchern am besten ankommen. Dafür zeigen wir Ihnen für einen begrenzten Zeitabschnitt zwei verschiedene Angebote. Nach dem Test (sogenannter A/B-Test) wissen wir, welches Produkt bzw. welcher Inhalt unsere Websitebesucher interessanter finden. Für solche Testverfahren, wie auch für andere Analytics-Verfahren, können auch Userprofile erstellt werden und die Daten in Cookies gespeichert werden.</p>
+        <h3>Warum betreiben wir Web Analytics?</h3>
+        <p>Mit unserer Website haben wir ein klares Ziel vor Augen: wir wollen für unsere Branche das beste Webangebot auf dem Markt liefern. Um dieses Ziel zu erreichen, wollen wir einerseits das beste und interessanteste Angebot bieten und andererseits darauf achten, dass Sie sich auf unserer Website rundum wohlfühlen. Mit Hilfe von Webanalyse-Tools können wir das Verhalten unserer Websitebesucher genauer unter die Lupe nehmen und dann entsprechend unser Webangebot für Sie und uns verbessern. So können wir beispielsweise erkennen wie alt unsere Besucher durchschnittlich sind, woher sie kommen, wann unsere Website am meisten besucht wird oder welche Inhalte oder Produkte besonders beliebt sind. All diese Informationen helfen uns die Website zu optimieren und somit bestens an Ihre Bedürfnisse, Interessen und Wünsche anzupassen.</p>
+        <h3>Welche Daten werden verarbeitet?</h3>
+        <p>Welche Daten genau gespeichert werden, hängt natürlich von den verwendeten Analyse-Tools ab. Doch in der Regel wird zum Beispiel gespeichert, welche Inhalte Sie auf unserer Website ansehen, auf welche Buttons oder Links Sie klicken, wann Sie eine Seite aufrufen, welchen Browser sie verwenden, mit welchem Gerät (PC, Tablet, Smartphone usw.) Sie die Website besuchen oder welches Computersystem Sie verwenden. Wenn Sie damit einverstanden waren, dass auch Standortdaten erhoben werden dürfen, können auch diese durch den Webanalyse-Tool-Anbieter verarbeitet werden.</p>
+        <p>Zudem wird auch Ihre IP-Adresse gespeichert. Gemäß der Datenschutz-Grundverordnung (DSGVO) sind IP-Adressen personenbezogene Daten. Ihre IP-Adresse wird allerdings in der Regel pseudonymisiert (also in unkenntlicher und gekürzter Form) gespeichert. Für den Zweck der Tests, der Webanalyse und der Weboptimierung werden grundsätzlich keine direkten Daten, wie etwa Ihr Name, Ihr Alter, Ihre Adresse oder Ihre E-Mail-Adresse gespeichert. All diese Daten werden, sofern sie erhoben werden, pseudonymisiert gespeichert. So können Sie als Person nicht identifiziert werden.</p>
+        <p>Das folgende Beispiel zeigt schematisch die Funktionsweise von Google Analytics als Beispiel für client-basiertes Webtracking mit Java-Script-Code.</p>
+        <p>
+        <img role="img" src="https://www.adsimple.at/wp-content/uploads/2021/04/google-analytics-dataflow.svg" alt="Schematischer Datenfluss bei Google Analytics" width="100%" />
+        </p>
+        <p>Wie lange die jeweiligen Daten gespeichert werden, hängt immer vom Anbieter ab. Manche Cookies speichern Daten nur für ein paar Minuten bzw. bis Sie die Website wieder verlassen, andere Cookies können Daten über mehrere Jahre speichern.</p>
+        <h3>
+        <span data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Wo und wie lange werden Daten gespeichert?&quot;}" data-sheets-userformat="{&quot;2&quot;:769,&quot;3&quot;:{&quot;1&quot;:0},&quot;11&quot;:4,&quot;12&quot;:0}">Dauer der Datenverarbeitung</span>
+        </h3>
+        <p>Über die Dauer der Datenverarbeitung informieren wir Sie weiter unten, sofern wir weitere Informationen dazu haben. Generell verarbeiten wir personenbezogene Daten nur so lange wie es für die Bereitstellung unserer Dienstleistungen und Produkte unbedingt notwendig ist. Wenn es, wie zum Beispiel im Fall von Buchhaltung, gesetzlich vorgeschrieben ist, kann diese Speicherdauer auch überschritten werden.</p>
+        <h3>Widerspruchsrecht</h3>
+        <p>Sie haben auch jederzeit das Recht und die Möglichkeit Ihre Einwilligung zur Verwendung von Cookies bzw. Drittanbietern zu widerrufen. Das funktioniert entweder über unser Cookie-Management-Tool oder über andere Opt-Out-Funktionen. Zum Beispiel können Sie auch die Datenerfassung durch Cookies verhindern, indem Sie in Ihrem Browser die Cookies verwalten, deaktivieren oder löschen.</p>
+        <h3>Rechtsgrundlage</h3>
+        <p>Der Einsatz von Web-Analytics setzt Ihre Einwilligung voraus, welche wir mit unserem Cookie Popup eingeholt haben. Diese Einwilligung stellt laut<strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung)</strong> die Rechtsgrundlage für die Verarbeitung personenbezogener Daten, wie sie bei der Erfassung durch Web-Analytics Tools vorkommen kann, dar.</p>
+        <p>Zusätzlich zur Einwilligung besteht von unserer Seite ein berechtigtes Interesse daran, das Verhalten der Websitebesucher zu analysieren und so unser Angebot technisch und wirtschaftlich zu verbessern. Mit Hilfe von Web-Analytics erkennen wir Fehler der Website, können Attacken identifizieren und die Wirtschaftlichkeit verbessern. Die Rechtsgrundlage dafür ist <strong>Art. 6 Abs. 1 lit. f DSGVO (Berechtigte Interessen)</strong>. Wir setzen die Tools gleichwohl nur ein, soweit sie eine Einwilligung erteilt haben.</p>
+        <p>Da bei Web-Analytics-Tools Cookies zum Einsatz kommen, empfehlen wir Ihnen auch das Lesen unserer allgemeinen Datenschutzerklärung zu Cookies. Um zu erfahren, welche Daten von Ihnen genau gespeichert und verarbeitet werden, sollten Sie die Datenschutzerklärungen der jeweiligen Tools durchlesen.</p>
+        <p>Informationen zu speziellen Web-Analytics-Tools, erhalten Sie &#8211; sofern vorhanden &#8211; in den folgenden Abschnitten.</p>
+        <h2 id="google-analytics-datenschutzerklaerung">Google Analytics Datenschutzerklärung</h2>
+        <table border="1" cellpadding="15">
+        <tbody>
+        <tr>
+        <td>
+        <strong>Google Analytics Datenschutzerklärung Zusammenfassung</strong>
+        <br />
+        &#x1f465; Betroffene: Besucher der Website<br />
+        &#x1f91d; Zweck: Auswertung der Besucherinformationen zur Optimierung des Webangebots.<br />
+        &#x1f4d3; Verarbeitete Daten: Zugriffsstatistiken, die Daten wie Standorte der Zugriffe, Gerätedaten, Zugriffsdauer und Zeitpunkt, Navigationsverhalten, Klickverhalten und IP-Adressen enthalten. Mehr Details dazu finden Sie weiter unten in dieser Datenschutzerklärung.<br />
+        &#x1f4c5; Speicherdauer: abhängig von den verwendeten Properties<br />
+        &#x2696;&#xfe0f; Rechtsgrundlagen: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung), Art. 6 Abs. 1 lit. f DSGVO (Berechtigte Interessen)</td>
+        </tr>
+        </tbody>
+        </table>
+        <h3>Was ist Google Analytics?</h3>
+        <p>Wir verwenden auf unserer Website das Analyse-Tracking Tool Google Analytics (GA) des amerikanischen Unternehmens Google Inc. Für den europäischen Raum ist das Unternehmen Google Ireland Limited (Gordon House, Barrow Street Dublin 4, Irland) für alle Google-Dienste verantwortlich. Google Analytics sammelt Daten über Ihre Handlungen auf unserer Website. Wenn Sie beispielsweise einen Link anklicken, wird diese Aktion in einem Cookie gespeichert und an Google Analytics versandt. Mithilfe der Berichte, die wir von Google Analytics erhalten, können wir unsere Website und unser Service besser an Ihre Wünsche anpassen. Im Folgenden gehen wir näher auf das Tracking-Tool ein und informieren Sie vor allem darüber, welche Daten gespeichert werden und wie Sie das verhindern können.</p>
+        <p>Google Analytics ist ein Trackingtool, das der Datenverkehrsanalyse unserer Website dient. Damit Google Analytics funktioniert, wird ein Tracking-Code in den Code unserer Website eingebaut. Wenn Sie unsere Website besuchen, zeichnet dieser Code verschiedene Handlungen auf, die Sie auf unserer Website ausführen. Sobald Sie unsere Website verlassen, werden diese Daten an die Google-Analytics-Server gesendet und dort gespeichert.</p>
+        <p>Google verarbeitet die Daten und wir bekommen Berichte über Ihr Userverhalten. Dabei kann es sich unter anderem um folgende Berichte handeln:</p>
+        <ul>
+        <li>Zielgruppenberichte: Über Zielgruppenberichte lernen wir unsere User besser kennen und wissen genauer, wer sich für unser Service interessiert.</li>
+        <li>Anzeigeberichte: Durch Anzeigeberichte können wir unsere Onlinewerbung leichter analysieren und verbessern.</li>
+        <li>Akquisitionsberichte: Akquisitionsberichte geben uns hilfreiche Informationen darüber, wie wir mehr Menschen für unser Service begeistern können.</li>
+        <li>Verhaltensberichte: Hier erfahren wir, wie Sie mit unserer Website interagieren. Wir können nachvollziehen welchen Weg Sie auf unserer Seite zurücklegen und welche Links Sie anklicken.</li>
+        <li>Conversionsberichte: Conversion nennt man einen Vorgang, bei dem Sie aufgrund einer Marketing-Botschaft eine gewünschte Handlung ausführen. Zum Beispiel, wenn Sie von einem reinen Websitebesucher zu einem Käufer oder Newsletter-Abonnent werden. Mithilfe dieser Berichte erfahren wir mehr darüber, wie unsere Marketing-Maßnahmen bei Ihnen ankommen. So wollen wir unsere Conversionrate steigern.</li>
+        <li>Echtzeitberichte: Hier erfahren wir immer sofort, was gerade auf unserer Website passiert. Zum Beispiel sehen wir wie viele User gerade diesen Text lesen.</li>
+        </ul>
+        <h3>Warum verwenden wir Google Analytics auf unserer Website?</h3>
+        <p>Unser Ziel mit dieser Website ist klar: Wir wollen Ihnen das bestmögliche Service bieten. Die Statistiken und Daten von Google Analytics helfen uns dieses Ziel zu erreichen.</p>
+        <p>Die statistisch ausgewerteten Daten zeigen uns ein klares Bild von den Stärken und Schwächen unserer Website. Einerseits können wir unsere Seite so optimieren, dass sie von interessierten Menschen auf Google leichter gefunden wird. Andererseits helfen uns die Daten, Sie als Besucher besser zu verstehen. Wir wissen somit sehr genau, was wir an unserer Website verbessern müssen, um Ihnen das bestmögliche Service zu bieten. Die Daten dienen uns auch, unsere Werbe- und Marketing-Maßnahmen individueller und kostengünstiger durchzuführen. Schließlich macht es nur Sinn, unsere Produkte und Dienstleistungen Menschen zu zeigen, die sich dafür interessieren.</p>
+        <h3>Welche Daten werden von Google Analytics gespeichert?</h3>
+        <p>Google Analytics erstellt mithilfe eines Tracking-Codes eine zufällige, eindeutige ID, die mit Ihrem Browser-Cookie verbunden ist. So erkennt Sie Google Analytics als neuen User. Wenn Sie das nächste Mal unsere Seite besuchen, werden Sie als „wiederkehrender“ User erkannt. Alle gesammelten Daten werden gemeinsam mit dieser User-ID gespeichert. So ist es überhaupt erst möglich pseudonyme Userprofile auszuwerten.</p>
+        <p>Um mit Google Analytics unsere Website analysieren zu können, muss eine Property-ID in den Tracking-Code eingefügt werden. Die Daten werden dann in der entsprechenden Property gespeichert. Für jede neu angelegte Property ist die Google Analytics 4-Property standardmäßig. Alternativ kann man aber auch noch die Universal Analytics Property erstellen. Je nach verwendeter Property werden Daten unterschiedlich lange gespeichert.</p>
+        <p>Durch Kennzeichnungen wie Cookies und App-Instanz-IDs werden Ihre Interaktionen auf unserer Website gemessen. Interaktionen sind alle Arten von Handlungen, die Sie auf unserer Website ausführen. Wenn Sie auch andere Google-Systeme (wie z.B. ein Google-Konto) nützen, können über Google Analytics generierte Daten mit Drittanbieter-Cookies verknüpft werden. Google gibt keine Google Analytics-Daten weiter, außer wir als Websitebetreiber genehmigen das. Zu Ausnahmen kann es kommen, wenn es gesetzlich erforderlich ist.</p>
+        <p>Folgende Cookies werden von Google Analytics verwendet:</p>
+        <p>
+        <strong>Name:</strong> _ga<br />
+        <strong>Wert: </strong>2.1326744211.152312214196-5<br />
+        <strong>Verwendungszweck:</strong> Standardmäßig verwendet analytics.js das Cookie _ga, um die User-ID zu speichern. Grundsätzlich dient es zur Unterscheidung der Webseitenbesucher.<br />
+        <strong>Ablaufdatum:</strong> nach 2 Jahren</p>
+        <p>
+        <strong>Name:</strong> _gid<br />
+        <strong>Wert: </strong>2.1687193234.152312214196-1<br />
+        <strong>Verwendungszweck:</strong> Das Cookie dient auch zur Unterscheidung der Webseitenbesucher<br />
+        <strong>Ablaufdatum:</strong> nach 24 Stunden</p>
+        <p>
+        <strong>Name:</strong> _gat_gtag_UA_&lt;property-id&gt;<br />
+        <strong>Wert:</strong> 1<br />
+        <strong>Verwendungszweck:</strong> Wird zum Senken der Anforderungsrate verwendet. Wenn Google Analytics über den Google Tag Manager bereitgestellt wird, erhält dieser Cookie den Namen _dc_gtm_ &lt;property-id&gt;.<br />
+        <strong>Ablaufdatum: </strong>nach 1 Minute</p>
+        <p>
+        <strong>Name:</strong> AMP_TOKEN<br />
+        <strong>Wert:</strong> keine Angaben<br />
+        <strong>Verwendungszweck:</strong> Das Cookie hat einen Token, mit dem eine User ID vom AMP-Client-ID-Dienst abgerufen werden kann. Andere mögliche Werte weisen auf eine Abmeldung, eine Anfrage oder einen Fehler hin.<br />
+        <strong>Ablaufdatum:</strong> nach 30 Sekunden bis zu einem Jahr</p>
+        <p>
+        <strong>Name:</strong> __utma<br />
+        <strong>Wert: </strong>1564498958.1564498958.1564498958.1<br />
+        <strong>Verwendungszweck:</strong> Mit diesem Cookie kann man Ihr Verhalten auf der Website verfolgen und die Leistung messen. Das Cookie wird jedes Mal aktualisiert, wenn Informationen an Google Analytics gesendet werden.<br />
+        <strong>Ablaufdatum:</strong> nach 2 Jahren</p>
+        <p>
+        <strong>Name:</strong> __utmt<br />
+        <strong>Wert:</strong> 1<br />
+        <strong>Verwendungszweck:</strong> Das Cookie wird wie _gat_gtag_UA_&lt;property-id&gt; zum Drosseln der Anforderungsrate verwendet.<br />
+        <strong>Ablaufdatum:</strong> nach 10 Minuten</p>
+        <p>
+        <strong>Name:</strong> __utmb<br />
+        <strong>Wert: </strong>3.10.1564498958<br />
+        <strong>Verwendungszweck:</strong> Dieses Cookie wird verwendet, um neue Sitzungen zu bestimmen. Es wird jedes Mal aktualisiert, wenn neue Daten bzw. Infos an Google Analytics gesendet werden.<br />
+        <strong>Ablaufdatum:</strong> nach 30 Minuten</p>
+        <p>
+        <strong>Name:</strong> __utmc<br />
+        <strong>Wert:</strong> 167421564<br />
+        <strong>Verwendungszweck:</strong> Dieses Cookie wird verwendet, um neue Sitzungen für wiederkehrende Besucher festzulegen. Dabei handelt es sich um ein Session-Cookie und wird nur solange gespeichert, bis Sie den Browser wieder schließen.<br />
+        <strong>Ablaufdatum:</strong> Nach Schließung des Browsers</p>
+        <p>
+        <strong>Name:</strong> __utmz<br />
+        <strong>Wert:</strong> m|utmccn=(referral)|utmcmd=referral|utmcct=/<br />
+        <strong>Verwendungszweck:</strong> Das Cookie wird verwendet, um die Quelle des Besucheraufkommens auf unserer Website zu identifizieren. Das heißt, das Cookie speichert, von wo Sie auf unsere Website gekommen sind. Das kann eine andere Seite bzw. eine Werbeschaltung gewesen sein.<br />
+        <strong>Ablaufdatum:</strong> nach 6 Monaten</p>
+        <p>
+        <strong>Name:</strong> __utmv<br />
+        <strong>Wert:</strong> keine Angabe<br />
+        <strong>Verwendungszweck:</strong> Das Cookie wird verwendet, um benutzerdefinierte Userdaten zu speichern. Es wird immer aktualisiert, wenn Informationen an Google Analytics gesendet werden.<br />
+        <strong>Ablaufdatum:</strong> nach 2 Jahren</p>
+        <p>
+        <strong>Anmerkung:</strong> Diese Aufzählung kann keinen Anspruch auf Vollständigkeit erheben, da Google die Wahl ihrer Cookies immer wieder auch verändert.</p>
+        <p>Hier zeigen wir Ihnen einen Überblick über die wichtigsten Daten, die mit Google Analytics erhoben werden:</p>
+        <p>
+        <strong>Heatmaps:</strong> Google legt sogenannte Heatmaps an. Über Heatmaps sieht man genau jene Bereiche, die Sie anklicken. So bekommen wir Informationen, wo Sie auf unserer Seite „unterwegs“ sind.</p>
+        <p>
+        <strong>Sitzungsdauer:</strong> Als Sitzungsdauer bezeichnet Google die Zeit, die Sie auf unserer Seite verbringen, ohne die Seite zu verlassen. Wenn Sie 20 Minuten inaktiv waren, endet die Sitzung automatisch.</p>
+        <p>
+        <strong>Absprungrate</strong> (engl. Bouncerate): Von einem Absprung ist die Rede, wenn Sie auf unserer Website nur eine Seite ansehen und dann unsere Website wieder verlassen.</p>
+        <p>
+        <strong>Kontoerstellung:</strong> Wenn Sie auf unserer Website ein Konto erstellen bzw. eine Bestellung machen, erhebt Google Analytics diese Daten.</p>
+        <p>
+        <strong>IP-Adresse:</strong> Die IP-Adresse wird nur in gekürzter Form dargestellt, damit keine eindeutige Zuordnung möglich ist.</p>
+        <p>
+        <strong>Standort:</strong> Über die IP-Adresse kann das Land und Ihr ungefährer Standort bestimmt werden. Diesen Vorgang bezeichnet man auch als IP- Standortbestimmung.</p>
+        <p>
+        <strong>Technische Informationen:</strong> Zu den technischen Informationen zählen unter anderem Ihr Browsertyp, Ihr Internetanbieter oder Ihre Bildschirmauflösung.</p>
+        <p>
+        <strong>Herkunftsquelle:</strong> Google Analytics beziehungsweise uns interessiert natürlich auch über welche Website oder welche Werbung Sie auf unsere Seite gekommen sind.</p>
+        <p>Weitere Daten sind Kontaktdaten, etwaige Bewertungen, das Abspielen von Medien (z. B. wenn Sie ein Video über unsere Seite abspielen), das Teilen von Inhalten über Social Media oder das Hinzufügen zu Ihren Favoriten. Die Aufzählung hat keinen Vollständigkeitsanspruch und dient nur zu einer allgemeinen Orientierung der Datenspeicherung durch Google Analytics.</p>
+        <h3>Wie lange und wo werden die Daten gespeichert?</h3>
+        <p>Google hat ihre Server auf der ganzen Welt verteilt. Die meisten Server befinden sich in Amerika und folglich werden Ihre Daten meist auf amerikanischen Servern gespeichert. Hier können Sie genau nachlesen wo sich die Google-Rechenzentren befinden: <a href="https://www.google.com/about/datacenters/locations/?hl=de" target="_blank" rel="follow noopener">https://www.google.com/about/datacenters/locations/?hl=de</a>
+        </p>
+        <p>Ihre Daten werden auf verschiedenen physischen Datenträgern verteilt. Das hat den Vorteil, dass die Daten schneller abrufbar sind und vor Manipulation besser geschützt sind. In jedem Google-Rechenzentrum gibt es entsprechende Notfallprogramme für Ihre Daten. Wenn beispielsweise die Hardware bei Google ausfällt oder Naturkatastrophen Server lahmlegen, bleibt das Risiko einer Dienstunterbrechung bei Google dennoch gering.</p>
+        <p>Die Aufbewahrungsdauer der Daten hängt von den verwendeten Properties ab. Bei der Verwendung der neueren Google Analytics 4-Properties ist die Aufbewahrungsdauer Ihrer Userdaten auf 14 Monate fix eingestellt. Für andere sogenannte Ereignisdaten haben wir die Möglichkeit eine Aufbewahrungsdauer von 2 Monaten oder 14 Monaten zu wählen.</p>
+        <p>Bei Universal Analytics-Properties ist bei Google Analytics eine Aufbewahrungsdauer Ihrer Userdaten von 26 Monaten standardisiert eingestellt. Dann werden Ihre Userdaten gelöscht. Allerdings haben wir die Möglichkeit, die Aufbewahrungsdauer von Nutzdaten selbst zu wählen. Dafür stehen uns fünf Varianten zur Verfügung:</p>
+        <ul>
+        <li>Löschung nach 14 Monaten</li>
+        <li>Löschung nach 26 Monaten</li>
+        <li>Löschung nach 38 Monaten</li>
+        <li>Löschung nach 50 Monaten</li>
+        <li>Keine automatische Löschung</li>
+        </ul>
+        <p>Zusätzlich gibt es auch die Option, dass Daten erst dann gelöscht werden, wenn Sie innerhalb des von uns gewählten Zeitraums nicht mehr unsere Website besuchen. In diesem Fall wird die Aufbewahrungsdauer jedes Mal zurückgesetzt, wenn Sie unsere Website innerhalb des festgelegten Zeitraums wieder besuchen.</p>
+        <p>Wenn der festgelegte Zeitraum abgelaufen ist, werden einmal im Monat die Daten gelöscht. Diese Aufbewahrungsdauer gilt für Ihre Daten, die mit Cookies, Usererkennung und Werbe-IDs (z.B. Cookies der DoubleClick-Domain) verknüpft sind. Berichtergebnisse basieren auf aggregierten Daten und werden unabhängig von Nutzerdaten gespeichert. Aggregierte Daten sind eine Zusammenschmelzung von Einzeldaten zu einer größeren Einheit.</p>
+        <h3>Wie kann ich meine Daten löschen bzw. die Datenspeicherung verhindern?</h3>
+        <p>Nach dem Datenschutzrecht der Europäischen Union haben Sie das Recht, Auskunft über Ihre Daten zu erhalten, sie zu aktualisieren, zu löschen oder einzuschränken. Mithilfe des Browser-Add-ons zur Deaktivierung von Google Analytics-JavaScript (ga.js, analytics.js, dc.js) verhindern Sie, dass Google Analytics Ihre Daten verwendet. Das Browser-Add-on können Sie unter <a href="https://tools.google.com/dlpage/gaoptout?hl=de" target="_blank" rel="noopener noreferrer">https://tools.google.com/dlpage/gaoptout?hl=de</a> runterladen und installieren. Beachten Sie bitte, dass durch dieses Add-on nur die Datenerhebung durch Google Analytics deaktiviert wird.</p>
+        <p>Falls Sie grundsätzlich Cookies deaktivieren, löschen oder verwalten wollen, finden Sie unter dem Abschnitt „Cookies“ die entsprechenden Links zu den jeweiligen Anleitungen der bekanntesten Browser.</p>
+        <h3>Rechtsgrundlage</h3>
+        <p>Der Einsatz von Google Analytics setzt Ihre Einwilligung voraus, welche wir mit unserem Cookie Popup eingeholt haben. Diese Einwilligung stellt laut<strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung)</strong> die Rechtsgrundlage für die Verarbeitung personenbezogener Daten, wie sie bei der Erfassung durch Web-Analytics Tools vorkommen kann, dar.</p>
+        <p>Zusätzlich zur Einwilligung besteht von unserer Seite ein berechtigtes Interesse daran, dass Verhalten der Websitebesucher zu analysieren und so unser Angebot technisch und wirtschaftlich zu verbessern. Mit Hilfe von Google Analytics erkennen wir Fehler der Website, können Attacken identifizieren und die Wirtschaftlichkeit verbessern. Die Rechtsgrundlage dafür ist <strong>Art. 6 Abs. 1 lit. f DSGVO (Berechtigte Interessen)</strong>. Wir setzen Google Analytics gleichwohl nur ein, soweit Sie eine Einwilligung erteilt haben.</p>
+        <p>Google verarbeitet Daten von Ihnen u.a. auch in den USA. Wir weisen darauf hin, dass nach Meinung des Europäischen Gerichtshofs derzeit kein angemessenes Schutzniveau für den Datentransfer in die USA besteht. Dies kann mit verschiedenen Risiken für die Rechtmäßigkeit und Sicherheit der Datenverarbeitung einhergehen.</p>
+        <p>Als Grundlage der Datenverarbeitung bei Empfängern mit Sitz in Drittstaaten (außerhalb der Europäischen Union, Island, Liechtenstein, Norwegen, also insbesondere in den USA) oder einer Datenweitergabe dorthin verwendet Google sogenannte Standardvertragsklauseln (= Art. 46. Abs. 2 und 3 DSGVO). Standardvertragsklauseln (Standard Contractual Clauses – SCC) sind von der EU-Kommission bereitgestellte Mustervorlagen und sollen sicherstellen, dass Ihre Daten auch dann den europäischen Datenschutzstandards entsprechen, wenn diese in Drittländer (wie beispielsweise in die USA) überliefert und dort gespeichert werden. Durch diese Klauseln verpflichtet sich Google, bei der Verarbeitung Ihrer relevanten Daten, das europäische Datenschutzniveau einzuhalten, selbst wenn die Daten in den USA gespeichert, verarbeitet und verwaltet werden. Diese Klauseln basieren auf einem Durchführungsbeschluss der EU-Kommission. Sie finden den Beschluss und die entsprechenden Standardvertragsklauseln u.a. hier: <a href="https://eur-lex.europa.eu/eli/dec_impl/2021/914/oj?locale=de" target="_blank" rel="noopener">https://eur-lex.europa.eu/eli/dec_impl/2021/914/oj?locale=de</a>
+        </p>
+        <p>Die Google Ads Datenverarbeitungsbedingungen (Google Ads Data Processing Terms), welche auf die Standardvertragsklauseln verweisen, finden Sie unter <a href="https://business.safety.google/intl/de/adsprocessorterms/" target="_blank" rel="follow noopener">https://business.safety.google/intl/de/adsprocessorterms/</a>.</p>
+        <p>Wir hoffen, wir konnten Ihnen die wichtigsten Informationen rund um die Datenverarbeitung von Google Analytics näherbringen. Wenn Sie mehr über den Tracking-Dienst erfahren wollen, empfehlen wir diese beiden Links: <a href="https://marketingplatform.google.com/about/analytics/terms/de/">https://marketingplatform.google.com/about/analytics/terms/de/</a> und <a href="https://support.google.com/analytics/answer/6004245?hl=de" target="_blank" rel="noopener noreferrer">https://support.google.com/analytics/answer/6004245?hl=de</a>.</p>
+        <h2 id="social-media-einleitung">Social Media Einleitung</h2>
+        <table border="1" cellpadding="15">
+        <tbody>
+        <tr>
+        <td>
+        <strong>Social Media Datenschutzerklärung Zusammenfassung</strong>
+        <br />
+        &#x1f465; Betroffene: Besucher der Website<br />
+        &#x1f91d; Zweck: Darstellung und Optimierung unserer Serviceleistung, Kontakt zu Besuchern, Interessenten u.a., Werbung<br />
+        &#x1f4d3; Verarbeitete Daten: Daten wie etwa Telefonnummern, E-Mail-Adressen, Kontaktdaten, Daten zum Nutzerverhalten, Informationen zu Ihrem Gerät und Ihre IP-Adresse.<br />
+        Mehr Details dazu finden Sie beim jeweils eingesetzten Social-Media-Tool.<br />
+        &#x1f4c5; Speicherdauer: abhängig von den verwendeten Social-Media-Plattformen<br />
+        &#x2696;&#xfe0f; Rechtsgrundlagen: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung), Art. 6 Abs. 1 lit. f DSGVO (Berechtigte Interessen)</td>
+        </tr>
+        </tbody>
+        </table>
+        <h3>Was ist Social Media?</h3>
+        <p>Zusätzlich zu unserer Website sind wir auch in diversen Social-Media-Plattformen aktiv. Dabei können Daten von Usern verarbeitet werden, damit wir gezielt User, die sich für uns interessieren, über die sozialen Netzwerke ansprechen können. Darüber hinaus können auch Elemente einer Social-Media-Plattform direkt in unsere Website eingebettet sein. Das ist etwa der Fall, wenn Sie einen sogenannten Social-Button auf unserer Website anklicken und direkt zu unserem Social-Media-Auftritt weitergeleitet werden. Als sogenannte Sozialen Medien oder Social Media werden Websites und Apps bezeichnet, über die angemeldete Mitglieder Inhalte produzieren, Inhalte offen oder in bestimmten Gruppen austauschen und sich mit anderen Mitgliedern vernetzen können.</p>
+        <h3>Warum nutzen wir Social Media?</h3>
+        <p>Seit Jahren sind Social-Media-Plattformen der Ort, wo Menschen online kommunizieren und in Kontakt treten. Mit unseren Social-Media-Auftritten können wir unsere Produkte und Dienstleistungen Interessenten näherbringen. Die auf unserer Website eingebundenen Social-Media-Elemente helfen Ihnen, schnell und ohne Komplikationen zu unseren Social-Media-Inhalten wechseln können.</p>
+        <p>Die Daten, die durch Ihre Nutzung eines Social-Media-Kanals gespeichert und verarbeitet werden, haben in erster Linie den Zweck, Webanalysen durchführen zu können. Ziel dieser Analysen ist es, genauere und personenbezogene Marketing- und Werbestrategien entwickeln zu können. Abhängig von Ihrem Verhalten auf einer Social-Media-Plattform, können mit Hilfe der ausgewerteten Daten, passende Rückschlüsse auf Ihre Interessen getroffen werden und sogenannte Userprofile erstellt werden. So ist es den Plattformen auch möglich, Ihnen maßgeschneiderte Werbeanzeigen zu präsentieren. Meistens werden für diesen Zweck Cookies in Ihrem Browser gesetzt, die Daten zu Ihrem Nutzungsverhalten speichern.</p>
+        <p>Wir gehen in der Regel davon aus, dass wir datenschutzrechtlich verantwortlich bleiben, auch wenn wir Dienste einer Social-Media-Plattform nutzen. Der Europäische Gerichtshof hat jedoch entschieden, dass in bestimmten Fällen der Betreiber der Social-Media-Plattform zusammen mit uns gemeinsam verantwortlich im Sinne des Art. 26 DSGVO sein kann. Soweit dies der Fall ist, weisen wir gesondert darauf hin und arbeiten auf Grundlage einer diesbezüglichen Vereinbarung. Das Wesentliche der Vereinbarung ist dann weiter unten bei der betroffenen Plattform wiedergegeben.</p>
+        <p>Bitte beachten Sie, dass bei der Nutzung der Social-Media-Plattformen oder unserer eingebauten Elemente auch Daten von Ihnen außerhalb der Europäischen Union verarbeitet werden können, da viele Social-Media-Kanäle, beispielsweise Facebook oder Twitter, amerikanische Unternehmen sind. Dadurch können Sie möglicherweise Ihre Rechte in Bezug auf Ihre personenbezogenen Daten nicht mehr so leicht einfordern bzw. durchsetzen.</p>
+        <h3>Welche Daten werden verarbeitet?</h3>
+        <p>Welche Daten genau gespeichert und verarbeitet werden, hängt vom jeweiligen Anbieter der Social-Media-Plattform ab. Aber für gewöhnlich handelt es sich um Daten wie etwa Telefonnummern, E-Mailadressen, Daten, die Sie in ein Kontaktformular eingeben, Nutzerdaten wie zum Beispiel welche Buttons Sie klicken, wen Sie liken oder wem folgen, wann Sie welche Seiten besucht haben, Informationen zu Ihrem Gerät und Ihre IP-Adresse. Die meisten dieser Daten werden in Cookies gespeichert. Speziell wenn Sie selbst ein Profil bei dem besuchten Social-Media-Kanal haben und angemeldet sind, können Daten mit Ihrem Profil verknüpft werden.</p>
+        <p>Alle Daten, die über eine Social-Media-Plattform erhoben werden, werden auch auf den Servern der Anbieter gespeichert. Somit haben auch nur die Anbieter Zugang zu den Daten und können Ihnen die passenden Auskünfte geben bzw. Änderungen vornehmen.</p>
+        <p>Wenn Sie genau wissen wollen, welche Daten bei den Social-Media-Anbietern gespeichert und verarbeitet werden und wie sie der Datenverarbeitung widersprechen können, sollten Sie die jeweilige Datenschutzerklärung des Unternehmens sorgfältig durchlesen. Auch wenn Sie zur Datenspeicherung und Datenverarbeitung Fragen haben oder entsprechende Rechte geltend machen wollen, empfehlen wir Ihnen, sich direkt an den Anbieter wenden.</p>
+        <h3>
+        <span data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Wo und wie lange werden Daten gespeichert?&quot;}" data-sheets-userformat="{&quot;2&quot;:769,&quot;3&quot;:{&quot;1&quot;:0},&quot;11&quot;:4,&quot;12&quot;:0}">Dauer der Datenverarbeitung</span>
+        </h3>
+        <p>Über die Dauer der Datenverarbeitung informieren wir Sie weiter unten, sofern wir weitere Informationen dazu haben. Beispielsweise speichert die Social-Media-Plattform Facebook Daten, bis sie für den eigenen Zweck nicht mehr benötigt werden. Kundendaten, die mit den eigenen Userdaten abgeglichen werden, werden aber schon innerhalb von zwei Tagen gelöscht. Generell verarbeiten wir personenbezogene Daten nur so lange wie es für die Bereitstellung unserer Dienstleistungen und Produkte unbedingt notwendig ist. Wenn es, wie zum Beispiel im Fall von Buchhaltung, gesetzlich vorgeschrieben ist, kann diese Speicherdauer auch überschritten werden.</p>
+        <h3>Widerspruchsrecht</h3>
+        <p>Sie haben auch jederzeit das Recht und die Möglichkeit Ihre Einwilligung zur Verwendung von Cookies bzw. Drittanbietern wie eingebettete Social-Media-Elemente zu widerrufen. Das funktioniert entweder über unser Cookie-Management-Tool oder über andere Opt-Out-Funktionen. Zum Bespiel können Sie auch die Datenerfassung durch Cookies verhindern, indem Sie in Ihrem Browser die Cookies verwalten, deaktivieren oder löschen.</p>
+        <p>Da bei Social-Media-Tools Cookies zum Einsatz kommen können, empfehlen wir Ihnen auch unsere allgemeine Datenschutzerklärung über Cookies. Um zu erfahren, welche Daten von Ihnen genau gespeichert und verarbeitet werden, sollten Sie die Datenschutzerklärungen der jeweiligen Tools durchlesen.</p>
+        <h3>Rechtsgrundlage</h3>
+        <p>Wenn Sie eingewilligt haben, dass Daten von Ihnen durch eingebundene Social-Media-Elemente verarbeitet und gespeichert werden können, gilt diese Einwilligung als Rechtsgrundlage der Datenverarbeitung <strong>(Art. 6 Abs. 1 lit. a DSGVO)</strong>. Grundsätzlich werden Ihre Daten bei Vorliegen einer Einwilligung auch auf Grundlage unseres berechtigten Interesses <strong>(Art. 6 Abs. 1 lit. f DSGVO)</strong> an einer schnellen und guten Kommunikation mit Ihnen oder anderen Kunden und Geschäftspartnern gespeichert und verarbeitet. Wir setzen die Tools gleichwohl nur ein, soweit Sie eine Einwilligung erteilt haben. Die meisten Social-Media-Plattformen setzen auch Cookies in Ihrem Browser, um Daten zu speichern. Darum empfehlen wir Ihnen, unseren Datenschutztext über Cookies genau durchzulesen und die Datenschutzerklärung oder die Cookie-Richtlinien des jeweiligen Dienstanbieters anzusehen.</p>
+        <p>Informationen zu speziellen Social-Media-Plattformen erfahren Sie &#8211; sofern vorhanden &#8211; in den folgenden Abschnitten.</p>
+        <h2 id="instagram-datenschutzerklaerung">Instagram Datenschutzerklärung</h2>
+        <table border="1" cellpadding="15">
+        <tbody>
+        <tr>
+        <td>
+        <strong>Instagram Datenschutzerklärung Zusammenfassung</strong>
+        <br />
+        &#x1f465; Betroffene: Besucher der Website<br />
+        &#x1f91d; Zweck: Optimierung unserer Serviceleistung<br />
+        &#x1f4d3; Verarbeitete Daten: Daten wie etwa Daten zum Nutzerverhalten, Informationen zu Ihrem Gerät und Ihre IP-Adresse.<br />
+        Mehr Details dazu finden Sie weiter unten in der Datenschutzerklärung.<br />
+        &#x1f4c5; Speicherdauer: bis Instagram die Daten für ihre Zwecke nicht mehr benötigt<br />
+        &#x2696;&#xfe0f; Rechtsgrundlagen: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung), Art. 6 Abs. 1 lit. f DSGVO (Berechtigte Interessen)</td>
+        </tr>
+        </tbody>
+        </table>
+        <h3>Was ist Instagram?</h3>
+        <p>Wir haben auf unserer Webseite Funktionen von Instagram eingebaut. Instagram ist eine Social Media Plattform des Unternehmens Instagram LLC, 1601 Willow Rd, Menlo Park CA 94025, USA. Instagram ist seit 2012 ein Tochterunternehmen von Meta Platforms Inc. und gehört zu den Facebook-Produkten. Das Einbetten von Instagram-Inhalten auf unserer Webseite nennt man Embedding. Dadurch können wir Ihnen Inhalte wie Buttons, Fotos oder Videos von Instagram direkt auf unserer Webseite zeigen. Wenn Sie Webseiten unserer Webpräsenz aufrufen, die eine Instagram-Funktion integriert haben, werden Daten an Instagram übermittelt, gespeichert und verarbeitet. Instagram verwendet dieselben Systeme und Technologien wie Facebook. Ihre Daten werden somit über alle Facebook-Firmen hinweg verarbeitet.</p>
+        <p>Im Folgenden wollen wir Ihnen einen genaueren Einblick geben, warum Instagram Daten sammelt, um welche Daten es sich handelt und wie Sie die Datenverarbeitung weitgehend kontrollieren können. Da Instagram zu Meta Platforms Inc. gehört, beziehen wir unsere Informationen einerseits von den Instagram-Richtlinien, andererseits allerdings auch von den Meta-Datenschutzrichtlinien selbst.</p>
+        <p>Instagram ist eines der bekanntesten Social Media Netzwerken weltweit. Instagram kombiniert die Vorteile eines Blogs mit den Vorteilen von audiovisuellen Plattformen wie YouTube oder Vimeo. Sie können auf „Insta“ (wie viele der User die Plattform salopp nennen) Fotos und kurze Videos hochladen, mit verschiedenen Filtern bearbeiten und auch in anderen sozialen Netzwerken verbreiten. Und wenn Sie selbst nicht aktiv sein wollen, können Sie auch nur anderen interessante Users folgen.</p>
+        <h3>Warum verwenden wir Instagram auf unserer Website?</h3>
+        <p>Instagram ist jene Social Media Plattform, die in den letzten Jahren so richtig durch die Decke ging. Und natürlich haben auch wir auf diesen Boom reagiert. Wir wollen, dass Sie sich auf unserer Webseite so wohl wie möglich fühlen. Darum ist für uns eine abwechslungsreiche Aufbereitung unserer Inhalte selbstverständlich. Durch die eingebetteten Instagram-Funktionen können wir unseren Content mit hilfreichen, lustigen oder spannenden Inhalten aus der Instagram-Welt bereichern. Da Instagram eine Tochtergesellschaft von Facebook ist, können uns die erhobenen Daten auch für personalisierte Werbung auf Facebook dienlich sein. So bekommen unsere Werbeanzeigen nur Menschen, die sich wirklich für unsere Produkte oder Dienstleistungen interessieren.</p>
+        <p>Instagram nützt die gesammelten Daten auch zu Messungs- und Analysezwecken. Wir bekommen zusammengefasste Statistiken und so mehr Einblick über Ihre Wünsche und Interessen. Wichtig ist zu erwähnen, dass diese Berichte Sie nicht persönlich identifizieren.</p>
+        <h3>Welche Daten werden von Instagram gespeichert?</h3>
+        <p>Wenn Sie auf eine unserer Seiten stoßen, die Instagram-Funktionen (wie Instagrambilder oder Plug-ins) eingebaut haben, setzt sich Ihr Browser automatisch mit den Servern von Instagram in Verbindung. Dabei werden Daten an Instagram versandt, gespeichert und verarbeitet. Und zwar unabhängig, ob Sie ein Instagram-Konto haben oder nicht. Dazu zählen Informationen über unserer Webseite, über Ihren Computer, über getätigte Käufe, über Werbeanzeigen, die Sie sehen und wie Sie unser Angebot nutzen. Weiters werden auch Datum und Uhrzeit Ihrer Interaktion mit Instagram gespeichert. Wenn Sie ein Instagram-Konto haben bzw. eingeloggt sind, speichert Instagram deutlich mehr Daten über Sie.</p>
+        <p>Facebook unterscheidet zwischen Kundendaten und Eventdaten. Wir gehen davon aus, dass dies bei Instagram genau so der Fall ist. Kundendaten sind zum Beispiel Name, Adresse, Telefonnummer und IP-Adresse. Diese Kundendaten werden erst an Instagram übermittelt werden, wenn Sie zuvor „gehasht“ wurden. Hashing meint, ein Datensatz wird in eine Zeichenkette verwandelt. Dadurch kann man die Kontaktdaten verschlüsseln. Zudem werden auch die oben genannten „Event-Daten“ übermittelt. Unter „Event-Daten“ versteht Facebook – und folglich auch Instagram – Daten über Ihr Userverhalten. Es kann auch vorkommen, dass Kontaktdaten mit Event-Daten kombiniert werden. Die erhobenen Kontaktdaten werden mit den Daten, die Instagram bereits von Ihnen hat, abgeglichen.</p>
+        <p>Über kleine Text-Dateien (Cookies), die meist in Ihrem Browser gesetzt werden, werden die gesammelten Daten an Facebook übermittelt. Je nach verwendeten Instagram-Funktionen und ob Sie selbst ein Instagram-Konto haben, werden unterschiedlich viele Daten gespeichert.</p>
+        <p>Wir gehen davon aus, dass bei Instagram die Datenverarbeitung gleich funktioniert wie bei Facebook. Das bedeutet: wenn Sie ein Instagram-Konto haben oder <a href="https://www.instagram.com/?tid=312214196" target="_blank" rel="noopener noreferrer">www.instagram.com</a> besucht haben, hat Instagram zumindest ein Cookie gesetzt. Wenn das der Fall ist, sendet Ihr Browser über das Cookie Infos an Instagram, sobald Sie mit einer Instagram-Funktion in Berührung kommen. Spätestens nach 90 Tagen (nach Abgleichung) werden diese Daten wieder gelöscht bzw. anonymisiert. Obwohl wir uns intensiv mit der Datenverarbeitung von Instagram beschäftigt haben, können wir nicht ganz genau sagen, welche Daten Instagram exakt sammelt und speichert.</p>
+        <p>Im Folgenden zeigen wir Ihnen Cookies, die in Ihrem Browser mindestens gesetzt werden, wenn Sie auf eine Instagram-Funktion (wie z.B. Button oder ein Insta-Bild) klicken. Bei unserem Test gehen wir davon aus, dass Sie kein Instagram-Konto haben. Wenn Sie bei Instagram eingeloggt sind, werden natürlich deutlich mehr Cookies in Ihrem Browser gesetzt.</p>
+        <p>Diese Cookies wurden bei unserem Test verwendet:</p>
+        <p>
+        <strong>Name: </strong>csrftoken<br />
+        <strong>Wert: </strong>&#8220;&#8221;<br />
+        <strong>Verwendungszweck: </strong>Dieses Cookie wird mit hoher Wahrscheinlichkeit aus Sicherheitsgründen gesetzt, um Fälschungen von Anfragen zu verhindern. Genauer konnten wir das allerdings nicht in Erfahrung bringen.<br />
+        <strong>Ablaufdatum:</strong> nach einem Jahr</p>
+        <p>
+        <strong>Name: </strong>mid<br />
+        <strong>Wert: </strong>&#8220;&#8221;<br />
+        <strong>Verwendungszweck: </strong>Instagram setzt dieses Cookie, um die eigenen Dienstleistungen und Angebote in und außerhalb von Instagram zu optimieren. Das Cookie legt eine eindeutige User-ID fest.<br />
+        <strong>Ablaufdatum:</strong> nach Ende der Sitzung</p>
+        <p>
+        <strong>Name:</strong> fbsr_312214196124024<br />
+        <strong>Wert: </strong>keine Angaben<br />
+        <strong>Verwendungszweck: </strong>Dieses Cookie speichert die Log-in-Anfrage für User der Instagram-App.<strong>
+        <br />
+        </strong>
+        <strong>Ablaufdatum:</strong> nach Ende der Sitzung</p>
+        <p>
+        <strong>Name:</strong> rur<br />
+        <strong>Wert: </strong>ATN<br />
+        <strong>Verwendungszweck: </strong>Dabei handelt es sich um ein Instagram-Cookie, das die Funktionalität auf Instagram gewährleistet.<br />
+        <strong>Ablaufdatum:</strong> nach Ende der Sitzung</p>
+        <p>
+        <strong>Name:</strong> urlgen<br />
+        <strong>Wert: </strong>&#8220;{&#8221;194.96.75.33&#8221;: 1901}:1iEtYv:Y833k2_UjKvXgYe312214196&#8221;<br />
+        <strong>Verwendungszweck: </strong>Dieses Cookie dient den Marketingzwecken von Instagram.<br />
+        <strong>Ablaufdatum:</strong> nach Ende der Sitzung</p>
+        <p>
+        <strong>Anmerkung:</strong> Wir können hier keinen Vollständigkeitsanspruch erheben. Welche Cookies im individuellen Fall gesetzt werden, hängt von den eingebetteten Funktionen und Ihrer Verwendung von Instagram ab.</p>
+        <h3>Wie lange und wo werden die Daten gespeichert?</h3>
+        <p>Instagram teilt die erhaltenen Informationen zwischen den Facebook-Unternehmen mit externen Partnern und mit Personen, mit denen Sie sich weltweit verbinden. Die Datenverarbeitung erfolgt unter Einhaltung der eigenen Datenrichtlinie. Ihre Daten sind, unter anderem aus Sicherheitsgründen, auf den Facebook-Servern auf der ganzen Welt verteilt. Die meisten dieser Server stehen in den USA.</p>
+        <h3>Wie kann ich meine Daten löschen bzw. die Datenspeicherung verhindern?</h3>
+        <p>Dank der Datenschutz Grundverordnung haben Sie das Recht auf Auskunft, Übertragbarkeit, Berichtigung und Löschung Ihrer Daten. In den Instagram-Einstellungen können Sie Ihre Daten verwalten. Wenn Sie Ihre Daten auf Instagram völlig löschen wollen, müssen Sie Ihr Instagram-Konto dauerhaft löschen.</p>
+        <p>Und so funktioniert die Löschung des Instagram-Kontos:</p>
+        <p>Öffnen Sie zuerst die Instagram-App. Auf Ihrer Profilseite gehen Sie nach unten und klicken Sie auf „Hilfebereich“. Jetzt kommen Sie auf die Webseite des Unternehmens. Klicken Sie auf der Webseite auf „Verwalten des Kontos“ und dann auf „Dein Konto löschen“.</p>
+        <p>Wenn Sie Ihr Konto ganz löschen, löscht Instagram Posts wie beispielsweise Ihre Fotos und Status-Updates. Informationen, die andere Personen über Sie geteilt haben, gehören nicht zu Ihrem Konto und werden folglich nicht gelöscht.</p>
+        <p>Wie bereits oben erwähnt, speichert Instagram Ihre Daten in erster Linie über Cookies. Diese Cookies können Sie in Ihrem Browser verwalten, deaktivieren oder löschen. Abhängig von Ihrem Browser funktioniert die Verwaltung immer ein bisschen anders. Unter dem Abschnitt „Cookies“ finden Sie die entsprechenden Links zu den jeweiligen Anleitungen der bekanntesten Browser.</p>
+        <p>Sie können auch grundsätzlich Ihren Browser so einrichten, dass Sie immer informiert werden, wenn ein Cookie gesetzt werden soll. Dann können Sie immer individuell entscheiden, ob Sie das Cookie zulassen wollen oder nicht.</p>
+        <h3>Rechtsgrundlage</h3>
+        <p>Wenn Sie eingewilligt haben, dass Daten von Ihnen durch eingebundene Social-Media-Elemente verarbeitet und gespeichert werden können, gilt diese Einwilligung als Rechtsgrundlage der Datenverarbeitung <strong>(Art. 6 Abs. 1 lit. a DSGVO)</strong>. Grundsätzlich werden Ihre Daten auch auf Grundlage unseres berechtigten Interesses <strong>(Art. 6 Abs. 1 lit. f DSGVO)</strong> an einer schnellen und guten Kommunikation mit Ihnen oder anderen Kunden und Geschäftspartnern gespeichert und verarbeitet. Wir setzen die eingebundene Social-Media-Elemente gleichwohl nur ein, soweit Sie eine Einwilligung erteilt haben. Die meisten Social-Media-Plattformen setzen auch Cookies in Ihrem Browser, um Daten zu speichern. Darum empfehlen wir Ihnen, unseren Datenschutztext über Cookies genau durchzulesen und die Datenschutzerklärung oder die Cookie-Richtlinien des jeweiligen Dienstanbieters anzusehen.</p>
+        <p>Instagram bzw. Facebook verarbeitet Daten u.a. auch in den USA. Wir weisen darauf hin, dass nach Meinung des Europäischen Gerichtshofs derzeit kein angemessenes Schutzniveau für den Datentransfer in die USA besteht. Dies kann mit verschiedenen Risiken für die Rechtmäßigkeit und Sicherheit der Datenverarbeitung einhergehen.</p>
+        <p>Als Grundlage der Datenverarbeitung bei Empfängern mit Sitz in Drittstaaten (außerhalb der Europäischen Union, Island, Liechtenstein, Norwegen, also insbesondere in den USA) oder einer Datenweitergabe dorthin verwendet Facebook von der EU-Kommission genehmigte Standardvertragsklauseln (= Art. 46. Abs. 2 und 3 DSGVO). Diese Klauseln verpflichten Facebook, das EU-Datenschutzniveau bei der Verarbeitung relevanter Daten auch außerhalb der EU einzuhalten. Diese Klauseln basieren auf einem Durchführungsbeschluss der EU-Kommission. Sie finden den Beschluss sowie die Klauseln u.a. hier: <a href="https://germany.representation.ec.europa.eu/index_de" target="_blank" rel="follow noopener">https://germany.representation.ec.europa.eu/index_de</a>.</p>
+        <p>Wir haben versucht, Ihnen die wichtigsten Informationen über die Datenverarbeitung durch Instagram näherzubringen. Auf <a href="https://help.instagram.com/519522125107875">https://help.instagram.com/519522125107875</a>
+        <br />
+        können Sie sich noch näher mit den Datenrichtlinien von Instagram auseinandersetzen.</p>
+        <p>Alle Texte sind urheberrechtlich geschützt.</p>
+        <p style="margin-top:15px">Quelle: Erstellt mit dem <a href="https://www.adsimple.de/datenschutz-generator/" title="Datenschutz Generator von AdSimple für Deutschland">Datenschutz Generator</a> von AdSimple</p>
+    </div>
+    <div class="footer">
+        <ul class="footer-content">
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+            <li><a href="#booking">Kontakt</a></li>
+        </ul>
+        <p class="copyright">© 2022 Baba Shrimp Gang</p>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
