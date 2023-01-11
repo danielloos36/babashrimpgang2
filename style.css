@@ -36,8 +36,12 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3 {
     font-family: "phosphaterrsoliduploaded_file", "arial";
+}
+
+h4 {
+    font-family: "alata", "arial";
 }
 
 p {
@@ -70,7 +74,7 @@ h3 {
 }
 
 h4 {
-    font-size: 2.2rem;
+    font-size: 2rem;
     margin: 20px 0;
 }
 
@@ -514,7 +518,6 @@ a:hover {
     width: 60%;
     left: 50%;
     transform: translateX(-50%);
-    text-align: center;
 }
 
 .kontaktformular h4 {
@@ -803,6 +806,10 @@ label a {
     z-index: 0;
 }
 
+.epk-video video {
+    width: 100%;
+}
+
 .hero-image-epk img {
     width: 80%;
     max-width: 1050px;
@@ -870,6 +877,7 @@ label a {
 
 .slider-presse {
     text-align: center;
+    background-color: black;
 }
 
 .slider-presse-child img {
@@ -879,15 +887,19 @@ label a {
 }
 
 .pressefotos .slick-prev:before, .pressefotos .slick-next:before {
-    color: black !important;
+    color: white !important;
 }
 
 .pressefotos .slick-next:before {
-    margin-left: -200px !important;
+    margin-left: -10% !important;
 }
 
 .pressefotos .slick-prev:before {
-    margin-left: 100px !important;
+    margin-left: 10% !important;
+}
+
+.vergangen {
+    text-decoration: line-through;
 }
 
 /*** EPK-UNTERSEITE ***/
@@ -1168,6 +1180,96 @@ label a {
     }
     .label {
         font-size: 1.4rem !important;
+    }
+    .hero-image-epk img {
+    width: 98%;
+    }
+    .epk-video video {
+        width: 100%;
+    }
+    .epk-video {
+        width: 79%;
+        top: 37px;
+    }
+    .bsg-logo-presse {
+        fill: black;
+        width: 45px;
+        height: 45px;
+        margin-top: -5px;
+        margin-left: -6px;
+        position: relative;
+    }
+    .hoerproben {
+        margin-top: 95px;
+    }
+    .hoerproben-parent {
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-direction: row;
+        margin-bottom: 30px;
+    }
+    .hoerproben h2 {
+        margin-bottom: 18px;
+    }
+    .hoerproben-child {
+        padding: 11px 0px;
+        margin-bottom: 0px;
+        display: flex;
+        align-items: center;
+        width: 50%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        flex-direction: column; 
+    }
+    .hoerproben-child h3 {
+        font-size: 2rem;
+    }
+    .schallplatte-1 img, .schallplatte-2 img, .schallplatte-3 img {
+        width: 105px;
+    }
+    .hoerproben-child h3 {
+        padding-right: 3px;
+    }
+    .hero-image-epk h2 {
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+    .pressetext {
+        margin-top: 70px;
+    }
+    .livesession {
+        margin-top: 80px;
+    }
+    .livesession-video iframe {
+        max-width: 100%;
+        width: 100%;
+        height: 200px;
+    }
+    .pressefotos {
+        margin-top: 85px;
+    }
+    .slider-presse-child img {
+        max-width: 100%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .slider-presse {
+        background-color: white;
+    }
+    #Presse .konzerttermine-vergangen {
+        margin-top: 60px;
+    }
+    .kontakt-parent {
+        text-align: left;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+    .kontaktformular {
+        margin-bottom: 0;
     }
 }
 
