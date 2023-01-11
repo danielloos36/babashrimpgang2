@@ -137,9 +137,12 @@ tl = gsap.timeline({
 
 
 var playBtn = document.getElementById('play'),
-  resetBtn = document.getElementById('reset'),
-  hearbeat = document.getElementById('heartbeat')
-	audios = document.querySelectorAll('audio');
+  play2Btn = document.getElementById('play-2'),
+  play3Btn = document.getElementById('play-3'),
+  mofa = document.getElementById('song-mofa')
+  zweihundertsechs = document.getElementById('song-206')
+  zurAchtziger = document.getElementById('song-zur-achtziger')
+	audios = document.getElementsByClassName('audio-1');
 console.log(audios);
 
 
@@ -151,15 +154,24 @@ playBtn.addEventListener('mouseover', function() {
 }, false);
 
 playBtn.addEventListener('mouseleave', function() {
-  heartbeat.pause();
-  heartbeat.currentTime = 0;
+  mofa.pause();
+  mofa.currentTime = 0;
 }, false);
 
-resetBtn.addEventListener('mouseover', function() {
-    heartbeat.play();
+play2Btn.addEventListener('mouseover', function() {
+    zweihundertsechs.play();
 }, false);
 
-resetBtn.addEventListener('mouseleave', function() {
-  heartbeat.pause();
-  heartbeat.currentTime = 0;
+play2Btn.addEventListener('mouseleave', function() {
+  zweihundertsechs.pause();
+  zweihundertsechs.currentTime = 0;
+}, false);
+
+play3Btn.addEventListener('mouseover', function() {
+  zurAchtziger.play();
+}, false);
+
+play3Btn.addEventListener('mouseleave', function() {
+  zurAchtziger.pause();
+  zurAchtziger.currentTime = 0;
 }, false);
