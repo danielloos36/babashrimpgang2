@@ -520,6 +520,10 @@ a:hover {
     transform: translateX(-50%);
 }
 
+#Presse .kontaktformular {
+    text-align: center;
+}
+
 .kontaktformular h4 {
     margin-bottom: 0;
 }
