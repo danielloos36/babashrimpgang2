@@ -799,7 +799,7 @@ label a {
     position: relative;
     top: 0;
     pointer-events: none;   
-    z-index: 2;     
+    z-index: 2;
 }
 
 .epk-video {
@@ -1077,13 +1077,13 @@ label a {
         font-size: 3rem;
     }
     .scheinwerfer-rot {
-        top: 19px;
-        right: -17vw;
+        top: 0px;
+        right: -23vw;
         width: 367px;
     }
     .scheinwerfer-gelb {
-        top: 53px;
-        left: -17vw;
+        top: 25px;
+        left: -23vw;
         width: 309px;    
     }
     .hero-image img {
@@ -1133,7 +1133,7 @@ label a {
         margin: 0;
     }
     .myButton {
-        padding:10px 30px;
+        padding: 10px 20px;
     }
     .spotify img {
         width: 70vw;
@@ -1256,10 +1256,21 @@ label a {
     .livesession-video iframe {
         max-width: 100%;
         width: 100%;
-        height: 200px;
+        height: 220px;
+    }
+    .livesession.page-width {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .livesession.page-width p, .livesession.page-width h2 {
+        padding-left: 30px;
+        padding-right: 30px;
     }
     .pressefotos {
         margin-top: 85px;
+    }
+    .topnav a {
+    font-size: 1.9rem;
     }
     .slider-presse-child img {
         max-width: 100%;
