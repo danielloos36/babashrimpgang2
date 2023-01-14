@@ -65,7 +65,6 @@ gsap.from(".hoerproben-child", {
     trigger: '.hoerproben-child',
     toggleActions: 'play complete none reverse',
     start: 'top 70%',
-    markers: true
   },
     opacity: 0,
     stagger: 0.2,
@@ -76,7 +75,6 @@ gsap.from(".pressetext p", {
     trigger: '.pressetext p',
     toggleActions: 'play complete none none',
     start: 'top 70%',
-    markers: true
   },
     x: '-100%',
     opacity: 0,
@@ -88,7 +86,6 @@ gsap.from(".livesession iframe", {
     trigger: '.livesession',
     toggleActions: 'play complete none none',
     start: 'top 60%',
-    markers: true
   },
     x: '+100%',
     opacity: 0,
@@ -100,7 +97,6 @@ gsap.from(".konzerttermine-vergangen li", {
     trigger: '.konzerttermine-vergangen',
     toggleActions: 'play complete none none',
     start: 'top 70%',
-    markers: true
   },
     opacity: 0,
     ease: 'back',
@@ -113,7 +109,6 @@ gsap.from(".kontakt-child", {
     trigger: '.kontakt-parent',
     toggleActions: 'play complete none none',
     start: 'top 70%',
-    markers: true
   },
     opacity: 0,
     ease: 'back',
