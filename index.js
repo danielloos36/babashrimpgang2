@@ -145,7 +145,39 @@ var playBtn = document.getElementById('play'),
 	audios = document.getElementsByClassName('audio-1');
 console.log(audios);
 
+if($(window).width() > 991)
+{
+playBtn.addEventListener('mouseover', function() {
+[].forEach.call(audios, function(audio) {
+  // do whatever
+  audio.play();
+});
+}, false);
 
+playBtn.addEventListener('mouseleave', function() {
+  mofa.pause();
+  mofa.currentTime = 0;
+}, false);
+
+play2Btn.addEventListener('mouseover', function() {
+    zweihundertsechs.play();
+}, false);
+
+play2Btn.addEventListener('mouseleave', function() {
+  zweihundertsechs.pause();
+  zweihundertsechs.currentTime = 0;
+}, false);
+
+play3Btn.addEventListener('mouseover', function() {
+  zurAchtziger.play();
+}, false);
+
+play3Btn.addEventListener('mouseleave', function() {
+  zurAchtziger.pause();
+  zurAchtziger.currentTime = 0;
+}, false);
+}
+else {
 playBtn.addEventListener('click', function() {
 [].forEach.call(audios, function(audio) {
   // do whatever
@@ -175,3 +207,4 @@ play3Btn.addEventListener('mouseleave', function() {
   zurAchtziger.pause();
   zurAchtziger.currentTime = 0;
 }, false);
+}
