@@ -54,10 +54,77 @@ function burgerIcons() {
 
 gsap.registerPlugin(ScrollTrigger);
 
+gsap.from(".epk-video", {
+    opacity: 0,
+    scaleY: '0',
+    duration: 0.3,
+  },);
+
+gsap.from(".hoerproben-child", {
+  scrollTrigger: { 
+    trigger: '.hoerproben-child',
+    toggleActions: 'play complete none reverse',
+    start: 'top 70%',
+    markers: true
+  },
+    opacity: 0,
+    stagger: 0.2,
+  },);
+
+gsap.from(".pressetext p", {
+  scrollTrigger: { 
+    trigger: '.pressetext p',
+    toggleActions: 'play complete none none',
+    start: 'top 70%',
+    markers: true
+  },
+    x: '-100%',
+    opacity: 0,
+    duration: 0.2,
+  },);
+
+gsap.from(".livesession iframe", {
+  scrollTrigger: { 
+    trigger: '.livesession',
+    toggleActions: 'play complete none none',
+    start: 'top 60%',
+    markers: true
+  },
+    x: '+100%',
+    opacity: 0,
+    duration: 0.2,
+  },);
+
+gsap.from(".konzerttermine-vergangen li", {
+  scrollTrigger: { 
+    trigger: '.konzerttermine-vergangen',
+    toggleActions: 'play complete none none',
+    start: 'top 70%',
+    markers: true
+  },
+    opacity: 0,
+    ease: 'back',
+    stagger: 0.1,
+    duration: 1,
+  },);
+
+gsap.from(".kontakt-child", {
+  scrollTrigger: { 
+    trigger: '.kontakt-parent',
+    toggleActions: 'play complete none none',
+    start: 'top 70%',
+    markers: true
+  },
+    opacity: 0,
+    ease: 'back',
+    stagger: 0.1,
+    duration: 1,
+  },);
+
 gsap.to(".icons", {
   scrollTrigger: { 
     trigger: '.footer',
-    toggleActions: 'play complet reset reset',
+    toggleActions: 'play complete reset reset',
     start: 'top bottom'
   },
     duration: 0.1,
