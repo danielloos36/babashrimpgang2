@@ -951,6 +951,12 @@ label a {
     }
 }
 
+@media (min-width: 99px ) {
+    .hide-on-desktop {
+        display: none;
+    }
+}
+
 @media (max-width: 990px ) {
     .spotify {
         flex-wrap: wrap;
