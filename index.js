@@ -146,7 +146,7 @@ var playBtn = document.getElementById('play'),
 console.log(audios);
 
 
-playBtn.addEventListener('mouseover', function() {
+playBtn.addEventListener('click', function() {
 [].forEach.call(audios, function(audio) {
   // do whatever
   audio.play();
@@ -158,7 +158,7 @@ playBtn.addEventListener('mouseleave', function() {
   mofa.currentTime = 0;
 }, false);
 
-play2Btn.addEventListener('mouseover', function() {
+play2Btn.addEventListener('click', function() {
     zweihundertsechs.play();
 }, false);
 
@@ -167,7 +167,7 @@ play2Btn.addEventListener('mouseleave', function() {
   zweihundertsechs.currentTime = 0;
 }, false);
 
-play3Btn.addEventListener('mouseover', function() {
+play3Btn.addEventListener('click', function() {
   zurAchtziger.play();
 }, false);
 
