@@ -804,10 +804,12 @@ label a {
 
 .epk-video {
     position: absolute;
-    top: 100px;
+    top: 14%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 0;
+    width: 65%;
+    max-width: 848px;
 }
 
 .epk-video video {
@@ -1199,7 +1201,6 @@ label a {
     }
     .epk-video {
         width: 79%;
-        top: 37px;
     }
     .bsg-logo-presse {
         fill: black;
