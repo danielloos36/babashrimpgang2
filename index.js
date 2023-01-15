@@ -54,12 +54,6 @@ function burgerIcons() {
 
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.from(".epk-video", {
-    opacity: 0,
-    scaleY: '0',
-    duration: 0.3,
-  },);
-
 gsap.from(".hoerproben-child", {
   scrollTrigger: { 
     trigger: '.hoerproben-child',
