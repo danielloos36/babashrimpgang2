@@ -54,12 +54,6 @@ function burgerIcons() {
 
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.from(".epk-video", {
-    opacity: 0,
-    scaleY: '0',
-    duration: 0.3,
-  },);
-
 gsap.from(".hoerproben-child", {
   scrollTrigger: { 
     trigger: '.hoerproben-child',
@@ -68,6 +62,11 @@ gsap.from(".hoerproben-child", {
   },
     opacity: 0,
     stagger: 0.2,
+  },);
+
+gsap.to(".bsg-logo-presse", {
+    delay: 7,
+    rotate: 360
   },);
 
 gsap.from(".pressetext p", {
