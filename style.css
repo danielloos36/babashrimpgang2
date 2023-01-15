@@ -958,6 +958,15 @@ label a {
     .slider-presse-child img {
         max-height: 655px;
     }
+    .scheinwerfer-gelb {
+        left: -6vw;
+    }
+    .scheinwerfer-rot {
+        right: -6vw;
+    }
+    .kontakt-child {
+        padding: 0 30px;
+    }
 }
 
 @media (min-width: 991px ) {
@@ -1024,6 +1033,52 @@ label a {
     }
     .slider-presse {
         background-color: white;
+    }
+    .hoerproben-child {
+        padding: 50px 10px;
+        margin-bottom: 70px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .hoerproben-child h3 {
+        padding-right: 10px;
+    }
+}
+
+@media (max-width: 749px ) {
+    .kontakt-parent {
+        text-align: left;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+    .kontaktformular {
+        padding-left: 30px;
+        left: 0;
+        transform: none;
+    }
+    .hoerproben-parent {
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-direction: row;
+        margin-bottom: 30px;
+    }
+    .hoerproben h2 {
+        margin-bottom: 18px;
+    }
+    .hoerproben-child {
+        padding: 11px 0px;
+        margin-bottom: 0px;
+        display: flex;
+        align-items: center;
+        width: 50%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        flex-direction: column; 
     }
 }
 
@@ -1296,12 +1351,6 @@ label a {
     }
     #Presse .konzerttermine-vergangen {
         margin-top: 60px;
-    }
-    .kontakt-parent {
-        text-align: left;
-        display: flex;
-        justify-content: space-evenly;
-        flex-direction: column;
     }
     .kontaktformular {
         margin-bottom: 0;
