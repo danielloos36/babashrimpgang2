@@ -64,11 +64,6 @@ gsap.from(".hoerproben-child", {
     stagger: 0.2,
   },);
 
-gsap.to(".bsg-logo-presse", {
-    delay: 7,
-    rotate: 360
-  },);
-
 gsap.from(".pressetext p", {
   scrollTrigger: { 
     trigger: '.pressetext p',
