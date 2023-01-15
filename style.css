@@ -78,6 +78,11 @@ h4 {
     margin: 20px 0;
 }
 
+.checkmark {
+    width: 30px;
+    margin-bottom: -3px;
+}
+
 .page-width {
     max-width: 800px;
     padding-left: 55px;
@@ -119,6 +124,10 @@ h4 {
         font-size: 3rem;
         margin: 20px 0;
     
+    }
+    .checkmark {
+        width: 22px;
+        margin-bottom: -2px;
     }
 }
 
