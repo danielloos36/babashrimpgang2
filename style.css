@@ -1246,6 +1246,10 @@ label a {
     .kontaktformular {
         margin-top: 70px;
         width: 95%;
+        padding-left: 10px;
+    }
+    .kontakt-child {
+        padding: 0;
     }
     .social-typ {
         position: absolute;
