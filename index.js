@@ -57,7 +57,7 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.from(".hoerproben-child", {
   scrollTrigger: { 
     trigger: '.hoerproben-child',
-    toggleActions: 'play complete none reverse',
+    toggleActions: 'play complete none none',
     start: 'top 70%',
   },
     opacity: 0,
