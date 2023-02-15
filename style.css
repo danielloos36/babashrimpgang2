@@ -854,8 +854,6 @@ label a {
 
 .download-button:hover {
     background-color: #D86F6F;
-    transform: rotate(360deg);
-    transition: 1s;
 }
 
 .hoerproben {
