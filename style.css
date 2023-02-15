@@ -840,6 +840,24 @@ label a {
     margin-top: 150px;
 }
 
+.presse-link {
+    margin-bottom: 140px;
+}
+
+.download-button {
+    fill: white;
+    background-color: black;
+    padding: 6px 14px;
+    width: 45px;
+    height: 45px;
+}
+
+.download-button:hover {
+    background-color: #D86F6F;
+    transform: rotate(360deg);
+    transition: 1s;
+}
+
 .hoerproben {
     text-align: center;
     max-width: 1350px;
