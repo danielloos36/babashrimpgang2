@@ -881,20 +881,36 @@ label a {
     transition-duration: 80s;
 }
 
+.schallplatte-4:hover {
+    transform:rotate(3600deg);
+    transition-duration: 80s;
+}
+
 .hoerproben-parent {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto;
+    margin-bottom: 70px;
 }
 
 .hoerproben-child {
-    padding: 50px 10px;
-    margin-bottom: 70px;
+    padding: 20px 10px;
+    /* margin-bottom: 70px; */
     display: flex;
     align-items: center;
+    flex-basis: 40%;
+    flex-direction: column-reverse;
+    gap: 21px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-content: center;  
 }
 
 .hoerproben-child h3 {
-    padding-right: 30px;
+    /* padding-right: 30px; */
+    text-align: center;
+    margin-top: 0;
 }
 
 .pressetext {
@@ -998,6 +1014,9 @@ label a {
     .hide-on-desktop {
         display: none;
     }
+    .hoerproben-parent {
+        max-width: 59vw;
+    }
 }
 
 @media (max-width: 990px ) {
@@ -1059,17 +1078,7 @@ label a {
     .slider-presse {
         background-color: white;
     }
-    .hoerproben-child {
-        padding: 50px 10px;
-        margin-bottom: 70px;
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .hoerproben-child h3 {
-        padding-right: 10px;
-    }
+
 }
 
 @media (max-width: 749px ) {
@@ -1092,7 +1101,7 @@ label a {
         flex-direction: row;
         margin-bottom: 30px;
     }
-    .hoerproben h2 {
+    /* .hoerproben h2 {
         margin-bottom: 18px;
     }
     .hoerproben-child {
@@ -1104,7 +1113,7 @@ label a {
         justify-content: space-between;
         flex-wrap: wrap;
         flex-direction: column; 
-    }
+    } */
 }
 
 /* RESPONSIVNESS SMARTPHONE*/
@@ -1313,7 +1322,7 @@ label a {
     .hoerproben {
         margin-top: 95px;
     }
-    .hoerproben-parent {
+    /* .hoerproben-parent {
         flex-wrap: wrap;
         align-content: center;
         align-items: flex-start;
@@ -1333,11 +1342,11 @@ label a {
         justify-content: space-between;
         flex-wrap: wrap;
         flex-direction: column; 
-    }
+    } */
     .hoerproben-child h3 {
         font-size: 2rem;
     }
-    .schallplatte-1 img, .schallplatte-2 img, .schallplatte-3 img {
+    .schallplatte-1 img, .schallplatte-2 img, .schallplatte-3 img, .schallplatte-4 img {
         width: 105px;
     }
     .hoerproben-child h3 {
