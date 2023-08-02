@@ -195,9 +195,11 @@ tl = gsap.timeline({
 var playBtn = document.getElementById('play'),
   play2Btn = document.getElementById('play-2'),
   play3Btn = document.getElementById('play-3'),
+  play4Btn = document.getElementById('play-4'),
   mofa = document.getElementById('song-mofa')
   zweihundertsechs = document.getElementById('song-206')
-  zurAchtziger = document.getElementById('song-zur-achtziger')
+  ichKannNix = document.getElementById('song-ich-kann-nix')
+  werdIchNie = document.getElementById('song-werd-ich-nie')
 	audios = document.getElementsByClassName('audio-1');
 console.log(audios);
 
@@ -225,12 +227,21 @@ play2Btn.addEventListener('mouseleave', function() {
 }, false);
 
 play3Btn.addEventListener('mouseover', function() {
-  zurAchtziger.play();
+  ichKannNix.play();
 }, false);
 
 play3Btn.addEventListener('mouseleave', function() {
-  zurAchtziger.pause();
-  zurAchtziger.currentTime = 0;
+  ichKannNix.pause();
+  ichKannNix.currentTime = 0;
+}, false);
+
+play4Btn.addEventListener('mouseover', function() {
+  werdIchNie.play();
+}, false);
+
+play4Btn.addEventListener('mouseleave', function() {
+  werdIchNie.pause();
+  werdIchNie.currentTime = 0;
 }, false);
 }
 else {
@@ -256,11 +267,20 @@ play2Btn.addEventListener('mouseleave', function() {
 }, false);
 
 play3Btn.addEventListener('click', function() {
-  zurAchtziger.play();
+  ichKannNix.play();
 }, false);
 
 play3Btn.addEventListener('mouseleave', function() {
-  zurAchtziger.pause();
-  zurAchtziger.currentTime = 0;
+  ichKannNix.pause();
+  ichKannNix.currentTime = 0;
+}, false);
+
+play4Btn.addEventListener('click', function() {
+  werdIchNie.play();
+}, false);
+
+play4Btn.addEventListener('mouseleave', function() {
+  werdIchNie.pause();
+  werdIchNie.currentTime = 0;
 }, false);
 }
