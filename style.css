@@ -393,6 +393,8 @@ a:hover {
     left: 50%;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
+    max-width: 300px;
+    max-height: 295px;
 }
 
 .btn {
@@ -1252,7 +1254,7 @@ label a {
     }
     .spotify img {
         width: 70vw;
-        height: 35vw;
+        height: 50vw;
     }
     .slider-child img {
         height: 56vh;
