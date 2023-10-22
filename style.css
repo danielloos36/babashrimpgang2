@@ -239,7 +239,11 @@ h4 {
 }
 
 .hero-image img {
-    width: 80%;
+    width: 100%;
+    max-height: calc( 100vh - 80px );
+    object-fit: cover;
+    object-position: 50% 70%;
+    /* margin-top: -80px; */
 }
 
 a {
@@ -252,9 +256,10 @@ a:hover {
 }
 
 .bsg-logo {
-    fill: black;
+    fill: #000000;
     width: 400px;
     position: relative;
+    margin-top: -9px;
 }
 
 .bsg-logo-presse {
@@ -388,6 +393,8 @@ a:hover {
     left: 50%;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
+    max-width: 300px;
+    max-height: 295px;
 }
 
 .btn {
@@ -1172,8 +1179,13 @@ label a {
         padding: 16px 0 !important;
     }
     .bsg-logo {
-        width: 249px;
-        height: 39px;
+        width: 273px;
+    }
+    .main-content {
+        padding-top: 60px;
+    }
+    .topnav a {
+        padding: 7px 16px;
     }
     #datenschutz, #impressum {
         margin-top: 76px;
@@ -1192,7 +1204,7 @@ label a {
         width: 309px;    
     }
     .hero-image img {
-        width: 500px;
+        width: 170%;
         height: auto;
         left: 50%;
         transform: translateX(-50%);
@@ -1242,7 +1254,7 @@ label a {
     }
     .spotify img {
         width: 70vw;
-        height: 35vw;
+        height: 50vw;
     }
     .slider-child img {
         height: 56vh;
