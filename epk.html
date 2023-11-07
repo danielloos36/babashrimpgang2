@@ -132,9 +132,43 @@
                 </p>
             </div>
         </div>
+
+        <div class="video-slider">
+            <div class="video-parent">
+                <h2>Musikvideos</h2>
+            </div>
+            <div class="slider-video">
+                <div class="slider-video-child">
+                    <div class="livesession-video">
+                        <iframe width="1200" height="680" 
+                            src="https://www.youtube.com/embed/AZw0zigIpg0?si=WyfEjfpBRFIx7EBZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+                <div class="slider-video-child">
+                    <div class="livesession-video">
+                        <iframe width="1200" height="680" 
+                            src="https://www.youtube-nocookie.com/embed/F94JSwZPUio" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- 
         <div class="livesession page-width">
-            <h2>Musikvideo Membercard</h2>
-                <p>Hier das Musikvideo zu unserem am 07.04.23 veröffentlichten Song Membercard</p>
+            <h2>Werd ich nie - Musikvideo</h2>
+            <div class="wohnzimmer">
+                <img src="assets/wohnzimmer.svg" alt="">
+                <div class="livesession-video">
+                    <iframe width="1200" height="680" 
+                        src="https://www.youtube.com/embed/AZw0zigIpg0?si=WyfEjfpBRFIx7EBZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+        <div class="livesession page-width">
+            <h2>Membercard - Musikvideo </h2>
             <div class="wohnzimmer">
                 <img src="assets/wohnzimmer.svg" alt="">
                 <div class="livesession-video">
@@ -143,7 +177,8 @@
                     </iframe>
                 </div>
             </div>
-        </div>
+        </div> -->
+
         <!-- <div class="social-media overflow" id="social-media">
             <div class="textbox-social page-width">
                 <h2>Social media</h2>
@@ -314,6 +349,13 @@
         $('.slider-presse').slick({
             autoplay: true,
             speed: 1000,
+            autoplaySpeed: 4000,
+            arrows: true,
+        }
+        );
+
+        $('.slider-video').slick({
+            autoplay: false,
             autoplaySpeed: 4000,
             arrows: true,
         }

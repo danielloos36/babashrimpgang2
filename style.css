@@ -567,6 +567,28 @@ a:hover {
     text-align: center;
 }
 
+.video-slider h2 {
+    text-align: center;
+}
+
+.video-slider {
+    margin-top: 180px;
+}
+
+.video-slider .slider-video {
+    background-color: transparent;
+}
+
+.video-slider .slick-prev:before, .video-slider .slick-next:before {
+    font-size: 60px;
+    color: rgb(0, 0, 0);
+    opacity: 1;
+}
+
+.video-slider {
+    text-align: center;
+}
+
 .form {
     width: 100%;
 }
@@ -1404,6 +1426,12 @@ label a {
     }
     .kontaktformular {
         margin-bottom: 0;
+    }
+    .video-slider .slick-prev:before, .video-slider .slick-next:before {
+        font-size: 30px;
+    }
+    .video-slider {
+        margin-top: 60px;
     }
 }
 
