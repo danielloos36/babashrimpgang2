@@ -341,8 +341,6 @@ a:hover {
 	padding:15px 40px;
     border-radius: 0;
 	text-decoration: none;
-    position: relative;
-    z-index: 2;
 }
 .myButton:hover {
 	background-color:#D86F6F;
@@ -473,12 +471,12 @@ a:hover {
 }
 
 .slick-prev {
-    z-index: 2;
+    z-index: 1;
     left: 26px;
 }
 
 .slick-next {
-    z-index: 2;
+    z-index: 1;
     right: 60px;
 }
 
