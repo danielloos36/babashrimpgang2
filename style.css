@@ -30,10 +30,14 @@ html {
 
 body {
     min-width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: auto;
     margin: 0px;
     padding: 0px;
     overflow-x: hidden;
+    background-image: url('assets/background-website.jpg');
+    background-repeat: repeat;
+    background-size: 1000px;
 }
 
 h1, h2, h3 {
@@ -131,13 +135,52 @@ h4 {
     }
 }
 
+body {
+    font-family: Arial, sans-serif;
+}
+
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
 .navbar {
     width: 100%;
     position: absolute;
     overflow: hidden;
+    z-index: 2;
 }
 
-.main-content {
+/* .main-content {
+    padding-top: 80px;
+} */
+.main-content.epk{
     padding-top: 80px;
 }
 
@@ -169,6 +212,51 @@ h4 {
 .bar3.change {
     transform: translate(0, -11px) rotate(45deg);
     background-color: white;
+}
+
+.bandfotos-wrapper {
+    width: 100vw;
+    overflow: auto;
+}
+
+.bandfotos {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 15px;
+    overflow: auto;
+    padding: 15px;
+    width: max-content;
+}
+
+.social-media-multicolumn {
+    text-align: center;
+    padding: 30px 40px;
+}
+
+.social-media-multicolumn-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+}
+
+.social-media-multicolumn-item {
+    width: 400px;
+    max-width: 30vw;
+    position: relative;
+}
+
+.social-media-multicolumn-item img {
+    width: 100%;
+    aspect-ratio: 9 / 17;
+}
+
+.social-media-multicolumn-item video {
+    position: absolute;
+    left: 21px;
+    top: 32px;
+    width: 90%;
+    aspect-ratio: 9 / 17;
 }
 
 #navbar-collapsed {
@@ -240,7 +328,7 @@ h4 {
 
 .hero-image img {
     width: 100%;
-    max-height: calc( 100vh - 80px );
+    max-height: 100vh;
     object-fit: cover;
     object-position: 50% 70%;
     /* margin-top: -80px; */
@@ -333,8 +421,6 @@ a:hover {
 	padding:15px 40px;
     border-radius: 0;
 	text-decoration: none;
-    position: relative;
-    z-index: 2;
 }
 .myButton:hover {
 	background-color:#D86F6F;
@@ -465,12 +551,12 @@ a:hover {
 }
 
 .slick-prev {
-    z-index: 2;
+    z-index: 1;
     left: 26px;
 }
 
 .slick-next {
-    z-index: 2;
+    z-index: 1;
     right: 60px;
 }
 
@@ -494,7 +580,7 @@ a:hover {
     left: 50%;
     transform: translateX(-50%);
     margin-bottom: 50px;
-    margin-top: 80px;
+    margin-top: 55px;
 }
 
 .instabutton .myButton {
@@ -505,7 +591,7 @@ a:hover {
 .social-typ {
     position: absolute;
     width: 232px;
-    top: -93px;
+    top: -51px;
     right: -84px;
     transform: rotate(5deg);
     z-index: 0;
@@ -599,6 +685,7 @@ input {
     width: 100%;
     box-sizing: border-box;
     border: 2px solid black;
+    background-color: transparent;
     height: 55px;
     font-family: "Alata", "arial";
     font-size: 1.4rem;
@@ -633,7 +720,7 @@ textarea {
     padding: 5px 15px;
     width: 100%;
     border: 2px solid black;
-    background-color: white;
+    background-color: transparent;
     height: 170px;
     font-family: "Alata", "arial";
     font-size: 1.4rem;
@@ -662,7 +749,7 @@ textarea {
 }
 
 .form-check-label {
-    padding-left: 45px;
+    padding-left: 35px;
 }
 
 .form-button {
@@ -750,6 +837,10 @@ ul.footer-content {
     position: relative;
     text-align: center;
     margin-top: 91px;
+}
+
+.pressefotos-parent h2 {
+    margin-bottom: 20px;
 }
 
 #Presse .konzerttermine-vergangen {
@@ -1052,6 +1143,9 @@ label a {
     .spotify {
         flex-wrap: wrap;
     }
+    .hide-on-mobile {
+        display: none;
+    }
     .box-1 {
         width: 75vw;
         height: 75vw;
@@ -1088,7 +1182,7 @@ label a {
         width: 539px;
     }
     .hero-image img {
-        width: 954px;
+        width: 100%;
         height: auto;
         left: 50%;
         transform: translateX(-50%);
@@ -1101,8 +1195,11 @@ label a {
     .slider-presse-child img {
         max-width: 100%;
         width: 100%;
-        height: 100%;
+        max-height: 230px;
         object-fit: cover;
+    }
+    .bandfotos {
+        gap: 10px;
     }
     .slider-presse {
         background-color: white;
@@ -1129,6 +1226,9 @@ label a {
         justify-content: space-between;
         flex-direction: row;
         margin-bottom: 30px;
+    }
+    body {
+        background-size: 800px;
     }
     /* .hoerproben h2 {
         margin-bottom: 18px;
@@ -1174,12 +1274,12 @@ label a {
     .konzerttermine-vergangen li {
         font-size: 1.4rem;
     }
-    .konzerttermine-vergangen {
+    /* .konzerttermine-vergangen {
         overflow-x: hidden;
-    }
-    .ueber-uns {
+    } */
+    /* .ueber-uns {
         overflow-x: hidden;
-    }
+    } */
     .releases h2 {
         margin-bottom: 0;
     }
@@ -1203,11 +1303,17 @@ label a {
     .bsg-logo {
         width: 273px;
     }
-    .main-content {
+    /* .main-content {
+        padding-top: 60px;
+    } */
+    .main-content.epk {
         padding-top: 60px;
     }
     .topnav a {
         padding: 7px 16px;
+    }
+    #Presse .topnav a {
+        padding: 12px 16px;
     }
     #datenschutz, #impressum {
         margin-top: 76px;
@@ -1217,16 +1323,16 @@ label a {
     }
     .scheinwerfer-rot {
         top: 0px;
-        right: -23vw;
+        right: -19vw;
         width: 367px;
     }
     .scheinwerfer-gelb {
         top: 25px;
-        left: -23vw;
-        width: 309px;    
+        left: -18vw;
+        width: 309px;
     }
     .hero-image img {
-        width: 170%;
+        width: 100%;
         height: auto;
         left: 50%;
         transform: translateX(-50%);
@@ -1275,7 +1381,7 @@ label a {
         padding: 10px 20px;
     }
     .spotify img {
-        width: 70vw;
+        width: 53vw;
         height: 50vw;
     }
     .slider-child img {

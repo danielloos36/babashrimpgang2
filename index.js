@@ -1,3 +1,34 @@
+window.addEventListener('scroll', () => {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        createConfetti();
+    }
+});
+
+function createConfetti() {
+    const container = document.getElementById('confetti-container');
+    for (let i = 0; i < 100; i++) {
+        const confetti = document.createElement('div');
+        confetti.classList.add('confetti');
+        confetti.style.left = Math.random() * 100 + 'vw';
+        confetti.style.backgroundColor = getRandomColor();
+        confetti.style.animationDuration = Math.random() * 2 + 2 + 's'; // zwischen 2 und 4 Sekunden
+        container.appendChild(confetti);
+        
+        // Entferne das Konfetti nach der Animation
+        setTimeout(() => {
+            confetti.remove();
+        }, 4000); // nach 4 Sekunden entfernen
+    }
+}
+
+function getRandomColor() {
+    const colors = ['#FFC700', '#FF3D00', '#FF6F00', '#D50000', '#00C853', '#00B0FF', '#AA00FF'];
+    return colors[Math.floor(Math.random() * colors.length)];
+}
+
+
+
+
 function myFunction() {
 var x = document.getElementById("navbar-collapsed");
 if (x.style.top === "-20vh") {
