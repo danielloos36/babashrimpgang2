@@ -1,3 +1,35 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const video = document.querySelector('.epk-video video');
+    const container = document.querySelector('.shrimp-tv');
+
+    function resizeVideo() {
+        const containerAspect = container.offsetWidth / container.offsetHeight;
+        const videoAspect = video.videoWidth / video.videoHeight;
+
+        if (containerAspect > videoAspect) {
+            // Container ist breiter als das Video
+            video.style.width = '100%';
+            video.style.height = 'auto';
+            video.style.top = '50%';
+            video.style.left = '0';
+            video.style.transform = 'translateY(-50%)';
+        } else {
+            // Container ist höher als das Video
+            video.style.width = 'auto';
+            video.style.height = '100%';
+            video.style.top = '0';
+            video.style.left = '50%';
+            video.style.transform = 'translateX(-50%)';
+        }
+    }
+
+    video.addEventListener('loadedmetadata', resizeVideo);
+    window.addEventListener('resize', resizeVideo);
+});
+
+
+
+
 window.addEventListener('scroll', () => {
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
         createConfetti();
