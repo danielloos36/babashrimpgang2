@@ -214,12 +214,18 @@ body {
     background-color: white;
 }
 
+.bandfotos-wrapper {
+    width: 100vw;
+    overflow: auto;
+}
+
 .bandfotos {
     display: flex;
     flex-wrap: nowrap;
     gap: 15px;
     overflow: auto;
     padding: 15px;
+    width: max-content;
 }
 
 .social-media-multicolumn {
@@ -833,6 +839,10 @@ ul.footer-content {
     margin-top: 91px;
 }
 
+.pressefotos-parent h2 {
+    margin-bottom: 20px;
+}
+
 #Presse .konzerttermine-vergangen {
     margin-top: 180px;
 }
@@ -1185,8 +1195,11 @@ label a {
     .slider-presse-child img {
         max-width: 100%;
         width: 100%;
-        height: 100%;
+        max-height: 230px;
         object-fit: cover;
+    }
+    .bandfotos {
+        gap: 10px;
     }
     .slider-presse {
         background-color: white;
