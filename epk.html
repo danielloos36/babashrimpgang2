@@ -146,77 +146,78 @@ Mit kreativen Songs und einem unverwechselbaren Sound prägt die Baba Shrimp Gan
                 <div class="social-media-multicolumn-wrapper">
                     <div class="social-media-multicolumn-item video-container">
                         <img class="smartphone-mask" src="assets/smartphone-mask.svg" alt="">
-                            <video class="myVideo" width="840" loop muted autoplay>
+                            <video class="myVideo" width="400" loop muted autoplay>
                             <source src="assets/ddn-komprimiert.mp4" type="video/mp4">
                             </video>
-                            <img class="volumeButton" src="assets/lautstärke-aus.svg" alt="Lautstärke" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); cursor: pointer;">
+                            <img class="volumeButton" src="assets/lautstärke-aus.svg" alt="Lautstärke">
                     </div>
                     <div class="social-media-multicolumn-item video-container">
                         <img class="smartphone-mask" src="assets/smartphone-mask.svg" alt="">
-                            <video class="myVideo" width="840" loop muted autoplay>
+                            <video class="myVideo" width="400" loop muted autoplay>
                             <source src="assets/sgf-24-komprimiert.mp4" type="video/mp4">
                             </video>
-                            <img class="volumeButton" src="assets/lautstärke-aus.svg" alt="Lautstärke" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); cursor: pointer;">
+                            <img class="volumeButton" src="assets/lautstärke-aus.svg" alt="Lautstärke">
                     </div>
                     <div class="social-media-multicolumn-item video-container">
                         <img class="smartphone-mask" src="assets/smartphone-mask.svg" alt="">
-                            <video class="myVideo" width="840" loop muted autoplay>
-                            <source src="assets/sgf-24-komprimiert.mp4" type="video/mp4">
+                            <video class="myVideo" width="400" loop muted autoplay>
+                            <source src="assets/jenny.mp4" type="video/mp4">
                             </video>
-                            <img class="volumeButton" src="assets/lautstärke-aus.svg" alt="Lautstärke" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); cursor: pointer;">
+                            <img class="volumeButton" src="assets/lautstärke-aus.svg" alt="Lautstärke">
                     </div>
                 </div>
             </div>
 
-        <script>
+<script>
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('DOM fully loaded');
-  
-  const videoContainers = document.querySelectorAll('.video-container');
-  console.log('Found video containers:', videoContainers.length);
-
-  videoContainers.forEach((container, index) => {
-    const video = container.querySelector('.myVideo');
-    const volumeButton = container.querySelector('.volumeButton');
     
-    console.log(`Container ${index + 1} - Video:`, video);
-    console.log(`Container ${index + 1} - Volume Button:`, volumeButton);
+    const videoContainers = document.querySelectorAll('.video-container');
 
-    if (!video || !volumeButton) {
-      console.error(`Container ${index + 1} - Missing video or button element`);
-      return;
-    }
+    let videos = [];
 
-    let isMuted = true;
+    videoContainers.forEach((container, index) => {
+        const video = container.querySelector('.myVideo');
+        const volumeButton = container.querySelector('.volumeButton');
+        
+        if (!video) {
+            return;
+        }
 
-    volumeButton.addEventListener('click', function(event) {
-      console.log(`Button ${index + 1} clicked`);
-      event.preventDefault(); // Prevent any default action
-      
-      if (isMuted) {
-        video.muted = false;
-        volumeButton.src = 'assets/lautstärke-ein.svg';
-        console.log(`Video ${index + 1} unmuted`);
-      } else {
-        video.muted = true;
-        volumeButton.src = 'assets/lautstärke-aus.svg';
-        console.log(`Video ${index + 1} muted`);
-      }
-      isMuted = !isMuted;
+        videos.push({video, volumeButton, isMuted: true});
+
+        function toggleMute(event) {
+            event.preventDefault(); // Prevent any default action
+            
+            // Mute all other videos
+            videos.forEach((v, i) => {
+                if (i !== index) {
+                    v.video.muted = true;
+                    v.isMuted = true;
+                    if (v.volumeButton) v.volumeButton.src = 'assets/lautstärke-aus.svg';
+                }
+            });
+
+            // Toggle mute for the clicked video
+            if (videos[index].isMuted) {
+                video.muted = false;
+                if (volumeButton) volumeButton.src = 'assets/lautstärke-ein.svg';
+            } else {
+                video.muted = true;
+                if (volumeButton) volumeButton.src = 'assets/lautstärke-aus.svg';
+            }
+            videos[index].isMuted = !videos[index].isMuted;
+        }
+
+        // Add click event listener to the video
+        video.addEventListener('click', toggleMute);
+
+        // If volumeButton exists, add click event listener to it as well
+        if (volumeButton) {
+            volumeButton.addEventListener('click', toggleMute);
+        }
     });
-
-    // Show/hide volume button
-    container.addEventListener('mouseenter', function() {
-      volumeButton.style.display = 'block';
-      console.log(`Button ${index + 1} shown`);
-    });
-    container.addEventListener('mouseleave', function() {
-      volumeButton.style.display = 'none';
-      console.log(`Button ${index + 1} hidden`);
-    });
-  });
 });
-        </script>
+</script>
 
         <!-- 
         <div class="livesession page-width">

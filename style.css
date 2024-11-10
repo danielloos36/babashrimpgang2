@@ -244,6 +244,8 @@ body {
     width: 400px;
     max-width: 30vw;
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .social-media-multicolumn-item .smartphone-mask {
@@ -255,12 +257,21 @@ body {
 
 .social-media-multicolumn-item video {
     position: relative;
-    left: 9px;
+    left: 0;
     top: 4px;
     width: 96%;
     border-radius: 72px;
     object-fit: cover;
     aspect-ratio: 8 / 16;
+}
+
+.volumeButton {
+    position: absolute; 
+    bottom: 10px;
+    right: 10px;
+    height: 60px;
+    transform: translate(-50%, -50%); 
+    cursor: pointer;
 }
 
 #navbar-collapsed {
