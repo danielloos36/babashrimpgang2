@@ -141,29 +141,86 @@ Mit kreativen Songs und einem unverwechselbaren Sound prägt die Baba Shrimp Gan
             </div>
         </div> -->
 
-            <!-- <div class="social-media-multicolumn">
+            <div class="social-media-multicolumn">
                 <h2>Social Media</h2>
                 <div class="social-media-multicolumn-wrapper">
-                    <div class="social-media-multicolumn-item">
-                        <img src="assets/smartphone.svg" alt="">
-                            <video width="840" controls">
-                            <source src="assets/sgf-24-komprimiert.mp4" type="video/mp4">
+                    <div class="social-media-multicolumn-item video-container">
+                        <img class="smartphone-mask" src="assets/smartphone-mask.svg" alt="">
+                            <video class="myVideo" width="400" loop muted autoplay>
+                            <source src="assets/ddn-komprimiert.mp4" type="video/mp4">
                             </video>
+                            <img class="volumeButton" src="assets/lautstärke-aus.svg" alt="Lautstärke">
                     </div>
-                    <div class="social-media-multicolumn-item">
-                        <img src="assets/smartphone.svg" alt="">
-                            <video width="840" controls>
+                    <div class="social-media-multicolumn-item video-container">
+                        <img class="smartphone-mask" src="assets/smartphone-mask.svg" alt="">
+                            <video class="myVideo" width="400" loop muted autoplay>
                             <source src="assets/sgf-24-komprimiert.mp4" type="video/mp4">
                             </video>
+                            <img class="volumeButton" src="assets/lautstärke-aus.svg" alt="Lautstärke">
                     </div>
-                    <div class="social-media-multicolumn-item">
-                        <img src="assets/smartphone.svg" alt="">
-                            <video width="840" controls>
-                            <source src="assets/sgf-24-komprimiert.mp4" type="video/mp4">
+                    <div class="social-media-multicolumn-item video-container">
+                        <img class="smartphone-mask" src="assets/smartphone-mask.svg" alt="">
+                            <video class="myVideo" width="400" loop muted autoplay>
+                            <source src="assets/jenny.mp4" type="video/mp4">
                             </video>
+                            <img class="volumeButton" src="assets/lautstärke-aus.svg" alt="Lautstärke">
                     </div>
                 </div>
-            </div> -->
+                <div class="social-media-button">
+                    <a href="https://www.instagram.com/shrimp_musik/" class="myButton" target="_blank">Zu Instagram</a>
+                </div>
+            </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    
+    const videoContainers = document.querySelectorAll('.video-container');
+
+    let videos = [];
+
+    videoContainers.forEach((container, index) => {
+        const video = container.querySelector('.myVideo');
+        const volumeButton = container.querySelector('.volumeButton');
+        
+        if (!video) {
+            return;
+        }
+
+        videos.push({video, volumeButton, isMuted: true});
+
+        function toggleMute(event) {
+            event.preventDefault(); // Prevent any default action
+            
+            // Mute all other videos
+            videos.forEach((v, i) => {
+                if (i !== index) {
+                    v.video.muted = true;
+                    v.isMuted = true;
+                    if (v.volumeButton) v.volumeButton.src = 'assets/lautstärke-aus.svg';
+                }
+            });
+
+            // Toggle mute for the clicked video
+            if (videos[index].isMuted) {
+                video.muted = false;
+                if (volumeButton) volumeButton.src = 'assets/lautstärke-ein.svg';
+            } else {
+                video.muted = true;
+                if (volumeButton) volumeButton.src = 'assets/lautstärke-aus.svg';
+            }
+            videos[index].isMuted = !videos[index].isMuted;
+        }
+
+        // Add click event listener to the video
+        video.addEventListener('click', toggleMute);
+
+        // If volumeButton exists, add click event listener to it as well
+        if (volumeButton) {
+            volumeButton.addEventListener('click', toggleMute);
+        }
+    });
+});
+</script>
 
         <!-- 
         <div class="livesession page-width">
@@ -257,40 +314,40 @@ Mit kreativen Songs und einem unverwechselbaren Sound prägt die Baba Shrimp Gan
             <h2>LIVE</h2>
             <div class="ul-parent">
                 <ul>
-                    <!-- <li>28.08.21 Summerkies Festival <img class="checkmark" src="assets/check.svg" alt="checkmark"></li> -->
-                    <!-- <li>26.03.22 Krone Darmstadt <img class="checkmark" src="assets/check.svg" alt="checkmark"></li> -->
+                    <li>28.08.21 Summerkies Festival <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
+                    <li>26.03.22 Krone Darmstadt <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
                     <!-- <li>20.05.22 Bensheim Mab‘s Café <img class="checkmark" src="assets/check.svg" alt="checkmark"></li> -->
-                    <li>03.06.22 Schlossgrabenfest Darmstadt <img class="checkmark" src="assets/check.svg" alt="checkmark"></li>
+                    <li>03.06.22 Schlossgrabenfest Darmstadt <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
                     <!-- <li>18.06.22 Jugendkirchentag Gernsheim <img class="checkmark" src="assets/check.svg" alt="checkmark"></li> -->
-                    <li>01.07.22 Heinerfest Darmstadt <img class="checkmark" src="assets/check.svg" alt="checkmark"></li>
+                    <li>01.07.22 Heinerfest Darmstadt <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
                     <!-- <li>01.07.22 Jugendehrung der Stadt Darmstadt <img class="checkmark" src="assets/check.svg" alt="checkmark"></li> -->
-                    <li>03.09.22 Rupat Festival <img class="checkmark" src="assets/check.svg" alt="checkmark"></li>
-                    <li>10.09.22 Summerkies Festival <img class="checkmark" src="assets/check.svg" alt="checkmark"></li>
-                    <li>24.09.22 Sundaze Open Air <img class="checkmark" src="assets/check.svg" alt="checkmark"></li>
-                    <!-- <li>08.10.22 Elfer Club SPH Viertelfinale <img class="checkmark" src="assets/check.svg" alt="checkmark"></li> -->
-                    <li>12.11.22 Elfer Club SPH Halbfinale <img class="checkmark" src="assets/check.svg" alt="checkmark"></li>
-                    <li>08.04.23 Live Music Hall Köln <img class="checkmark" src="assets/check.svg" alt="checkmark"></li>
-                    <li>30.04.23 Rock in den Mai <img class="checkmark" src="assets/check.svg" alt="checkmark"></li>
-                    <!-- <li>05.05.23 Poly Ghost Support (Ponyhof Frankfurt) <img class="checkmark" src="assets/check.svg" alt="checkmark"></li> -->
+                    <li>03.09.22 Rupat Festival <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
+                    <li>10.09.22 Summerkies Festival <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
+                    <li>24.09.22 Sundaze Open Air <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
+                    <li>08.10.22 Elfer Club SPH Viertelfinale <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
+                    <li>12.11.22 Elfer Club SPH Halbfinale <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
+                    <li>08.04.23 Live Music Hall Köln <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
+                    <li>30.04.23 Rock in den Mai <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
+                    <li>05.05.23 Poly Ghost Support (Ponyhof Frankfurt) <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
                     <!-- <li>16.06.23 Nacht der Kirchen (DA) <img class="checkmark" src="assets/check.svg" alt="checkmark"></li> -->
-                    <!-- <li>16.07.23 Darmstadt Speakers <img class="checkmark" src="assets/check.svg" alt="checkmark"></li> -->
-                    <!-- <li>18.07.23 Heidelberg Acoustic Lounge <img class="checkmark" src="assets/check.svg" alt="checkmark"></li> -->
-                    <li>05.08.23 Sound of the Forest <img class="checkmark" src="assets/check.svg" alt="checkmark"></li>
-                    <li>11.08.23 Nonstock Festival <img class="checkmark" src="assets/check.svg" alt="checkmark"></li>
-                    <li>24.08.23 Centralstation Darmstadt <img class="checkmark" src="assets/check.svg" alt="checkmark"></li>
-                    <li>25.08.23 Sommerschein Festival <img class="checkmark" src="assets/check.svg" alt="checkmark"></li>
-                    <!-- <li>16.09.23 Summerkies Darmstadt <img class="checkmark" src="assets/check.svg" alt="checkmark"></li> -->
-                    <li>08.05.24 Frischzelle Darmstadt <img class="checkmark" src="assets/check.svg" alt="checkmark"></li>
-                    <li>10.05.24 KFZ Marburg <img class="checkmark" src="assets/check.svg" alt="checkmark"></li>
-                    <li>11.05.24 Bel R Festival Rüsselsheim <img class="checkmark" src="assets/check.svg" alt="checkmark"></li>
-                    <li>18.05.24 Schlossgrabenfest Darmstadt <img class="checkmark" src="assets/check.svg" alt="checkmark"></li>
-                    <li>06.07.24 Juggle Maniac Festival (FR) <img class="checkmark" src="assets/check.svg" alt="checkmark"></li>
-                    <li>26.07.24 Campusfest Dieburg <img class="checkmark" src="assets/check.svg" alt="checkmark"></li>
-                    <li>27.07.24 Wein am Stein Würzburg <img class="checkmark" src="assets/check.svg" alt="checkmark"></li>
-                    <li>16.08.24 Karben Open Air <img class="checkmark" src="assets/check.svg" alt="checkmark"></li>
-                    <li>31.08.24 SUMMERKIES <img class="checkmark" src="assets/check.svg" alt="checkmark"></li>
+                    <li>16.07.23 Darmstadt Speakers <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
+                    <li>18.07.23 Heidelberg Acoustic Lounge <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
+                    <li>05.08.23 Sound of the Forest <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
+                    <li>11.08.23 Nonstock Festival <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
+                    <li>24.08.23 Centralstation Darmstadt <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
+                    <li>25.08.23 Sommerschein Festival <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
+                    <li>16.09.23 Summerkies Darmstadt <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
+                    <li>08.05.24 Frischzelle Darmstadt <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
+                    <li>10.05.24 KFZ Marburg <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
+                    <li>11.05.24 Bel R Festival Rüsselsheim <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
+                    <li>18.05.24 Schlossgrabenfest Darmstadt <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
+                    <li>06.07.24 Juggle Maniac Festival (FR) <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
+                    <li>26.07.24 Campusfest Dieburg <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
+                    <li>27.07.24 Wein am Stein Würzburg <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
+                    <li>16.08.24 Karben Open Air <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
+                    <li>31.08.24 SUMMERKIES <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
                     <li>22.11.24 Yara Support (Frankfurt)</li>
-                    <li>21.12.24 TBA</li>
+                    <li>21.12.24 Support KAFFKIEZ Rosenheim</li>
                 </ul>
                 <img class="scheinwerfer-gelb" src="assets/scheinwerfer-gelb.svg" alt="">
                 <img class="scheinwerfer-rot" src="assets/scheinwerfer-rot.svg" alt="">

@@ -83,7 +83,7 @@ h4 {
 }
 
 .checkmark {
-    width: 30px;
+    width: 32px;
     margin-bottom: -3px;
 }
 
@@ -244,20 +244,62 @@ body {
     width: 400px;
     max-width: 30vw;
     position: relative;
+    display: flex;
+    justify-content: center;
+    min-width: 260px;
 }
 
-.social-media-multicolumn-item img {
+.social-media-multicolumn-item .smartphone-mask {
     width: 100%;
-    aspect-ratio: 9 / 17;
+    position: absolute;
+    z-index: 5;
+    pointer-events: none;
 }
 
 .social-media-multicolumn-item video {
-    position: absolute;
-    left: 21px;
-    top: 32px;
-    width: 90%;
-    aspect-ratio: 9 / 17;
+    position: relative;
+    left: 0;
+    top: 4px;
+    width: 96.5%;
+    border-radius: 4.5vw;
+    object-fit: cover;
+    aspect-ratio: 8 / 16;
+    cursor: pointer;
 }
+
+.volumeButton {
+    position: absolute;
+    bottom: 6%;
+    right: 9%;
+    height: 60px;
+}
+
+.social-media-button {
+    margin-top: 70px;
+}
+
+/* .volumeButton {
+    animation: bounce 3s infinite;
+    -webkit-animation: bounce 3s infinite;
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    transform: scale(1) translate(-50%, -40%);
+  }
+  
+  8%{
+    transform: translate(-50%, -100%);
+  }
+
+  12%{
+    transform: scale(1) translate(-50%, -50%);
+  }
+  
+ 100% {
+    transform: scale(1) translate(-50%, -50%);
+  }
+} */
 
 #navbar-collapsed {
     background-color: black;
@@ -1128,6 +1170,9 @@ label a {
     .kontakt-child {
         padding: 0 30px;
     }
+    .social-media-multicolumn-item video {
+        border-radius: 5vw;
+    }
 }
 
 @media (min-width: 991px ) {
@@ -1204,7 +1249,17 @@ label a {
     .slider-presse {
         background-color: white;
     }
-
+    .social-media-multicolumn-wrapper {
+        justify-content: flex-start;
+        overflow-x: auto;
+        margin: 0px -40px;
+        padding: 20px;
+    }
+    .volumeButton {
+        bottom: 25px;
+        right: 25px;
+        height: 50px;
+    }
 }
 
 @media (max-width: 749px ) {
@@ -1243,6 +1298,9 @@ label a {
         flex-wrap: wrap;
         flex-direction: column; 
     } */
+    .social-media-multicolumn-item video {
+        border-radius: 42px;
+    }
 }
 
 /* RESPONSIVNESS SMARTPHONE*/
@@ -1538,6 +1596,11 @@ label a {
     }
     .video-slider {
         margin-top: 60px;
+    }
+    .volumeButton {
+        bottom: 25px;
+        right: 25px;
+        height: 46px;
     }
 }
 
