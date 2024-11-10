@@ -246,17 +246,21 @@ body {
     position: relative;
 }
 
-.social-media-multicolumn-item img {
+.social-media-multicolumn-item .smartphone-mask {
     width: 100%;
-    aspect-ratio: 9 / 17;
+    position: absolute;
+    z-index: 5;
+    pointer-events: none;
 }
 
 .social-media-multicolumn-item video {
-    position: absolute;
-    left: 21px;
-    top: 32px;
-    width: 90%;
-    aspect-ratio: 9 / 17;
+    position: relative;
+    left: 9px;
+    top: 4px;
+    width: 96%;
+    border-radius: 72px;
+    object-fit: cover;
+    aspect-ratio: 8 / 16;
 }
 
 #navbar-collapsed {
