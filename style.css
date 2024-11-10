@@ -1066,7 +1066,8 @@ label a {
     gap: 21px;
     justify-content: flex-end;
     flex-wrap: wrap;
-    align-content: center;  
+    align-content: center;
+    opacity: 0;
 }
 
 .hoerproben-child h3 {

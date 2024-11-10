@@ -85,13 +85,13 @@ function burgerIcons() {
 
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.from(".hoerproben-child", {
+gsap.to(".hoerproben-child", {
   scrollTrigger: { 
     trigger: '.hoerproben-child',
     toggleActions: 'play complete none none',
     start: 'top 70%',
   },
-    opacity: 0,
+    opacity: 1,
     stagger: 0.2,
   },);
 
