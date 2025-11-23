@@ -32,6 +32,9 @@
 
 
 <body>
+    <div class="body-overlay">
+        <img preload="true" fetchpriority="high" loading="eager" width="1200px" height="700px" src="assets/background-website-v1.jpg" alt="">
+    </div>
     <div id="Presse">
     <div class="navbar">
         <div class="topnav">
@@ -88,13 +91,13 @@
     <div class="main-content epk">
         <div class="hero" id="home">
             <div class="hero-image-epk overflow">
-                <h2>Electronic Press Kit</h2>
+                <!-- <h2>Electronic Press Kit</h2> -->
                 <div class="shrimp-tv">
-                    <img src="assets/shrimp-tv.svg" alt="">
+                    <img src="assets/shrimp-tv-4-3.svg" alt="">
                     <div class="epk-video">
                         <video width="840" controls playsinline webkit-playsinline poster="assets/video-poster.jpg">
-                        <source src="assets/epk-2024-1.mp4" type="video/mp4">
-                        <source src="assets/epk-2024-1.ogg" type="video/ogg">
+                        <source src="assets/epk-2025.mp4" type="video/mp4">
+                        <source src="assets/epk-2025.ogg" type="video/ogg">
                         </video>
                     </div>
                 </div>
@@ -105,9 +108,9 @@
             <p>Zum Abspielen klick auf die Schallplatten</p>
             <div class="hoerproben-parent">
                 <div class="hoerproben-child">
-                    <h3>Durch die Nacht</h3>
-                    <a class="schallplatte-3" id="play-3"><img src="assets/schallplatte.svg" alt=""></a>
-                    <audio class="audio-3" id="song-ich-kann-nix" src="assets/durch-die-nacht.mp3" preload="auto">
+                    <h3>ETFs</h3>
+                    <a class="schallplatte-2" id="play-2"><img src="assets/schallplatte.svg" alt=""></a>
+                    <audio class="audio-2" id="song-206" src="assets/etfs-demo.mp3" preload="auto">
                         Your browser does not support the <code>audio</code> element.
                     </audio>
                 </div>
@@ -119,16 +122,16 @@
                     </audio>
                 </div>
                 <div class="hoerproben-child">
-                    <h3>Airpod</h3>
-                    <a class="schallplatte-1" id="play"><img src="assets/schallplatte.svg" alt=""></a>
-                    <audio class="audio-1" id="song-mofa" src="assets/airpod.mp3" preload="auto">
+                    <h3>Durch die Nacht</h3>
+                    <a class="schallplatte-3" id="play-3"><img src="assets/schallplatte.svg" alt=""></a>
+                    <audio class="audio-3" id="song-ich-kann-nix" src="assets/durch-die-nacht.mp3" preload="auto">
                         Your browser does not support the <code>audio</code> element.
                     </audio>
                 </div>
                 <div class="hoerproben-child">
-                    <h3>Werd ich nie</h3>
-                    <a class="schallplatte-2" id="play-2"><img src="assets/schallplatte.svg" alt=""></a>
-                    <audio class="audio-2" id="song-206" src="assets/werd ich nie snippet.mp3" preload="auto">
+                    <h3>Schönste <br>lüge</h3>
+                    <a class="schallplatte-1" id="play"><img src="assets/schallplatte.svg" alt=""></a>
+                    <audio class="audio-1" id="song-mofa" src="assets/schoenste-luge-demo.mp3" preload="auto">
                         Your browser does not support the <code>audio</code> element.
                     </audio>
                 </div>
@@ -156,7 +159,7 @@ Mit kreativen Songs und einem unverwechselbaren Sound prägt die Baba Shrimp Gan
         </div> -->
 
             <div class="social-media-multicolumn">
-                <h2>Social Media</h2>
+                <h2>Latest releases</h2>
                 <div class="social-media-multicolumn-wrapper">
                     <div class="social-media-multicolumn-item video-container">
                         <img class="smartphone-mask" src="assets/smartphone-mask.svg" alt="">
@@ -167,8 +170,8 @@ Mit kreativen Songs und einem unverwechselbaren Sound prägt die Baba Shrimp Gan
                     </div>
                     <div class="social-media-multicolumn-item video-container">
                         <img class="smartphone-mask" src="assets/smartphone-mask.svg" alt="">
-                            <video class="myVideo" width="400" loading="lazy" loop muted playsinline webkit-playsinline autoplay poster="assets/sgf-24-poster.png">
-                            <source src="assets/sgf-24-komprimiert.mp4" type="video/mp4">
+                            <video class="myVideo" width="400" loading="lazy" loop muted playsinline webkit-playsinline autoplay poster="assets/etfs-poster.png">
+                            <source src="assets/etfs-reels-4.mp4" type="video/mp4">
                             </video>
                             <img class="volumeButton" src="assets/lautstärke-aus.svg" alt="Lautstärke">
                     </div>
@@ -312,9 +315,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         <img src="assets/MDP_2805.jpg" loading="lazy" alt="">
                     </div>
                     <div class="slider-presse-child">
-                        <img src="assets/Bandfoto-1.jpg" loading="lazy" alt="">
-                    </div>
-                    <div class="slider-presse-child">
                         <img src="assets/_MDP7719 2.jpg" loading="lazy" alt="">
                     </div>
                 </div>
@@ -365,8 +365,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li>06.06.25 Schlossgrabenfest Darmstadt <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
                     <li>26.06.25 Campusfestival hDa Darmstadt <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
                     <li>12.07.25 Wein am Stein Würzburg (Support für KYTES) <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
-                    <li>23.08.25 Summerkies Darmstadt</li>
-                    <li>31.08.25 Museumsuferfest</li>
+                    <li>23.08.25 Summerkies Darmstadt <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
+                    <li>31.08.25 Museumsuferfest <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
                 </ul>
                 <img class="scheinwerfer-gelb" src="assets/scheinwerfer-gelb.svg" alt="">
                 <img class="scheinwerfer-rot" src="assets/scheinwerfer-rot.svg" alt="">
@@ -385,13 +385,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         </iframe>
                     </div>
                 </div>
-                <div class="slider-video-child">
+                <!-- <div class="slider-video-child">
                     <div class="livesession-video">
                         <iframe width="1200" height="680" 
                             src="https://www.youtube-nocookie.com/embed/F94JSwZPUio" loading="lazy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
                         </iframe>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -462,13 +462,13 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </div>
 </div>
-    <div id="footer-cookie">
+    <!-- <div id="footer-cookie">
         <span id="description">
             Wir nutzen Cookies, um unsere Dienste zu erbringen und zu verbessern. Mit Nutzung dieser Seite akzeptieren
             Sie Cookies. <a href="datenschutz.html">Mehr erfahren</a>
         </span>
         <span id="accept"><a href="javascript:void(0)" title="Akzeptieren">Alles klar</a></span>
-    </div>
+    </div> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
