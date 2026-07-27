@@ -90,7 +90,7 @@
             <img class="amp" src="assets/amp.svg" alt="">
             <div class="textbox-ueber-uns  page-width">
                 <h2>Ey, was geht</h2>
-                <p>Wir sind die Baba Shrimp Gang aus Darmstadt. Cool, dass du vorbei schaust!
+                <p>Wir sind die Baba Shrimp Gang aus Darmstadt. Schön, dass du vorbei schaust!
                 </p>
                 <!-- <a href="ueber-uns.html" class="myButton">mehr erfahren</a> -->
             </div>
@@ -117,7 +117,7 @@
             </div>
         </div>
         <div class="konzerttermine-vergangen">
-            <h2>Konzerte</h2>
+            <h2>Konzerte 2026</h2>
             <div class="ul-parent">
                 <ul>
                     <!--<li>28.08.21 Summerkies Festival</li>
@@ -152,19 +152,60 @@
                     <li>16.08.24 Karben Open Air <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li> -->
                     <!-- <li>31.08.24 SUMMERKIES</li> -->
                     <!-- <li>22.11.24 Yara Support (Frankfurt)</li> -->
-                    <li>21.12.24 Kaffkiez Support Rosenheim <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
-                    <li>30.05.25 Freiraum Festival Bad Nauheim <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
-                    <li>06.06.25 Schlossgrabenfest Darmstadt <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
-                    <li>26.06.25 Campusfestival hDa Darmstadt <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
-                    <li>12.07.25 Wein am Stein Würzburg (Support für KYTES) <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
-                    <li>23.08.25 Summerkies Darmstadt <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
-                    <li>31.08.25 Museumsuferfest <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
-                    <li>20.03.26 Centralstation Darmstadt <img class="checkmark" src="assets/tick.svg" alt="checkmark"></li>
+                    <!-- <li>21.12.24 Kaffkiez Support Rosenheim</li>
+                    <li>30.05.25 Freiraum Festival Bad Nauheim</li>
+                    <li>06.06.25 Schlossgrabenfest Darmstadt</li>
+                    <li>26.06.25 Campusfestival hDa Darmstadt</li>
+                    <li>12.07.25 Wein am Stein Würzburg (Support für KYTES)</li>
+                    <li>23.08.25 Summerkies Darmstadt</li>
+                    <li>31.08.25 Museumsuferfest</li> -->
+                    <li>20.03.26 Centralstation Darmstadt (mit Scheiba)</li>
+                    <li>29.04.26 Terrassenfest Osnabrück</li>
+                    <li>15.05.26 Stadtfest Kehl (WF)</li>
+                    <li>22.05.26 Schlossgrabenfest Darmstadt</li>
+                    <li>18.06.26 Unifest Goethe-Uni Frankfurt</li>
+                    <li>20.06.26 Umsonst und Draußen Festival Würzburg</li>
+                    <li>10.07.26 Nonstock Festival</li>
+                    <li>11.07.26 Dure Festival</li>
+                    <li>25.07.26 Wein am Stein Würzburg</li>
+                    <li>01.08.26 Plauen (mit SIND)</li>
+                    <li>05.09.26 Weinfest Magdeburg</li>
+                    <li>26.09.26 Stadtfest Wiesbaden</li>
                 </ul>
                 <img class="scheinwerfer-gelb" src="assets/scheinwerfer-gelb.svg" alt="">
                 <img class="scheinwerfer-rot" src="assets/scheinwerfer-rot.svg" alt="">
             </div>
         </div>
+
+        <script>
+        // Hakt Konzerttermine automatisch ab, sobald ihr Datum in der Vergangenheit liegt.
+        // Läuft synchron direkt hier (statt bei DOMContentLoaded), damit das Icon von
+        // Anfang an mitgerendert wird und es keinen Layout-Shift durch nachträgliches
+        // Einfügen gibt. Sichtbarkeit wird über visibility gesteuert, damit der Platz
+        // für das Icon immer reserviert bleibt, egal ob der Termin schon war oder nicht.
+        (function() {
+            var termine = document.querySelectorAll('.konzerttermine-vergangen li');
+            var heute = new Date();
+            heute.setHours(0, 0, 0, 0);
+
+            termine.forEach(function(li) {
+                var match = li.textContent.trim().match(/^(\d{1,2})\.(?:-(\d{1,2})\.)?(\d{2})\.(\d{2})/);
+                if (!match) return;
+
+                var tag = match[2] || match[1];
+                var monat = match[3];
+                var jahr = 2000 + parseInt(match[4], 10);
+                var terminDatum = new Date(jahr, parseInt(monat, 10) - 1, parseInt(tag, 10));
+
+                var img = document.createElement('img');
+                img.className = 'checkmark';
+                img.src = 'assets/tick.svg';
+                img.alt = 'checkmark';
+                img.style.visibility = terminDatum <= heute ? 'visible' : 'hidden';
+                li.appendChild(img);
+            });
+        })();
+        </script>
 
         <div class="live" id="konzerte">
             <div class="konzerttermine">
@@ -439,11 +480,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
-    <script src="index.js"></script>
     <script
     src="https://code.jquery.com/jquery-3.6.1.min.js"
     integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
     crossorigin="anonymous"></script>
+    <script src="index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript">
         $('.slider').slick({

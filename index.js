@@ -63,8 +63,9 @@ function burgerIcons() {
 
 gsap.registerPlugin(ScrollTrigger);
 
+if (document.querySelector(".hoerproben-child")) {
 gsap.to(".hoerproben-child", {
-  scrollTrigger: { 
+  scrollTrigger: {
     trigger: '.hoerproben-child',
     toggleActions: 'play complete none none',
     start: 'top 70%',
@@ -72,9 +73,11 @@ gsap.to(".hoerproben-child", {
     opacity: 1,
     stagger: 0.2,
   },);
+}
 
+if (document.querySelector(".pressetext p")) {
 gsap.from(".pressetext p", {
-  scrollTrigger: { 
+  scrollTrigger: {
     trigger: '.pressetext p',
     toggleActions: 'play complete none none',
     start: 'top 70%',
@@ -83,9 +86,11 @@ gsap.from(".pressetext p", {
     opacity: 0,
     duration: 0.2,
   },);
+}
 
+if (document.querySelector(".livesession")) {
 gsap.from(".livesession iframe", {
-  scrollTrigger: { 
+  scrollTrigger: {
     trigger: '.livesession',
     toggleActions: 'play complete none none',
     start: 'top 60%',
@@ -94,6 +99,7 @@ gsap.from(".livesession iframe", {
     opacity: 0,
     duration: 0.2,
   },);
+}
 
 gsap.from(".konzerttermine-vergangen li", {
   scrollTrigger: { 
@@ -107,8 +113,9 @@ gsap.from(".konzerttermine-vergangen li", {
     duration: 1,
   },);
 
+if (document.querySelector(".kontakt-parent")) {
 gsap.from(".kontakt-child", {
-  scrollTrigger: { 
+  scrollTrigger: {
     trigger: '.kontakt-parent',
     toggleActions: 'play complete none none',
     start: 'top 70%',
@@ -118,6 +125,7 @@ gsap.from(".kontakt-child", {
     stagger: 0.1,
     duration: 1,
   },);
+}
 
 gsap.to(".icons", {
   scrollTrigger: { 
@@ -150,8 +158,9 @@ tl = gsap.timeline({
     ease: Power3. easeInOut,  
   },);
 
+  if (document.querySelector(".ueber-uns-page")) {
   tl = gsap.timeline({
-    scrollTrigger: { 
+    scrollTrigger: {
       trigger: '.ueber-uns-page',
       toggleActions: 'play none none reverse',
       start: 'top bottom'
@@ -162,14 +171,15 @@ tl = gsap.timeline({
       rotation: -4,
       duration: 1.5,
       transformOrigin: "top center",
-      ease: Power3. easeInOut,  
+      ease: Power3. easeInOut,
     },);
     tl.to(".lampe", {
       rotation: 4,
       duration: 1.5,
       transformOrigin: "top center",
-      ease: Power3. easeInOut,  
+      ease: Power3. easeInOut,
     },);
+  }
 
   tl = gsap.timeline({
     scrollTrigger: { 
@@ -212,6 +222,7 @@ var playBtn = document.getElementById('play'),
 	audios = document.getElementsByClassName('audio-1');
 console.log(audios);
 
+if (playBtn) {
 if($(window).width() > 991)
 {
 playBtn.addEventListener('mouseover', function() {
@@ -292,4 +303,5 @@ play4Btn.addEventListener('mouseleave', function() {
   werdIchNie.pause();
   werdIchNie.currentTime = 0;
 }, false);
+}
 }
