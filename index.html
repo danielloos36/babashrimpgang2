@@ -211,6 +211,64 @@
         })();
         </script>
 
+        <script>
+        // Erzeugt automatisch strukturierte Daten (schema.org MusicEvent) aus der
+        // Konzertliste oben, damit Google die Termine als Event-Rich-Result anzeigen
+        // kann. Läuft direkt aus der sichtbaren Liste, damit beim Pflegen der Termine
+        // nur eine Stelle (die Liste selbst) aktualisiert werden muss.
+        (function() {
+            var termine = document.querySelectorAll('.konzerttermine-vergangen li');
+            var heute = new Date();
+            heute.setHours(0, 0, 0, 0);
+            var events = [];
+
+            function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+            termine.forEach(function(li) {
+                var match = li.textContent.trim().match(/^(\d{1,2})\.(?:-(\d{1,2})\.)?(\d{2})\.(\d{2})\s+(.+)$/);
+                if (!match) return;
+
+                var monat = parseInt(match[3], 10);
+                var jahr = 2000 + parseInt(match[4], 10);
+                var startTag = parseInt(match[1], 10);
+                var startDatum = new Date(jahr, monat - 1, startTag);
+
+                // Vergangene Termine nicht in die strukturierten Daten aufnehmen,
+                // Google verlangt ausdrücklich nur aktuelle/zukünftige Events.
+                if (startDatum < heute) return;
+
+                var ort = match[5].trim();
+                var ortName = ort.replace(/\s*\([^)]*\)\s*$/, '');
+
+                events.push({
+                    "@context": "https://schema.org",
+                    "@type": "MusicEvent",
+                    "name": "Baba Shrimp Gang live: " + ort,
+                    "startDate": jahr + '-' + pad(monat) + '-' + pad(startTag),
+                    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+                    "eventStatus": "https://schema.org/EventScheduled",
+                    "location": {
+                        "@type": "Place",
+                        "name": ortName,
+                        "address": ortName
+                    },
+                    "performer": {
+                        "@type": "MusicGroup",
+                        "name": "Baba Shrimp Gang"
+                    },
+                    "url": "https://babashrimpgang.de/#konzerte"
+                });
+            });
+
+            if (events.length) {
+                var script = document.createElement('script');
+                script.type = 'application/ld+json';
+                script.text = JSON.stringify(events);
+                document.head.appendChild(script);
+            }
+        })();
+        </script>
+
         <div class="live">
             <div class="konzerttermine">
                 <!-- <h3>Anstehende Konzerte</h3> -->
