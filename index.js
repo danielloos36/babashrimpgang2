@@ -128,7 +128,7 @@ gsap.from(".kontakt-child", {
 }
 
 gsap.to(".icons", {
-  scrollTrigger: { 
+  scrollTrigger: {
     trigger: '.footer',
     toggleActions: 'play complete reset reset',
     start: 'top bottom'
@@ -136,6 +136,30 @@ gsap.to(".icons", {
     duration: 0.1,
     fill: 'white'
   },);
+
+var isHomepage = location.pathname === '/' || location.pathname.endsWith('/index.html');
+
+if (isHomepage && document.querySelector(".hero")) {
+gsap.to(".bsg-logo, .icons", {
+  scrollTrigger: {
+    trigger: '.hero',
+    toggleActions: 'play reverse play reverse',
+    start: 'top bottom'
+  },
+    duration: 0.1,
+    fill: 'white'
+  },);
+
+gsap.to(".bar1, .bar2, .bar3", {
+  scrollTrigger: {
+    trigger: '.hero',
+    toggleActions: 'play reverse play reverse',
+    start: 'top bottom'
+  },
+    duration: 0.1,
+    backgroundColor: 'white'
+  },);
+}
 
 tl = gsap.timeline({
   scrollTrigger: { 
