@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baba Shrimp Gang</title>
-    <meta name="description" content="Baba Shrimp Gang aus Darmstadt: Indie-Pop-Band mit 80er-Synthesizern und funkigem Gitarrensound. Konzerttermine, Musik und Social Media.">
+    <meta name="description" content="Baba Shrimp Gang: fünf Jungs aus Südhessen mit deutschsprachigem Indie-Pop, die man am besten live erleben sollte.">
     <link rel="canonical" href="https://babashrimpgang.de/">
 
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
@@ -18,14 +18,14 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://babashrimpgang.de">
     <meta property="og:title" content="Baba Shrimp Gang">
-    <meta property="og:description" content="Willkommen auf der Website der Baba Shrimp Gang">
+    <meta property="og:description" content="Baba Shrimp Gang: fünf Jungs aus Südhessen mit deutschsprachigem Indie-Pop, die man am besten live erleben sollte.">
     <meta property="og:image" content="https://babashrimpgang.de/assets/MDP_4440.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://babashrimpgang.de">
     <meta property="twitter:title" content="Baba Shrimp Gang">
-    <meta property="twitter:description" content="Willkommen auf der Website der Baba Shrimp Gang">
+    <meta property="twitter:description" content="Baba Shrimp Gang: fünf Jungs aus Südhessen mit deutschsprachigem Indie-Pop, die man am besten live erleben sollte.">
     <meta property="twitter:image" content="https://babashrimpgang.de/assets/MDP_4440.jpg">
 
     <script type="application/ld+json">
@@ -532,6 +532,120 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
         </div>
+        <div class="faq overflow" id="faq">
+            <div class="textbox-faq page-width">
+                <h2>Häufig gestellte Fragen</h2>
+                <details class="faq-item">
+                    <summary>Wer sind die Mitglieder der Baba Shrimp Gang?</summary>
+                    <p>Daniel (Gesang &amp; Gitarre), Aaron (E-Bass), Martyn (Schlagzeug), Henrik (Trompete) und Joschi (Keyboard/Synthesizer) – das ist die Baba Shrimp Gang.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Welche Musikrichtung spielt die Baba Shrimp Gang?</summary>
+                    <p>Deutschsprachigen Indie-Pop</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Woher kommt die Baba Shrimp Gang?</summary>
+                    <p>Aus Darmstadt.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Wann spielt die Baba Shrimp Gang das nächste Konzert?</summary>
+                    <p id="faq-next-concert">Die aktuellen Termine findet ihr weiter oben in der Konzertliste.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Wo kann man Musik von der Baba Shrimp Gang hören?</summary>
+                    <p>Auf <a href="https://open.spotify.com/intl-de/artist/7gElG6ZdG8Se1opnsGXxT5?si=tSD4TKHmTbi5YxmXeuwaxQ" target="_blank" rel="noopener noreferrer">Spotify</a> und <a href="https://www.youtube.com/channel/UC1TnnC05_rydgKXp87npdrQ/featured" target="_blank" rel="noopener noreferrer">YouTube</a> – und natürlich live auf unseren Konzerten.</p>
+                </details>
+            </div>
+        </div>
+
+        <script>
+        // Ermittelt den nächsten anstehenden Konzerttermin aus derselben Liste, die
+        // auch die MusicEvent-Daten weiter oben speist, und trägt ihn sowohl sichtbar
+        // als auch in ein FAQPage-Schema ein. So bleibt die Antwort auf "Wann ist das
+        // nächste Konzert?" automatisch aktuell, ohne zwei Stellen pflegen zu müssen.
+        (function() {
+            var termine = document.querySelectorAll('.konzerttermine-vergangen li');
+            var heute = new Date();
+            heute.setHours(0, 0, 0, 0);
+            var naechstesDatum = null;
+            var naechsterOrt = null;
+
+            termine.forEach(function(li) {
+                if (naechstesDatum) return;
+                var match = li.textContent.trim().match(/^(\d{1,2})\.(?:-(\d{1,2})\.)?(\d{2})\.(\d{2})\s+(.+)$/);
+                if (!match) return;
+
+                var monat = parseInt(match[3], 10);
+                var jahr = 2000 + parseInt(match[4], 10);
+                var tag = parseInt(match[1], 10);
+                var datum = new Date(jahr, monat - 1, tag);
+                if (datum < heute) return;
+
+                naechstesDatum = match[1] + '.' + match[3] + '.' + jahr;
+                naechsterOrt = match[5].trim();
+            });
+
+            var antwortNaechstesKonzert = naechstesDatum
+                ? 'Am ' + naechstesDatum + ' in ' + naechsterOrt + '.'
+                : 'Die aktuellen Termine findet ihr weiter oben in der Konzertliste.';
+
+            var zielElement = document.getElementById('faq-next-concert');
+            if (zielElement) zielElement.textContent = antwortNaechstesKonzert;
+
+            var faqSchema = {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Wer sind die Mitglieder der Baba Shrimp Gang?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Daniel (Gesang & Gitarre), Aaron (E-Bass), Martyn (Schlagzeug), Henrik (Trompete) und Joschi (Keyboard/Synthesizer) – das ist die Baba Shrimp Gang."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Welche Musikrichtung spielt die Baba Shrimp Gang?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Deutschsprachigen Indie-Pop"
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Woher kommt die Baba Shrimp Gang?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Aus Darmstadt."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Wann spielt die Baba Shrimp Gang das nächste Konzert?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": antwortNaechstesKonzert
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Wo kann man Musik von der Baba Shrimp Gang hören?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Auf Spotify und YouTube – und natürlich live auf den Konzerten der Baba Shrimp Gang."
+                        }
+                    }
+                ]
+            };
+
+            var script = document.createElement('script');
+            script.type = 'application/ld+json';
+            script.text = JSON.stringify(faqSchema);
+            document.head.appendChild(script);
+        })();
+        </script>
+
         <div class="social-icons">
             <div>
                 <a href="https://open.spotify.com/intl-de/artist/7gElG6ZdG8Se1opnsGXxT5?si=tSD4TKHmTbi5YxmXeuwaxQ" target="_blank" rel="noopener noreferrer"><svg class="icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M248 8C111.1 8 0 119.1 0 256s111.1 248 248 248 248-111.1 248-248S384.9 8 248 8zm100.7 364.9c-4.2 0-6.8-1.3-10.7-3.6-62.4-37.6-135-39.2-206.7-24.5-3.9 1-9 2.6-11.9 2.6-9.7 0-15.8-7.7-15.8-15.8 0-10.3 6.1-15.2 13.6-16.8 81.9-18.1 165.6-16.5 237 26.2 6.1 3.9 9.7 7.4 9.7 16.5s-7.1 15.4-15.2 15.4zm26.9-65.6c-5.2 0-8.7-2.3-12.3-4.2-62.5-37-155.7-51.9-238.6-29.4-4.8 1.3-7.4 2.6-11.9 2.6-10.7 0-19.4-8.7-19.4-19.4s5.2-17.8 15.5-20.7c27.8-7.8 56.2-13.6 97.8-13.6 64.9 0 127.6 16.1 177 45.5 8.1 4.8 11.3 11 11.3 19.7-.1 10.8-8.5 19.5-19.4 19.5zm31-76.2c-5.2 0-8.4-1.3-12.9-3.9-71.2-42.5-198.5-52.7-280.9-29.7-3.6 1-8.1 2.6-12.9 2.6-13.2 0-23.3-10.3-23.3-23.6 0-13.6 8.4-21.3 17.4-23.9 35.2-10.3 74.6-15.2 117.5-15.2 73 0 149.5 15.2 205.4 47.8 7.8 4.5 12.9 10.7 12.9 22.6 0 13.6-11 23.3-23.2 23.3z"/></svg></a>

@@ -1664,3 +1664,51 @@ label a {
       text-align: center;
     }
   }
+
+.faq {
+    margin-top: 100px;
+    padding-bottom: 40px;
+}
+
+.faq h2 {
+    text-align: center;
+}
+
+.textbox-faq {
+    text-align: left;
+    margin: 0 auto;
+}
+
+.faq-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 20px 0;
+}
+
+.faq-item summary {
+    font-family: "Alata", "arial";
+    font-size: 1.3rem;
+    cursor: pointer;
+    list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::before {
+    content: "+";
+    display: inline-block;
+    width: 1em;
+    color: #D86F6F;
+    font-weight: bold;
+}
+
+.faq-item[open] summary::before {
+    content: "\2013";
+}
+
+.faq-item p {
+    margin: 15px 0 0;
+    font-family: "Alata", "arial";
+    font-size: 1.1rem;
+}
