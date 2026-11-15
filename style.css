@@ -474,7 +474,7 @@ a:hover {
 }
 
 .myButton {
-	background-color:var(--black);
+	background-color:var(--bordeaux);
 	display:inline-block;
 	cursor:pointer;
 	color:var(--creme);
@@ -487,7 +487,7 @@ a:hover {
     transition: border-radius 0.35s ease, background-color 0.2s, transform 0.2s;
 }
 .myButton:hover {
-	background-color:var(--bordeaux);
+	background-color:var(--black);
     color:var(--creme);
     border-radius: var(--blob-hover);
     transform: rotate(-1.5deg);
@@ -959,14 +959,14 @@ ul.footer-content {
 
 .konzert-filter-btn:hover {
     border-radius: var(--blob-small-hover);
-    background-color: var(--bordeaux);
-    border-color: var(--bordeaux);
+    background-color: var(--black);
+    border-color: var(--black);
     color: var(--creme);
 }
 
 .konzert-filter-btn.active {
-    background-color: var(--black);
-    border-color: var(--black);
+    background-color: var(--bordeaux);
+    border-color: var(--bordeaux);
     color: var(--creme);
 }
 
@@ -1098,7 +1098,7 @@ label a {
     border-radius: var(--blob-small);
     transition: border-radius 0.35s ease, background-color 0.2s;
     fill: var(--creme);
-    background-color: var(--black);
+    background-color: var(--bordeaux);
     padding: 6px 14px;
     width: 45px;
     height: 45px;
@@ -1106,7 +1106,7 @@ label a {
 
 .download-button:hover {
     border-radius: var(--blob-small-hover);
-    background-color: var(--bordeaux);
+    background-color: var(--black);
 }
 
 .hoerproben {
