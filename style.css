@@ -380,6 +380,130 @@ body {
 
 .hero-image {
     text-align: center;
+    position: relative;
+}
+
+/* ===== Hero-Grafik ===== */
+
+.hero {
+    position: relative;
+}
+
+/* Verlauf oben, damit Logo und Menü auf dem Foto lesbar bleiben */
+.hero-image::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 220px;
+    background: linear-gradient(rgba(9, 12, 6, 0.45), rgba(9, 12, 6, 0));
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Schachbrett-Band aus der CI über der Unterkante des Fotos */
+.hero-checker {
+    --checker: 28px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: calc(var(--checker) * -1);
+    height: calc(var(--checker) * 2);
+    background-color: var(--creme);
+    background-image:
+        conic-gradient(var(--bordeaux) 90deg, transparent 90deg 180deg, var(--bordeaux) 180deg 270deg, transparent 270deg);
+    background-size: calc(var(--checker) * 2) calc(var(--checker) * 2);
+    z-index: 3;
+}
+
+/* Pinker Blob-Sticker, schräg aufs Foto geklebt */
+.hero-sticker {
+    position: absolute;
+    right: 9vw;
+    bottom: 70px;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 190px;
+    aspect-ratio: 1 / 0.92;
+    background-color: var(--pink);
+    color: var(--black);
+    border-radius: 58% 42% 55% 45% / 46% 58% 42% 54%;
+    transform: rotate(9deg);
+    box-shadow: 6px 8px 0 var(--black);
+    text-align: center;
+    line-height: 0.95;
+    transition: transform 0.25s ease, border-radius 0.4s ease;
+}
+
+.hero-sticker:hover {
+    color: var(--black);
+    transform: rotate(4deg) scale(1.06);
+    border-radius: 45% 55% 42% 58% / 58% 44% 56% 42%;
+    animation: sticker-wackeln 0.5s ease-in-out;
+}
+
+.hero-sticker-big {
+    font-family: var(--font-display);
+    font-size: 2.6rem;
+    text-transform: uppercase;
+}
+
+.hero-sticker-small {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-top: 8px;
+}
+
+@keyframes sticker-wackeln {
+    0%   { transform: rotate(9deg) scale(1); }
+    30%  { transform: rotate(0deg) scale(1.08); }
+    60%  { transform: rotate(7deg) scale(1.04); }
+    100% { transform: rotate(4deg) scale(1.06); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-sticker:hover {
+        animation: none;
+    }
+}
+
+@media (max-width: 990px) {
+    .hero-sticker {
+        width: 140px;
+        bottom: 50px;
+        right: 7vw;
+    }
+    .hero-sticker-big {
+        font-size: 1.9rem;
+    }
+    .hero-sticker-small {
+        font-size: 0.8rem;
+    }
+    .hero-image::before {
+        height: 140px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-checker {
+        --checker: 16px;
+    }
+    .hero-sticker {
+        width: 104px;
+        bottom: 28px;
+        right: 5vw;
+        box-shadow: 4px 5px 0 var(--black);
+    }
+    .hero-sticker-big {
+        font-size: 1.35rem;
+    }
+    .hero-sticker-small {
+        font-size: 0.62rem;
+        margin-top: 4px;
+    }
 }
 
 .hero-image img {
@@ -547,6 +671,42 @@ a:hover {
     transform: translateX(-50%) translateY(-50%);
     max-width: 300px;
     max-height: 295px;
+}
+
+/* Single-Cover füllen die ganze Box, Titel als Sticker darüber */
+.spotify .box-1, .spotify .box-2 {
+    overflow: hidden;
+}
+
+.spotify img.release-cover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: none;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.spotify .box-1 h3, .spotify .box-2 h3 {
+    position: absolute;
+    top: 22px;
+    left: 22px;
+    z-index: 1;
+    margin: 0;
+    padding: 10px 20px;
+    background-color: var(--creme);
+    color: var(--black);
+    font-size: 1.6rem;
+    border-radius: var(--blob-small);
+    transform: rotate(-3deg);
+}
+
+.spotify .btn {
+    z-index: 1;
 }
 
 .btn {
@@ -1811,4 +1971,13 @@ label a {
 /* Formularfelder und Buttons erben die Schriftstärke nicht automatisch */
 input, textarea, select, button {
     font-weight: var(--font-body-weight);
+}
+
+@media (max-width: 576px) {
+    .spotify .box-1 h3, .spotify .box-2 h3 {
+        top: 14px;
+        left: 14px;
+        padding: 6px 14px;
+        font-size: 1.2rem;
+    }
 }
