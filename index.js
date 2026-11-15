@@ -11,22 +11,22 @@ function myFunction() {
 var x = document.getElementById("navbar-collapsed");
 if (x.style.top === "-20vh") {
   x.style.top = "3000px";
-  document.getElementsByClassName("icons")[0].style.fill = "black";
-  document.getElementsByClassName("icons")[1].style.fill = "black";
-  document.getElementsByClassName("icons")[2].style.fill = "black";
+  document.getElementsByClassName("icons")[0].style.fill = "#090C06";
+  document.getElementsByClassName("icons")[1].style.fill = "#090C06";
+  document.getElementsByClassName("icons")[2].style.fill = "#090C06";
 } else {
   x.style.top = "-20vh";
-  document.getElementsByClassName("icons")[0].style.fill = "white";
-  document.getElementsByClassName("icons")[1].style.fill = "white";
-  document.getElementsByClassName("icons")[2].style.fill = "white";
+  document.getElementsByClassName("icons")[0].style.fill = "#FAF2BD";
+  document.getElementsByClassName("icons")[1].style.fill = "#FAF2BD";
+  document.getElementsByClassName("icons")[2].style.fill = "#FAF2BD";
 }
 }
 function linkClicked() {
     var x = document.getElementById("navbar-collapsed");
     x.style.top = "3000px";
-    document.getElementsByClassName("icons")[0].style.fill = "black";
-    document.getElementsByClassName("icons")[1].style.fill = "black";
-    document.getElementsByClassName("icons")[2].style.fill = "black";
+    document.getElementsByClassName("icons")[0].style.fill = "#090C06";
+    document.getElementsByClassName("icons")[1].style.fill = "#090C06";
+    document.getElementsByClassName("icons")[2].style.fill = "#090C06";
 }
 function burgerIcon() {
     document.getElementsByClassName("bar1")[0].classList.toggle("change");
@@ -134,20 +134,30 @@ gsap.to(".icons", {
     start: 'top bottom'
   },
     duration: 0.1,
-    fill: 'white'
+    fill: '#FAF2BD'
   },);
 
 var isHomepage = location.pathname === '/' || location.pathname.endsWith('/index.html');
 
 if (isHomepage && document.querySelector(".hero")) {
-gsap.to(".bsg-logo, .icons", {
+gsap.to(".icons", {
   scrollTrigger: {
     trigger: '.hero',
     toggleActions: 'play reverse play reverse',
     start: 'top bottom'
   },
     duration: 0.1,
-    fill: 'white'
+    fill: '#FAF2BD'
+  },);
+
+gsap.to(".bsg-logo", {
+  scrollTrigger: {
+    trigger: '.hero',
+    toggleActions: 'play reverse play reverse',
+    start: 'top bottom'
+  },
+    duration: 0.1,
+    backgroundColor: '#FAF2BD'
   },);
 
 gsap.to(".bar1, .bar2, .bar3", {
@@ -157,7 +167,7 @@ gsap.to(".bar1, .bar2, .bar3", {
     start: 'top bottom'
   },
     duration: 0.1,
-    backgroundColor: 'white'
+    backgroundColor: '#FAF2BD'
   },);
 }
 
